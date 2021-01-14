@@ -35,12 +35,12 @@ __packed typedef struct{
 #deifne ABSOLUTE_BATTERY	0
 #deifne DRIVER_DATA1		1
 #deifne DRIVER_DATA2		2
-#deifne MOVE_SENSOR			3
+#deifne MOVE_SENSOR		3
 #deifne MOVE_INIT_POSITION	4
 ///////////////////////////step///////////////////////////
 ///////////////////////////status///////////////////////////
-#define STATUS_WAIT			0
-#define STATUS_OK			1
+#define STATUS_WAIT		0
+#define STATUS_OK		1
 #define STATUS_ERROR		2
 #define STATUS_TIMEOUT		3
 ///////////////////////////status///////////////////////////
