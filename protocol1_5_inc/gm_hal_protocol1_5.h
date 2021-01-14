@@ -33,7 +33,7 @@ __packed typedef struct{
 #define PID_INIT				0
 #define PID_MOTION				1
 #define PID_MIDI				2
-#define PID_VIDEO				3
+#define PID_EDIT				3
 #define PID_SPEAKER				4
 #define PID_SENSOR				5
 #define PID_ERROR				6
