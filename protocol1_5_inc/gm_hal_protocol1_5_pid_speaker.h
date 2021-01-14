@@ -8,10 +8,10 @@ __packed typedef struct{
 ///////////////////////////action///////////////////////////
 #define	SPEAKER_ACTION_SOUND_UP		0
 #define	SPEAKER_ACTION_SOUND_DN		1
-#define	SPEAKER_ACTION_MUTE			2
+#define	SPEAKER_ACTION_MUTE		2
 #define	SPEAKER_ACTION_UNMUTE		3
-#define	SPEAKER_ACTION_STOP			4
-#define	SPEAKER_ACTION_NEXT			5
+#define	SPEAKER_ACTION_STOP		4
+#define	SPEAKER_ACTION_NEXT		5
 #define	SPEAKER_ACTION_PREVIOS		6
 #define	SPEAKER_ACTION_PLAY_PAUSE	7
 ///////////////////////////action///////////////////////////
