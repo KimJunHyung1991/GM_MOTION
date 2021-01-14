@@ -24,10 +24,10 @@ __packed typedef struct{
 #define RTR_GET					1
 /*******************************************Header영역의 RTR******************************************************************/
 /*******************************************Header영역의 PRIORITY******************************************************************/
-#define PRIORITY_EMERGENCY		0
-#define PRIORITY_NOMAL			1
-#define PRIORITY_RESERVED1		2
-#define PRIORITY_RESERVED2		3
+#define PRIORITY_EMERGENCY			0
+#define PRIORITY_NOMAL				1
+#define PRIORITY_RESERVED1			2
+#define PRIORITY_RESERVED2			3
 /*******************************************Header영역의 PRIORITY******************************************************************/
 /*******************************************Header영역의 PID******************************************************************/
 #define PID_INIT				0
