@@ -17,7 +17,7 @@ __packed typedef struct{
 			uint8_t status : 1;
 			uint8_t id : 7;
 		};
-		uint8_t u8;
+		uint8_t val;
 	};	
 }prtc_data_set_midi_button_t;
 ///////////////////////////type///////////////////////////
