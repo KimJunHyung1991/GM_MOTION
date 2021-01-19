@@ -21,10 +21,10 @@ __packed typedef struct{
 
 
 /*******************************************Header영역의 RTR******************************************************************/
-#define CMD_CONTROL					0
-#define CMD_RESPONSE					1
-#define CMD_REQUEST					2
-#define CMD_RESERVED					3
+#define CMD_CONTROL				0
+#define CMD_RESPONSE				1
+#define CMD_REQUEST				2
+#define CMD_RESERVED				3
 /*******************************************Header영역의 RTR******************************************************************/
 /*******************************************Header영역의 PRIORITY******************************************************************/
 #define PRIORITY_EMERGENCY			0
