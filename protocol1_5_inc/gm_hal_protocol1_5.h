@@ -2,16 +2,17 @@
 #define _GM_HAL_PROTOCOL1_5_H_
 
 __packed typedef struct{
-	uint8_t rtr;
+	uint8_t cmd1;
 	uint8_t dlc;
 	union{
 		struct{
 			uint32_t sub_id		:	5;
 			uint32_t sub_pid	:	5;
 			uint32_t pid		:	5;
+			uint32_t cmd2		:	1;
 			uint32_t target_id	:	6;
 			uint32_t souce_id	:	6;
-			uint32_t priority	:	2;
+			uint32_t priority	:	1;
 			uint32_t Null		:	3;
 		};
 		uint32_t protocol_header_32
@@ -20,8 +21,10 @@ __packed typedef struct{
 
 
 /*******************************************Header영역의 RTR******************************************************************/
-#define RTR_SET					0
-#define RTR_GET					1
+#define CMD_CONTROL					0
+#define CMD_RESPONSE					1
+#define CMD_REQUEST					2
+#define CMD_RESERVED					3
 /*******************************************Header영역의 RTR******************************************************************/
 /*******************************************Header영역의 PRIORITY******************************************************************/
 #define PRIORITY_EMERGENCY			0
