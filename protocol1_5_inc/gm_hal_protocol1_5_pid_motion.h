@@ -8,6 +8,6 @@ __packed typedef struct{
 /***********************************************************MOTION_SUB_PID_ANGLE**********************************************************/
 __packed typedef struct{
 	uint16_t	angle_val;
-}prtc_data_set_motion_adc_t;
+}prtc_data_set_motion_angle_t;
 /***********************************************************MOTION_SUB_PID_ANGLE**********************************************************/
 #endif
