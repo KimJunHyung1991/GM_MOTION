@@ -1,0 +1,51 @@
+#include "main.h"
+#include "app_pid_speaker_cmd.h"
+/*************************************************
+fail : net_phd_pid_speaker.c
+network packet header disassemble prameter idemtification speaker
+4계층중 network층에 해당
+packet의 header영역의 PID(speaker) 분해
+**************************************************/
+
+void net_phd_speaker_sub_pid_action(prtc_header_t *pPh, uint8_t *pData);
+/******************************************SPEAKER PID DISASSEMBLE*********************************************/
+/**
+  * @brief  packet header disassemble(PID-speaker의 sub_pid)
+  * @param  *pPh : packet header pointer
+			*pData : packet data pointer
+  * @retval None
+  */
+void net_phd_speaker_sub_pid(prtc_header_t *pPh, uint8_t *pData)
+{
+	switch(pPh->sub_pid)
+	{
+		case SPEAKER_SUB_PID_ACTION:
+			net_phd_speaker_sub_pid_action(pPh, pData);
+		break;
+	}
+}
+/******************************************SPEAKER PID DISASSEMBLE*********************************************/
+/******************************************SPEAKER SUB PID ACTION DISASSEMBLE*********************************************/
+/**
+  * @brief  packet header disassemble(PID-speaker의 sub_pid-action의 cmd)
+  * @param  *pPh : packet header pointer
+			*pData : packet data pointer
+  * @retval None
+  */
+void net_phd_speaker_sub_pid_action(prtc_header_t *pPh, uint8_t *pData)
+{
+	uint8_t cmd = ret_protocol_header_cmd(pPh);
+	switch(cmd)
+	{
+		case CMD_CONTROL:
+			app_rx_speaker_sub_pid_action_ctl(pPh, pData);
+		break;
+		case CMD_RESPONSE:
+			app_rx_speaker_sub_pid_action_rsp(pPh, pData);
+		break;
+		case CMD_REQUEST:
+			app_rx_speaker_sub_pid_action_rqt(pPh, pData);
+		break;
+	}
+}
+/******************************************SPEAKER SUB PID ACTION DISASSEMBLE*********************************************/

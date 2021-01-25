@@ -1,0 +1,119 @@
+#include "main.h"
+/*************************************************
+fail : net_pda_pid_error.c
+network packet data assemble prameter idemtification error
+4계층중 network층에 해당
+packet pid-error영역의 data 재조립
+**************************************************/
+
+/******************************************ERROR SUB PID RC ASSEMBLE*********************************************/
+/**
+  * @brief  packet error-rc-control data assemble
+  * @param  error_code : value(0~255)
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_rc_ctl(uint8_t error_code)
+{
+	prtc_data_set_error_rc_t *pCdser = (prtc_data_set_error_rc_t *)make_data_buff;
+	pCdser->error_code = error_code;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-rc-response data assemble
+  * @param  error_code : value(0~255)
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_rc_rsp(uint8_t error_code)
+{
+	prtc_data_set_error_rc_t *pCdser = (prtc_data_set_error_rc_t *)make_data_buff;
+	pCdser->error_code = error_code;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-rc-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_rc_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************ERROR SUB PID RC ASSEMBLE*********************************************/
+/******************************************ERROR SUB PID AC ASSEMBLE*********************************************/
+/**
+  * @brief  packet error-ac-control data assemble
+  * @param  error_code : value(0~255)
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_ac_ctl(uint8_t error_code)
+{
+	prtc_data_set_error_ac_t *pCdsea = (prtc_data_set_error_ac_t *)make_data_buff;
+	pCdsea->error_code = error_code;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-ac-response data assemble
+  * @param  error_code : value(0~255)
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_ac_rsp(uint8_t error_code)
+{
+	prtc_data_set_error_ac_t *pCdsea = (prtc_data_set_error_ac_t *)make_data_buff;
+	pCdsea->error_code = error_code;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-ac-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_ac_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************ERROR SUB PID AC ASSEMBLE*********************************************/
+/******************************************ERROR SUB PID BLDC ASSEMBLE*********************************************/
+/**
+  * @brief  packet error-bldc-control data assemble
+  * @param  error_code : value(0~255)
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_bldc_ctl(uint8_t error_code)
+{
+	prtc_data_set_error_bldc_t *pCdseb = (prtc_data_set_error_bldc_t *)make_data_buff;
+	pCdseb->error_code = error_code;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-bldc-response data assemble
+  * @param  error_code : value(0~255)
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_bldc_rsp(uint8_t error_code)
+{
+	prtc_data_set_error_bldc_t *pCdseb = (prtc_data_set_error_bldc_t *)make_data_buff;
+	pCdseb->error_code = error_code;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-bldc-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_bldc_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************ERROR SUB PID BLDC ASSEMBLE*********************************************/
