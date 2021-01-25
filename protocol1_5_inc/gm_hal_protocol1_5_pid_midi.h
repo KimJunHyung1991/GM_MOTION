@@ -17,12 +17,12 @@ __packed typedef struct{
 			uint8_t status : 1;
 			uint8_t id : 7;
 		};
-		uint8_t u8;
+		uint8_t val;
 	};	
 }prtc_data_set_midi_button_t;
 ///////////////////////////type///////////////////////////
-#define MIDI_BTN_TYPE_PUSH			0
-#define MIDI_BTN_TYPE_SLOT			1
+#define MIDI_BTN_TYPE_PUSH		0
+#define MIDI_BTN_TYPE_SLOT		1
 #define MIDI_BTN_TYPE_DIRECTION		2
 ///////////////////////////type///////////////////////////
 ///////////////////////////status///////////////////////////
@@ -43,11 +43,11 @@ __packed typedef struct{
 #define MIDI_LED_TYPE_PUSH_BTN		0
 #define MIDI_LED_TYPE_COUNT1		1
 #define MIDI_LED_TYPE_COUNT2		2
-#define MIDI_LED_TYPE_SLOT1			3
-#define MIDI_LED_TYPE_SLOT2			4
-#define MIDI_LED_TYPE_SLOT3			5
-#define MIDI_LED_TYPE_SLOT4			6
-#define MIDI_LED_TYPE_RGB			7
+#define MIDI_LED_TYPE_SLOT1		3
+#define MIDI_LED_TYPE_SLOT2		4
+#define MIDI_LED_TYPE_SLOT3		5
+#define MIDI_LED_TYPE_SLOT4		6
+#define MIDI_LED_TYPE_RGB		7
 ///////////////////////////type///////////////////////////
 ///////////////////////////status///////////////////////////
 #define MIDI_LED_STATUS_OFF		0

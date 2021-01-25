@@ -12,8 +12,8 @@ __packed typedef struct{
 	uint8_t		reducer_ratio;
 }prtc_data_set_init_driver_data1_t;
 ///////////////////////////direction///////////////////////////
-#deifne CW		0
-#deifne CWW		1
+#define CW		0
+#define CCW		1
 ///////////////////////////direction///////////////////////////
 /***********************************************************INIT_SUB_PID_DRIVER_DATA1**********************************************************/
 /***********************************************************INIT_SUB_PID_DRIVER_DATA2**********************************************************/
@@ -32,15 +32,15 @@ __packed typedef struct{
 	uint8_t		status;
 }prtc_data_set_init_status_t;
 ///////////////////////////step///////////////////////////
-#deifne ABSOLUTE_BATTERY	0
-#deifne DRIVER_DATA1		1
-#deifne DRIVER_DATA2		2
-#deifne MOVE_SENSOR			3
-#deifne MOVE_INIT_POSITION	4
+#define ABSOLUTE_BATTERY	0
+#define DRIVER_DATA1		1
+#define DRIVER_DATA2		2
+#define MOVE_SENSOR		3
+#define MOVE_INIT_POSITION	4
 ///////////////////////////step///////////////////////////
 ///////////////////////////status///////////////////////////
-#define STATUS_WAIT			0
-#define STATUS_OK			1
+#define STATUS_WAIT		0
+#define STATUS_OK		1
 #define STATUS_ERROR		2
 #define STATUS_TIMEOUT		3
 ///////////////////////////status///////////////////////////
@@ -58,5 +58,3 @@ __packed typedef struct{
 /***********************************************************INIT_SUB_PID_MOVE_INIT_POSITION**********************************************************/
 
 #endif
-
-
