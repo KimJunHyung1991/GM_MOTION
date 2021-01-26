@@ -15,10 +15,10 @@ GM_MOTION_PROTOCOL
 1. 타겟 장치에 적합한 sub_cmd를 정한다.
   	- (edit_, error_, init_, midi_, motion_, sensor_, speaker_)
 edit_을 예로 들어 설명함
-2. 수신된 명령을 처리할 `예시.c` 파일을 연다.(없다면 생성한다)
+2. 수신된 명령을 처리할 `예시.c` 파일을 연다.(없다면 생성한다, GM_MOTION 경로에 생성하지말것.)
 3. 프로토콜 라이브러리 GM_MOTION/common/GM_APP/Src/app_pid_edit_cmd.c 을 연다.
 4. 수신 명령을 처리할 `예시.c` 파일에서 `#include "net_pda_pid_edit.h"` 를 include 한다.
-5. app_pid_edit_cmd.c에 `__weak` 처리된 함수를 재정의 하여, 명령 수신시 동작을 정의한다.
+5. app_pid_edit_cmd.c에 `__weak` 처리된 함수를 `예시.c`에 재정의 하여, 명령 수신시 동작을 정의한다.
 
 - app_pid_edit_cmd.c   [__weak](http://jake.dothome.co.kr/attr1/)
 ```cpp
