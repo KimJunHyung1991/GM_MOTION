@@ -11,3 +11,9 @@ GM_MOTION_PROTOCOL
 └[GM_DL](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_DL)
 
 └[GM_NET](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_NET)
+
+사용법
+------
+1. 타겟 장치에 적합한 sub_cmd를 정한다.
+  - (edit_, error_, init_, midi_, motion_, sensor_, speaker_)
+
