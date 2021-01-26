@@ -73,7 +73,7 @@ __weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  
 ```cpp
 void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)//재정의
 {
-	//action 명령 수신시 동작코드
+	//action 명령 수신시 동작코드 .
 }  
 ```
 
