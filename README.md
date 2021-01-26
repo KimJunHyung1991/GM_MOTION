@@ -12,6 +12,11 @@ GM_MOTION_PROTOCOL
 
 자원할당
 --------
+##### 이 라이브러리는 CAN, RAM, CPU(main loop) 자원이 필요하다.
+##### CAN -
+##### RAM - `main.h` 의 `CAN_Q_BUFF_SIZE` 에 설정한다.
+##### RAM사용량 = ((헤더 4 Byte + 데이터 8 Byte) x CAN_Q_BUFF_SIZE) x 2(rx,tx)
+
 `main.c`
 ```cpp
 #include "main.h"
@@ -32,7 +37,7 @@ int main(void)
 #define __MAIN_H
 
 /*************자신에 RAM버퍼에 따라 수정******************/
-#define CAN_Q_BUFF_SIZE 	512
+#define CAN_Q_BUFF_SIZE 	512   //  ((헤더 4 Byte + 데이터 8 Byte) x 512(CAN_Q_BUFF_SIZE)) x 2(rx,tx) = 12,288 Byte
 /*************자신에 RAM버퍼에 따라 수정******************/
 	  
 #include "dl_can.h"
