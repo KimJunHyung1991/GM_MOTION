@@ -3,7 +3,7 @@
 /*************************************************
 fail : dl_can.c
 data link can
-4°èÃşÁß data linkÃş¿¡ ÇØ´ç
+4ê³„ì¸µì¤‘ data linkì¸µì— í•´ë‹¹
 
 **************************************************/
 
@@ -12,7 +12,7 @@ uint8_t my_can_id = 0;
 /******************************************CMD ASSEMBLE*********************************************/
 /**
   * @brief  packet header cmd assemble
-  * @param  prtc_header_t *pPh :  header Æ÷ÀÌÅÍ
+  * @param  prtc_header_t *pPh :  header í¬ì¸í„°
   * @retval cmd : cmd1 + cmd2
   */
 uint8_t ret_protocol_header_cmd(prtc_header_t *pPh)
@@ -23,6 +23,7 @@ uint8_t ret_protocol_header_cmd(prtc_header_t *pPh)
 	return cmd;
 }
 /******************************************CMD ASSEMBLE*********************************************/
+
 
 
 
