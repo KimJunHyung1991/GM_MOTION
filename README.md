@@ -6,7 +6,7 @@ GM_MOTION_PROTOCOL
 
 폴더 구조
 -------------------
-└[GM_APP](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_APP) <br>
+└[GM_APP](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_APP) : 명령어 해석  <br>
 └[GM_DL](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_DL) <br>
 └[GM_NET](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_NET) <br>
 
