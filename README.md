@@ -50,7 +50,7 @@ int main(void)
 ------
 1. 타겟 장치에 적합한 sub_cmd를 정한다.
   	- (edit_, error_, init_, midi_, motion_, sensor_, speaker_)
-edit_을 예로 들어 설명함
+	- edit_을 예로 들어 설명함
 
 2. 수신된 명령을 처리할 `예시.c` 파일을 연다.(없다면 생성한다, GM_MOTION 경로에 생성하지말것.)
 
