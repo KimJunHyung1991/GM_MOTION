@@ -1,8 +1,9 @@
 #include "main.h"
+#include <string.h>
 /*************************************************
 fail : dl_can_tx.c
 data link can tx
-4∞Ë√˛¡ﬂ data link√˛ø° «ÿ¥Á
+4Í≥ÑÏ∏µÏ§ë data linkÏ∏µÏóê Ìï¥Îãπ
 
 **************************************************/
 
@@ -17,7 +18,7 @@ uint32_t TxMailbox;
 
 /******************************************ERROR HANDLER*********************************************/
 /**
-  * @brief  error √≥∏Æ «‘ºˆ
+  * @brief  error Ï≤òÎ¶¨ Ìï®Ïàò
   * @param  none
   * @retval none
   */
@@ -30,7 +31,7 @@ static void error_handler(void)
 /******************************************ERROR HANDLER*********************************************/
 /******************************************PROCESS TX RING BUF HEAD CHECK*********************************************/
 /**
-  * @brief  can_tx_ring_buff¿« head √≥∏Æ «‘ºˆ
+  * @brief  can_tx_ring_buffÏùò head Ï≤òÎ¶¨ Ìï®Ïàò
   * @param  none
   * @retval none
   */
@@ -44,7 +45,7 @@ void proc_tx_ring_buff_head_chk(void)
 /******************************************PROCESS TX RING BUF HEAD CHECK*********************************************/
 /******************************************PROCESS TX RING BUF TAIL CHECK*********************************************/
 /**
-  * @brief  can_tx_ring_buff¿« tail √≥∏Æ «‘ºˆ
+  * @brief  can_tx_ring_buffÏùò tail Ï≤òÎ¶¨ Ìï®Ïàò
   * @param  none
   * @retval none
   */
@@ -58,7 +59,7 @@ void proc_tx_ring_buff_tail_chk(void)
 /******************************************PROCESS TX RING BUF TAIL CHECK*********************************************/
 /******************************************PROCESS CAN TX *********************************************/
 /**
-  * @brief  can tx√≥∏Æ «‘ºˆ
+  * @brief  can txÏ≤òÎ¶¨ Ìï®Ïàò
   * @param  none
   * @retval none
   */
@@ -71,8 +72,8 @@ void hal_can_protocol_tx(prtc_header_t *can_header, uint8_t *pData)
 /******************************************PROCESS CAN TX *********************************************/
 /******************************************HAL CAN TX *********************************************/
 /**
-  * @brief  hal_can_tx «‘ºˆ
-  * @param  CAN_HandleTypeDef *hcan : can «⁄µÈ∑Ø
+  * @brief  hal_can_tx Ìï®Ïàò
+  * @param  CAN_HandleTypeDef *hcan : can Ìï∏Îì§Îü¨
   * @retval none
   */
 void proc_can_tx(CAN_HandleTypeDef *canhd)
@@ -80,7 +81,10 @@ void proc_can_tx(CAN_HandleTypeDef *canhd)
 	if(can_tx_ring_buff.head != can_tx_ring_buff.tail){
 		if(HAL_CAN_GetTxMailboxesFreeLevel(canhd) == 3){
 			TxHeader.IDE = CAN_ID_EXT;
-			TxHeader.RTR = can_tx_ring_buff.can_header[can_tx_ring_buff.tail].cmd1;
+			
+			if(can_tx_ring_buff.can_header[can_tx_ring_buff.tail].cmd1 == 1) TxHeader.RTR = CAN_RTR_REMOTE;
+			else	TxHeader.RTR = CAN_RTR_DATA;
+			
 			TxHeader.DLC = can_tx_ring_buff.can_header[can_tx_ring_buff.tail].dlc;
 			TxHeader.ExtId = can_tx_ring_buff.can_header[can_tx_ring_buff.tail].protocol_header_32;
 			TxHeader.TransmitGlobalTime = DISABLE;
