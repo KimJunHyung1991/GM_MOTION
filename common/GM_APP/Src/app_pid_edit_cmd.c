@@ -3,17 +3,17 @@
 #include "net_pda_pid_edit.h"
 
 /******************************************EDIT SUB PID ACTION APPLICATION*********************************************/
-void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_edit_sub_pid_action_rsp(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_edit_sub_pid_action_rsp(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_edit_sub_pid_action_rqt(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_edit_sub_pid_action_rqt(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }

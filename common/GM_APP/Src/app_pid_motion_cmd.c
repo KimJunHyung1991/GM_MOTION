@@ -3,17 +3,17 @@
 #include "net_pda_pid_motion.h"
 
 /******************************************MOTION SUB PID ADC APPLICATION*********************************************/
-void app_rx_motion_sub_pid_adc_ctl(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_motion_sub_pid_adc_ctl(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_motion_sub_pid_adc_rsp(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_motion_sub_pid_adc_rsp(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_motion_sub_pid_adc_rqt(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_motion_sub_pid_adc_rqt(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
@@ -37,17 +37,17 @@ void app_tx_motion_sub_pid_adc_rqt(uint8_t priority, uint8_t souce_id, uint8_t t
 }
 /******************************************MOTION SUB PID ADC APPLICATION*********************************************/
 /******************************************MOTION SUB PID ANGLE APPLICATION*********************************************/
-void app_rx_motion_sub_pid_angle_ctl(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_motion_sub_pid_angle_ctl(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_motion_sub_pid_angle_rsp(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_motion_sub_pid_angle_rsp(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_motion_sub_pid_angle_rqt(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_motion_sub_pid_angle_rqt(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }

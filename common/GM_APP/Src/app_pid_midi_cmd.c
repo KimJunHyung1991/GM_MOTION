@@ -3,17 +3,17 @@
 #include "net_pda_pid_midi.h"
 
 /******************************************MIDI SUB PID ADC APPLICATION*********************************************/
-void app_rx_midi_sub_pid_adc_ctl(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_adc_ctl(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_midi_sub_pid_adc_rsp(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_adc_rsp(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_midi_sub_pid_adc_rqt(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_adc_rqt(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
@@ -37,17 +37,17 @@ void app_tx_midi_sub_pid_adc_rqt(uint8_t priority, uint8_t souce_id, uint8_t tar
 }
 /******************************************MIDI SUB PID ADC APPLICATION*********************************************/
 /******************************************MIDI SUB PID BUTTON APPLICATION*********************************************/
-void app_rx_midi_sub_pid_button_ctl(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_button_ctl(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_midi_sub_pid_button_rsp(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_button_rsp(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_midi_sub_pid_button_rqt(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_button_rqt(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
@@ -72,17 +72,17 @@ void app_tx_midi_sub_pid_button_rqt(uint8_t priority, uint8_t souce_id, uint8_t 
 
 /******************************************MIDI SUB PID BUTTON APPLICATION*********************************************/
 /******************************************MIDI SUB PID LED APPLICATION*********************************************/
-void app_rx_midi_sub_pid_led_ctl(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_led_ctl(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_midi_sub_pid_led_rsp(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_led_rsp(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_midi_sub_pid_led_rqt(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_led_rqt(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
@@ -107,17 +107,17 @@ void app_tx_midi_sub_pid_led_rqt(uint8_t priority, uint8_t souce_id, uint8_t tar
 
 /******************************************MIDI SUB PID LED APPLICATION*********************************************/
 /******************************************MIDI SUB PID ID APPLICATION*********************************************/
-void app_rx_midi_sub_pid_id_ctl(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_id_ctl(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_midi_sub_pid_id_rsp(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_id_rsp(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_midi_sub_pid_id_rqt(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_id_rqt(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }

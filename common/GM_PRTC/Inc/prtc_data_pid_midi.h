@@ -1,16 +1,17 @@
 #ifndef _GM_HAL_PROTOCOL1_5_PID_MIDI_H_
 #define _GM_HAL_PROTOCOL1_5_PID_MIDI_H_
+#pragma pack(1)
 /***********************************************************MIDI_SUB_PID_ADC**********************************************************/
-__packed typedef struct{
+typedef struct{
 	uint16_t	adc_val;
 }prtc_data_set_midi_adc_t;
 /***********************************************************MIDI_SUB_PID_ADC**********************************************************/
 /***********************************************************MIDI_SUB_PID_BUTTON**********************************************************/
-__packed typedef struct{
+typedef struct{
 	uint8_t		type;
 }prtc_data_get_midi_button_t;
 
-__packed typedef struct{
+typedef struct{
 	uint8_t	type;
 	union{
 		struct{
@@ -31,11 +32,11 @@ __packed typedef struct{
 ///////////////////////////status///////////////////////////
 /***********************************************************MIDI_SUB_PID_BUTTON**********************************************************/
 /***********************************************************MIDI_SUB_PID_LED**********************************************************/
-__packed typedef struct{
+typedef struct{
 	uint8_t		type;
 }prtc_data_get_midi_led_t;
 
-__packed typedef struct{
+typedef struct{
 	uint8_t		type;
 	uint32_t 	val;
 }prtc_data_set_midi_led_t;
@@ -55,7 +56,7 @@ __packed typedef struct{
 ///////////////////////////status///////////////////////////
 /***********************************************************MIDI_SUB_PID_LED**********************************************************/
 /***********************************************************MIDI_SUB_PID_ID**********************************************************/
-__packed typedef struct{
+typedef struct{
 	uint8_t		sub_id1;
 	uint8_t		sub_id2;
 	uint8_t		sub_id3;
@@ -66,6 +67,5 @@ __packed typedef struct{
 	uint8_t		sub_id8;
 }prtc_data_set_midi_id_t;
 /***********************************************************MIDI_SUB_PID_ID**********************************************************/
-
-
+#pragma pack()
 #endif

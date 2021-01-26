@@ -1,6 +1,6 @@
 #ifndef _GM_HAL_PROTOCOL1_5_H_
 #define _GM_HAL_PROTOCOL1_5_H_
-
+#pragma pack(1)
 #include "prtc_data_pid_init.h"
 #include "prtc_data_pid_motion.h"
 #include "prtc_data_pid_midi.h"
@@ -9,7 +9,7 @@
 #include "prtc_data_pid_sensor.h"
 #include "prtc_data_pid_error.h"
 
-__packed typedef struct{
+typedef struct{
 	uint8_t cmd1;
 	uint8_t dlc;
 	union{
@@ -26,6 +26,7 @@ __packed typedef struct{
 		uint32_t protocol_header_32;
 	};
 }prtc_header_t;
+
 
 
 /*******************************************Header영역의 RTR******************************************************************/
@@ -82,6 +83,5 @@ __packed typedef struct{
 #define ERROR_SUB_PID_AC		1
 #define ERROR_SUB_PID_BLDC		2
 /*******************************************PID_ERROR의 SUB_PID******************************************************************/
-
-
+#pragma pack()
 #endif

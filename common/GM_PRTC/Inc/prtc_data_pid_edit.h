@@ -1,7 +1,8 @@
 #ifndef _GM_HAL_PROTOCOL1_5_PID_EDIT_H_
 #define _GM_HAL_PROTOCOL1_5_PID_EDIT_H_
+#pragma pack(1)
 /***********************************************************EDIT_SUB_PID_ACTION**********************************************************/
-__packed typedef struct{
+typedef struct{
 	uint8_t 	action;
 }prtc_data_set_edit_action_t;
 
@@ -52,5 +53,5 @@ __packed typedef struct{
 ///////////////////////////action///////////////////////////
 
 /***********************************************************EDIT_SUB_PID_ACTION**********************************************************/
-
+#pragma pack()
 #endif

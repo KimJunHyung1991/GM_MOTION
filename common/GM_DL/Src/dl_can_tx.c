@@ -3,7 +3,7 @@
 /*************************************************
 fail : dl_can_tx.c
 data link can tx
-4Í≥ÑÏ∏µÏ§ë data linkÏ∏µÏóê Ìï¥Îãπ
+4∞Ë√˛¡ﬂ data link√˛ø° «ÿ¥Á
 
 **************************************************/
 
@@ -18,7 +18,7 @@ uint32_t TxMailbox;
 
 /******************************************ERROR HANDLER*********************************************/
 /**
-  * @brief  error Ï≤òÎ¶¨ Ìï®Ïàò
+  * @brief  error √≥∏Æ «‘ºˆ
   * @param  none
   * @retval none
   */
@@ -31,7 +31,7 @@ static void error_handler(void)
 /******************************************ERROR HANDLER*********************************************/
 /******************************************PROCESS TX RING BUF HEAD CHECK*********************************************/
 /**
-  * @brief  can_tx_ring_buffÏùò head Ï≤òÎ¶¨ Ìï®Ïàò
+  * @brief  can_tx_ring_buff¿« head √≥∏Æ «‘ºˆ
   * @param  none
   * @retval none
   */
@@ -45,7 +45,7 @@ void proc_tx_ring_buff_head_chk(void)
 /******************************************PROCESS TX RING BUF HEAD CHECK*********************************************/
 /******************************************PROCESS TX RING BUF TAIL CHECK*********************************************/
 /**
-  * @brief  can_tx_ring_buffÏùò tail Ï≤òÎ¶¨ Ìï®Ïàò
+  * @brief  can_tx_ring_buff¿« tail √≥∏Æ «‘ºˆ
   * @param  none
   * @retval none
   */
@@ -59,7 +59,7 @@ void proc_tx_ring_buff_tail_chk(void)
 /******************************************PROCESS TX RING BUF TAIL CHECK*********************************************/
 /******************************************PROCESS CAN TX *********************************************/
 /**
-  * @brief  can txÏ≤òÎ¶¨ Ìï®Ïàò
+  * @brief  can tx√≥∏Æ «‘ºˆ
   * @param  none
   * @retval none
   */
@@ -72,8 +72,8 @@ void hal_can_protocol_tx(prtc_header_t *can_header, uint8_t *pData)
 /******************************************PROCESS CAN TX *********************************************/
 /******************************************HAL CAN TX *********************************************/
 /**
-  * @brief  hal_can_tx Ìï®Ïàò
-  * @param  CAN_HandleTypeDef *hcan : can Ìï∏Îì§Îü¨
+  * @brief  hal_can_tx «‘ºˆ
+  * @param  CAN_HandleTypeDef *hcan : can «⁄µÈ∑Ø
   * @retval none
   */
 void proc_can_tx(CAN_HandleTypeDef *canhd)

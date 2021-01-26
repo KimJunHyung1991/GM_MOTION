@@ -3,17 +3,17 @@
 #include "net_pda_pid_sensor.h"
 
 /******************************************SENSOR SUB PID DETECT APPLICATION*********************************************/
-void app_rx_sensor_sub_pid_detect_ctl(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_sensor_sub_pid_detect_ctl(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_sensor_sub_pid_detect_rsp(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_sensor_sub_pid_detect_rsp(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }
 
-void app_rx_sensor_sub_pid_detect_rqt(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_sensor_sub_pid_detect_rqt(prtc_header_t *pPh, uint8_t *pData)
 {
 	
 }

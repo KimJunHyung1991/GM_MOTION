@@ -1,7 +1,8 @@
 #ifndef _GM_HAL_PROTOCOL1_5_PID_SPEAKER_H_
 #define _GM_HAL_PROTOCOL1_5_PID_SPEAKER_H_
+#pragma pack(1)
 /***********************************************************SPEAKER_SUB_PID_ACTION**********************************************************/
-__packed typedef struct{
+typedef struct{
 	uint8_t 	action;
 }prtc_data_set_speaker_action_t;
 
@@ -16,6 +17,5 @@ __packed typedef struct{
 #define	SPEAKER_ACTION_PLAY_PAUSE	7
 ///////////////////////////action///////////////////////////
 /***********************************************************SPEAKER_SUB_PID_ACTION**********************************************************/
-
-
+#pragma pack()
 #endif

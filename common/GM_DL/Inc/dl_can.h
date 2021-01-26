@@ -7,9 +7,9 @@
 
 #define CAN_BROADCAST	0
 
-
+#pragma pack(1)
 /////////////////////////////////////////////////////
-__packed typedef struct{
+typedef struct{
 	uint16_t tail;
 	uint16_t head;
 	prtc_header_t can_header[CAN_Q_BUFF_SIZE];
@@ -25,7 +25,7 @@ extern uint8_t my_can_id;
 
 uint8_t ret_protocol_header_cmd(prtc_header_t *pPh);
 
-__packed typedef struct{
+typedef struct{
 	union{
 		struct{
 			uint32_t sub_cmd	: 7;
@@ -40,6 +40,6 @@ __packed typedef struct{
 		uint32_t can_header_32;
 	};
 }android_can_header_t;
-
+#pragma pack()
 
 #endif
