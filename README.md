@@ -20,7 +20,7 @@ edit_을 예로 들어 설명함
 4. 수신 명령을 처리할 `예시.c` 파일에서 `#include "net_pda_pid_edit.h"` 를 include 한다.
 5. app_pid_edit_cmd.c에 `__weak` 처리된 함수를 `예시.c`에 재정의 하여, 명령 수신시 동작을 정의한다.
 
-- app_pid_edit_cmd.c   [__weak 설명](http://jake.dothome.co.kr/attr1/)
+- app_pid_edit_cmd.c   [__weak 설명](https://en.wikipedia.org/wiki/Weak_symbol)
 ```cpp
 __weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  //전처리 __weak
 {
