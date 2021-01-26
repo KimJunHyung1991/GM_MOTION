@@ -27,7 +27,7 @@ __weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  
 	//여기에 코드를 절대!! 작성하지 않는다.
 }
 ```
-- .c
+- 예시.c
 	
 ```cpp
 void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)//재정의
