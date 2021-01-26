@@ -6,7 +6,7 @@ GM_MOTION_PROTOCOL
 
 폴더 구조
 -------------------
-└[GM_APP](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_APP) : 명령어 해석  <br>
+└[GM_APP](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_APP) : 수신 데이터 해석, PID 반환  <br>
 └[GM_DL](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_DL) <br>
 └[GM_NET](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_NET) <br>
 
@@ -60,7 +60,7 @@ int main(void)
 
 5. app_pid_edit_cmd.c에 `__weak` 처리된 함수를 `예시.c`에 재정의 하여, 명령 수신시 동작코드를 작성.
 
-	- app_pid_edit_cmd.c   [__weak 설명](https://en.wikipedia.org/wiki/Weak_symbol)
+- app_pid_edit_cmd.c   [__weak 설명](https://en.wikipedia.org/wiki/Weak_symbol)
 
 ```cpp
 __weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  //전처리 __weak
@@ -68,10 +68,8 @@ __weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  
 	//여기에 코드를 절대!! 작성하지 않는다.
 }
 ```
-```	```	   
-	- 예시.c
 
-
+- 예시.c
 ```cpp
 void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)//재정의
 {
