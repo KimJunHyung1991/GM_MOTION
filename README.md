@@ -60,15 +60,18 @@ edit_을 예로 들어 설명함
 
 5. app_pid_edit_cmd.c에 `__weak` 처리된 함수를 `예시.c`에 재정의 하여, 명령 수신시 동작코드를 작성.
 
-- app_pid_edit_cmd.c   [__weak 설명](https://en.wikipedia.org/wiki/Weak_symbol)
+	- app_pid_edit_cmd.c   [__weak 설명](https://en.wikipedia.org/wiki/Weak_symbol)
+
 ```cpp
 __weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  //전처리 __weak
 {
 	//여기에 코드를 절대!! 작성하지 않는다.
 }
 ```
-- 예시.c
-	
+
+	- 예시.c
+
+
 ```cpp
 void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)//재정의
 {
