@@ -10,7 +10,38 @@ GM_MOTION_PROTOCOL
 └[GM_DL](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_DL) <br>
 └[GM_NET](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_NET) <br>
 
-사용법
+자원할당
+--------`
+`main.c`
+```cpp
+#include "main.h"
+
+int main(void)
+{
+	/*HAL 설정 영역*/
+	while(1)
+	{
+		proc_can_rx();
+		proc_can_tx(&CanHandle);
+	}
+}
+```
+`main.h`
+```cpp
+#ifndef __MAIN_H
+#define __MAIN_H
+
+/*************자신에 RAM버퍼에 따라 수정******************/
+#define CAN_Q_BUFF_SIZE 	512
+/*************자신에 RAM버퍼에 따라 수정******************/
+	  
+#include "dl_can.h"
+#include "net_phd_pid.h"
+
+#endif /* __MAIN_H */
+```
+
+통신 함수 사용법
 ------
 1. 타겟 장치에 적합한 sub_cmd를 정한다.
   	- (edit_, error_, init_, midi_, motion_, sensor_, speaker_)
