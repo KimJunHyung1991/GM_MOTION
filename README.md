@@ -22,19 +22,16 @@ edit_을 예로 들어 설명함
 
   	- app_pid_edit_cmd.c
   	```c
-//전처리 [__weak](http://jake.dothome.co.kr/attr1/)
-__weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  //전처리 [__weak](http://jake.dothome.co.kr/attr1/)
 {
 	//여기에 코드를 절대!! 작성하지 않는다.
 }
   	```
 	- 예시.c
 	```c
-//재정의
-void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)
+void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)//재정의
 {
 	//action 명령 수신시 동작코드
-}
-  
+}  
   	```
 
