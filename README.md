@@ -11,7 +11,7 @@ GM_MOTION_PROTOCOL
 └[GM_NET](https://github.com/KimJunHyung1991/GM_MOTION/tree/main/common/GM_NET) <br>
 
 자원할당
---------`
+--------
 `main.c`
 ```cpp
 #include "main.h"
