@@ -2,7 +2,7 @@
 #include "app_pid_midi_cmd.h"
 /*************************************************
 fail : net_phd_pid_midi.c
-network packet header disassemble prameter idemtification midi
+network packet header disassemble parameter identification midi
 4계층중 network층에 해당
 packet의 header영역의 PID(midi) 분해
 **************************************************/

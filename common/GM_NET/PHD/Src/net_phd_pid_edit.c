@@ -2,7 +2,7 @@
 #include "app_pid_edit_cmd.h"
 /*************************************************
 fail : net_phd_pid_edit.c
-network packet header disassemble prameter idemtification edit
+network packet header disassemble parameter identification edit
 4계층중 network층에 해당
 packet의 header영역의 PID(edit) 분해
 **************************************************/

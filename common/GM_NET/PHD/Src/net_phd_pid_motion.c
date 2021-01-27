@@ -2,7 +2,7 @@
 #include "app_pid_motion_cmd.h"
 /*************************************************
 fail : net_phd_pid_motion.c
-network packet header disassemble prameter idemtification motion
+network packet header disassemble parameter identification motion
 4계층중 network층에 해당
 packet의 header영역의 PID(motion) 분해
 **************************************************/

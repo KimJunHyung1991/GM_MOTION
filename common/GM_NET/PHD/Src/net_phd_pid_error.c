@@ -2,7 +2,7 @@
 #include "app_pid_error_cmd.h"
 /*************************************************
 fail : net_phd_pid_error.c
-network packet header disassemble prameter idemtification error
+network packet header disassemble parameter identification error
 4계층중 network층에 해당
 packet의 header영역의 PID(error) 분해
 **************************************************/

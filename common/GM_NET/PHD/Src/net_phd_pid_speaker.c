@@ -2,7 +2,7 @@
 #include "app_pid_speaker_cmd.h"
 /*************************************************
 fail : net_phd_pid_speaker.c
-network packet header disassemble prameter idemtification speaker
+network packet header disassemble parameter identification speaker
 4계층중 network층에 해당
 packet의 header영역의 PID(speaker) 분해
 **************************************************/

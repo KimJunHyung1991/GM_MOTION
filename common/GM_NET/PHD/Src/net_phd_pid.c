@@ -10,7 +10,7 @@
 
 /*************************************************
 fail : net_phd_pid.c
-network packet header disassemble prameter idemtification
+network packet header disassemble parameter identification
 4계층중 network층에 해당
 packet의 header영역의 PID 분해
 **************************************************/

@@ -2,7 +2,7 @@
 #include "app_pid_sensor_cmd.h"
 /*************************************************
 fail : net_phd_pid_sensor.c
-network packet header disassemble prameter idemtification sensor
+network packet header disassemble parameter identification sensor
 4계층중 network층에 해당
 packet의 header영역의 PID(sensor) 분해
 **************************************************/

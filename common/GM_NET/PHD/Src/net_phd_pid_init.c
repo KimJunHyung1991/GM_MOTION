@@ -2,7 +2,7 @@
 #include "app_pid_init_cmd.h"
 /*************************************************
 fail : net_phd_pid_init.c
-network packet header disassemble prameter idemtification init
+network packet header disassemble parameter identification init
 4계층중 network층에 해당
 packet의 header영역의 PID(init) 분해
 **************************************************/
