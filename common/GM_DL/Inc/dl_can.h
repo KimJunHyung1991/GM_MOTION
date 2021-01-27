@@ -4,7 +4,6 @@
 #include "prtc_header.h"
 
 
-
 #define CAN_BROADCAST	0
 
 #pragma pack(1)

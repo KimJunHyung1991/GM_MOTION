@@ -1,6 +1,6 @@
 #ifndef _GM_HAL_PROTOCOL1_5_H_
 #define _GM_HAL_PROTOCOL1_5_H_
-#pragma pack(1)
+
 #include "prtc_data_pid_init.h"
 #include "prtc_data_pid_motion.h"
 #include "prtc_data_pid_midi.h"
@@ -8,7 +8,7 @@
 #include "prtc_data_pid_speaker.h"
 #include "prtc_data_pid_sensor.h"
 #include "prtc_data_pid_error.h"
-
+#pragma pack(1)
 typedef struct{
 	uint8_t cmd1;
 	uint8_t dlc;
