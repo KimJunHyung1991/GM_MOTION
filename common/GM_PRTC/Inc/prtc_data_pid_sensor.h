@@ -5,7 +5,12 @@
 typedef struct{
 	uint8_t 	cw;
 	uint8_t 	ccw;
-}prtc_data_set_sensor_detect_t;
+}prtc_data_ctl_sensor_detect_t;
+
+typedef struct{
+	uint8_t 	cw;
+	uint8_t 	ccw;
+}prtc_data_rsp_sensor_detect_t;
 
 #define SENSOR_UNDETECTED	0
 #define SENSOR_DETECT		1

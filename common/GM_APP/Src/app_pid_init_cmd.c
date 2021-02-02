@@ -55,13 +55,13 @@ __weak void app_rx_init_sub_pid_driver_data1_rqt(prtc_header_t *pPh, uint8_t *pD
 
 void app_tx_init_sub_pid_driver_data1_ctl(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio)
 {
-	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_set_init_driver_data1_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA1, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_init_driver_data1_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA1, sub_id), \
 			net_pda_init_sub_pid_driver_data1_ctl(direction, angle, init_position, reducer_ratio));
 }
 
 void app_tx_init_sub_pid_driver_data1_rsp(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio)
 {
-	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_set_init_driver_data1_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA1, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_init_driver_data1_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA1, sub_id), \
 			net_pda_init_sub_pid_driver_data1_rsp(direction, angle, init_position, reducer_ratio));
 }
 
@@ -89,13 +89,13 @@ __weak void app_rx_init_sub_pid_driver_data2_rqt(prtc_header_t *pPh, uint8_t *pD
 
 void app_tx_init_sub_pid_driver_data2_ctl(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint16_t count, uint16_t rpm)
 {
-	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_set_init_driver_data2_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA2, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_init_driver_data2_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA2, sub_id), \
 			net_pda_init_sub_pid_driver_data2_ctl(count, rpm));
 }
 
 void app_tx_init_sub_pid_driver_data2_rsp(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint16_t count, uint16_t rpm)
 {
-	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_set_init_driver_data2_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA2, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_init_driver_data2_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA2, sub_id), \
 			net_pda_init_sub_pid_driver_data2_rsp(count, rpm));
 }
 
@@ -129,13 +129,13 @@ void app_tx_init_sub_pid_status_ctl(uint8_t priority, uint8_t souce_id, uint8_t 
 
 void app_tx_init_sub_pid_status_rsp(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t step, uint8_t status)
 {
-	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_set_init_status_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_STATUS, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_init_status_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_STATUS, sub_id), \
 			net_pda_init_sub_pid_status_rsp(step, status));
 }
 
 void app_tx_init_sub_pid_status_rqt(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t step)
 {
-	hal_can_protocol_tx(net_pha(CMD_REQUEST, sizeof(prtc_data_get_init_status_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_STATUS, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_REQUEST, sizeof(prtc_data_rqt_init_status_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_STATUS, sub_id), \
 			net_pda_init_sub_pid_status_rqt(step));
 }
 /******************************************INIT SUB PID STATUS APPLICATION*********************************************/
@@ -157,13 +157,13 @@ __weak void app_rx_init_sub_pid_absolute_battery_rqt(prtc_header_t *pPh, uint8_t
 
 void app_tx_init_sub_pid_absolute_battery_ctl(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint32_t save_data)
 {
-	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_set_init_absolute_battery_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_ABSOLUTE_BATTERY, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_init_absolute_battery_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_ABSOLUTE_BATTERY, sub_id), \
 			net_pda_init_sub_pid_absolute_battery_ctl(save_data));
 }
 
 void app_tx_init_sub_pid_absolute_battery_rsp(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint32_t save_data)
 {
-	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_set_init_absolute_battery_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_ABSOLUTE_BATTERY, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_init_absolute_battery_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_ABSOLUTE_BATTERY, sub_id), \
 			net_pda_init_sub_pid_absolute_battery_rsp(save_data));
 }
 

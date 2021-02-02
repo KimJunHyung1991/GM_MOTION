@@ -4,7 +4,11 @@
 /***********************************************************EDIT_SUB_PID_ACTION**********************************************************/
 typedef struct{
 	uint8_t 	action;
-}prtc_data_set_edit_action_t;
+}prtc_data_ctl_edit_action_t;
+
+typedef struct{
+	uint8_t 	action;
+}prtc_data_rsp_edit_action_t;
 
 ///////////////////////////action///////////////////////////
 #define	EDIT_ACTION_REC_START							0

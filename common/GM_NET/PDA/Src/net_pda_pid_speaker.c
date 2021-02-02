@@ -15,8 +15,8 @@ packet pid-speaker영역의 data 재조립
   */
 uint8_t *net_pda_speaker_sub_pid_action_ctl(uint8_t action)
 {
-	prtc_data_set_speaker_action_t *pCdsa = (prtc_data_set_speaker_action_t *)make_data_buff;
-	pCdsa->action = action;
+	prtc_data_ctl_speaker_action_t *pCdcsa = (prtc_data_ctl_speaker_action_t *)make_data_buff;
+	pCdcsa->action = action;
 	
 	return make_data_buff;
 }
@@ -28,8 +28,8 @@ uint8_t *net_pda_speaker_sub_pid_action_ctl(uint8_t action)
   */
 uint8_t *net_pda_speaker_sub_pid_action_rsp(uint8_t action)
 {
-	prtc_data_set_speaker_action_t *pCdsa = (prtc_data_set_speaker_action_t *)make_data_buff;
-	pCdsa->action = action;
+	prtc_data_rsp_speaker_action_t *pCdrsa = (prtc_data_rsp_speaker_action_t *)make_data_buff;
+	pCdrsa->action = action;
 	
 	return make_data_buff;
 }

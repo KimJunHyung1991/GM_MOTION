@@ -48,12 +48,12 @@ uint8_t *net_pda_init_sub_pid_boot_rqt(void)
   */
 uint8_t *net_pda_init_sub_pid_driver_data1_ctl(uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio)
 {
-	prtc_data_set_init_driver_data1_t *pCdsidd = (prtc_data_set_init_driver_data1_t *)make_data_buff;
+	prtc_data_ctl_init_driver_data1_t *pCdcidd = (prtc_data_ctl_init_driver_data1_t *)make_data_buff;
 	
-	pCdsidd->direction = direction;
-	pCdsidd->angle = angle;
-	pCdsidd->init_position = init_position;
-	pCdsidd->reducer_ratio = reducer_ratio;
+	pCdcidd->direction = direction;
+	pCdcidd->angle = angle;
+	pCdcidd->init_position = init_position;
+	pCdcidd->reducer_ratio = reducer_ratio;
 	
 	return make_data_buff;
 }
@@ -68,12 +68,12 @@ uint8_t *net_pda_init_sub_pid_driver_data1_ctl(uint8_t direction, uint16_t angle
   */
 uint8_t *net_pda_init_sub_pid_driver_data1_rsp(uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio)
 {
-	prtc_data_set_init_driver_data1_t *pCdsidd = (prtc_data_set_init_driver_data1_t *)make_data_buff;
+	prtc_data_rsp_init_driver_data1_t *pCdridd = (prtc_data_rsp_init_driver_data1_t *)make_data_buff;
 	
-	pCdsidd->direction = direction;
-	pCdsidd->angle = angle;
-	pCdsidd->init_position = init_position;
-	pCdsidd->reducer_ratio = reducer_ratio;
+	pCdridd->direction = direction;
+	pCdridd->angle = angle;
+	pCdridd->init_position = init_position;
+	pCdridd->reducer_ratio = reducer_ratio;
 	
 	return make_data_buff;
 }
@@ -97,10 +97,10 @@ uint8_t *net_pda_init_sub_pid_driver_data1_rqt(void)
   */
 uint8_t *net_pda_init_sub_pid_driver_data2_ctl(uint16_t count, uint16_t rpm)
 {
-	prtc_data_set_init_driver_data2_t *pCdsidd = (prtc_data_set_init_driver_data2_t *)make_data_buff;
+	prtc_data_ctl_init_driver_data2_t *pCdcidd = (prtc_data_ctl_init_driver_data2_t *)make_data_buff;
 	
-	pCdsidd->count = count;
-	pCdsidd->rpm = rpm;
+	pCdcidd->count = count;
+	pCdcidd->rpm = rpm;
 	
 	return make_data_buff;
 }
@@ -113,10 +113,10 @@ uint8_t *net_pda_init_sub_pid_driver_data2_ctl(uint16_t count, uint16_t rpm)
   */
 uint8_t *net_pda_init_sub_pid_driver_data2_rsp(uint16_t count, uint16_t rpm)
 {
-	prtc_data_set_init_driver_data2_t *pCdsidd = (prtc_data_set_init_driver_data2_t *)make_data_buff;
+	prtc_data_rsp_init_driver_data2_t *pCdridd = (prtc_data_rsp_init_driver_data2_t *)make_data_buff;
 	
-	pCdsidd->count = count;
-	pCdsidd->rpm = rpm;
+	pCdridd->count = count;
+	pCdridd->rpm = rpm;
 	
 	return make_data_buff;
 }
@@ -150,8 +150,8 @@ uint8_t *net_pda_init_sub_pid_status_ctl(void)
   */
 uint8_t *net_pda_init_sub_pid_status_rsp(uint8_t step, uint8_t status)
 {
-	prtc_data_set_init_status_t *pCsis = (prtc_data_set_init_status_t *)make_data_buff;
-	pCsis->step = step;
+	prtc_data_rsp_init_status_t *pCris = (prtc_data_rsp_init_status_t *)make_data_buff;
+	pCris->step = step;
 	
 	return make_data_buff;
 }
@@ -164,8 +164,8 @@ uint8_t *net_pda_init_sub_pid_status_rsp(uint8_t step, uint8_t status)
   */
 uint8_t *net_pda_init_sub_pid_status_rqt(uint8_t step)
 {
-	prtc_data_get_init_status_t *pCdgis = (prtc_data_get_init_status_t *)make_data_buff;
-	pCdgis->step = step;
+	prtc_data_rqt_init_status_t *pCdris = (prtc_data_rqt_init_status_t *)make_data_buff;
+	pCdris->step = step;
 	return make_data_buff;
 }
 /******************************************INIT SUB PID STATUS ASSEMBLE*********************************************/
@@ -177,8 +177,8 @@ uint8_t *net_pda_init_sub_pid_status_rqt(uint8_t step)
   */
 uint8_t *net_pda_init_sub_pid_absolute_battery_ctl(uint32_t save_data)
 {
-	prtc_data_set_init_absolute_battery_t *pCdsiab = (prtc_data_set_init_absolute_battery_t *)make_data_buff;
-	pCdsiab->save_data = save_data;
+	prtc_data_ctl_init_absolute_battery_t *pCdciab = (prtc_data_ctl_init_absolute_battery_t *)make_data_buff;
+	pCdciab->save_data = save_data;
 	return make_data_buff;
 }
 
@@ -189,8 +189,8 @@ uint8_t *net_pda_init_sub_pid_absolute_battery_ctl(uint32_t save_data)
   */
 uint8_t *net_pda_init_sub_pid_absolute_battery_rsp(uint32_t save_data)
 {
-	prtc_data_set_init_absolute_battery_t *pCdsiab = (prtc_data_set_init_absolute_battery_t *)make_data_buff;
-	pCdsiab->save_data = save_data;
+	prtc_data_rsp_init_absolute_battery_t *pCdriab = (prtc_data_rsp_init_absolute_battery_t *)make_data_buff;
+	pCdriab->save_data = save_data;
 	
 	return make_data_buff;
 }

@@ -10,7 +10,14 @@ typedef struct{
 	uint16_t 	angle;
 	uint16_t	init_position;
 	uint8_t		reducer_ratio;
-}prtc_data_set_init_driver_data1_t;
+}prtc_data_ctl_init_driver_data1_t;
+
+typedef struct{
+	uint8_t 	direction;
+	uint16_t 	angle;
+	uint16_t	init_position;
+	uint8_t		reducer_ratio;
+}prtc_data_rsp_init_driver_data1_t;
 ///////////////////////////direction///////////////////////////
 #define CW		0
 #define CCW		1
@@ -20,17 +27,22 @@ typedef struct{
 typedef struct{
 	uint16_t 	count;
 	uint16_t 	rpm;
-}prtc_data_set_init_driver_data2_t;
+}prtc_data_ctl_init_driver_data2_t;
+
+typedef struct{
+	uint16_t 	count;
+	uint16_t 	rpm;
+}prtc_data_rsp_init_driver_data2_t;
 /***********************************************************INIT_SUB_PID_DRIVER_DATA2**********************************************************/
 /***********************************************************INIT_SUB_PID_STATUS**********************************************************/
 typedef struct{
 	uint8_t		step;
-}prtc_data_get_init_status_t;
+}prtc_data_rqt_init_status_t;
 
 typedef struct{
 	uint8_t		step;
 	uint8_t		status;
-}prtc_data_set_init_status_t;
+}prtc_data_rsp_init_status_t;
 ///////////////////////////step///////////////////////////
 #define ABSOLUTE_BATTERY	0
 #define DRIVER_DATA1		1
@@ -48,7 +60,11 @@ typedef struct{
 /***********************************************************INIT_SUB_PID_ABSOLUTE_BATTERY**********************************************************/
 typedef struct{
 	uint32_t save_data;
-}prtc_data_set_init_absolute_battery_t;
+}prtc_data_ctl_init_absolute_battery_t;
+
+typedef struct{
+	uint32_t save_data;
+}prtc_data_rsp_init_absolute_battery_t;
 /***********************************************************INIT_SUB_PID_ABSOLUTE_BATTERY**********************************************************/
 /***********************************************************INIT_SUB_PID_MOVE_SENSOR**********************************************************/
 

@@ -16,9 +16,9 @@ packet pid-sensor영역의 data 재조립
   */
 uint8_t *net_pda_sensor_sub_pid_detect_ctl(uint8_t cw, uint8_t ccw)
 {
-	prtc_data_set_sensor_detect_t *pCdssd = (prtc_data_set_sensor_detect_t *)make_data_buff;
-	pCdssd->cw = cw;
-	pCdssd->ccw = ccw;
+	prtc_data_ctl_sensor_detect_t *pCdcsd = (prtc_data_ctl_sensor_detect_t *)make_data_buff;
+	pCdcsd->cw = cw;
+	pCdcsd->ccw = ccw;
 	
 	return make_data_buff;
 }
@@ -31,9 +31,9 @@ uint8_t *net_pda_sensor_sub_pid_detect_ctl(uint8_t cw, uint8_t ccw)
   */
 uint8_t *net_pda_sensor_sub_pid_detect_rsp(uint8_t cw, uint8_t ccw)
 {
-	prtc_data_set_sensor_detect_t *pCdssd = (prtc_data_set_sensor_detect_t *)make_data_buff;
-	pCdssd->cw = cw;
-	pCdssd->ccw = ccw;
+	prtc_data_rsp_sensor_detect_t *pCdrsd = (prtc_data_rsp_sensor_detect_t *)make_data_buff;
+	pCdrsd->cw = cw;
+	pCdrsd->ccw = ccw;
 	
 	return make_data_buff;
 }

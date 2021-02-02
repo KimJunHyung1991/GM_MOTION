@@ -14,8 +14,8 @@ packet pid-edit영역의 data 재조립
   */
 uint8_t *net_pda_edit_sub_pid_action_ctl(uint8_t action)
 {
-	prtc_data_set_edit_action_t *pCdsea = (prtc_data_set_edit_action_t *)make_data_buff;
-	pCdsea->action = action;
+	prtc_data_ctl_edit_action_t *pCdcea = (prtc_data_ctl_edit_action_t *)make_data_buff;
+	pCdcea->action = action;
 	
 	return make_data_buff;
 }
@@ -27,8 +27,8 @@ uint8_t *net_pda_edit_sub_pid_action_ctl(uint8_t action)
   */
 uint8_t *net_pda_edit_sub_pid_rsp(uint8_t action)
 {
-	prtc_data_set_edit_action_t *pCdsea = (prtc_data_set_edit_action_t *)make_data_buff;
-	pCdsea->action = action;
+	prtc_data_rsp_edit_action_t *pCdrea = (prtc_data_rsp_edit_action_t *)make_data_buff;
+	pCdrea->action = action;
 	
 	return make_data_buff;
 }

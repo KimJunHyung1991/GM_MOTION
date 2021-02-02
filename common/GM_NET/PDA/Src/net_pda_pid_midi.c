@@ -15,8 +15,8 @@ packet pid-midi영역의 data 재조립
   */
 uint8_t *net_pda_midi_sub_pid_adc_ctl(uint16_t adc_val)
 {
-	prtc_data_set_midi_adc_t *pCdsma = (prtc_data_set_midi_adc_t *)make_data_buff;
-	pCdsma->adc_val = adc_val;
+	prtc_data_ctl_midi_adc_t *pCdcma = (prtc_data_ctl_midi_adc_t *)make_data_buff;
+	pCdcma->adc_val = adc_val;
 	
 	return make_data_buff;
 }
@@ -28,8 +28,8 @@ uint8_t *net_pda_midi_sub_pid_adc_ctl(uint16_t adc_val)
   */
 uint8_t *net_pda_midi_sub_pid_adc_rsp(uint16_t adc_val)
 {
-	prtc_data_set_midi_adc_t *pCdsma = (prtc_data_set_midi_adc_t *)make_data_buff;
-	pCdsma->adc_val = adc_val;
+	prtc_data_rsp_midi_adc_t *pCdrma = (prtc_data_rsp_midi_adc_t *)make_data_buff;
+	pCdrma->adc_val = adc_val;
 	
 	return make_data_buff;
 }
@@ -54,10 +54,10 @@ uint8_t *net_pda_midi_sub_pid_adc_rqt(void)
   */
 uint8_t *net_pda_midi_sub_pid_button_ctl(uint8_t type, uint8_t status, uint8_t id)
 {
-	prtc_data_set_midi_button_t *pCdsma = (prtc_data_set_midi_button_t *)make_data_buff;
-	pCdsma->type = type;
-	pCdsma->status = status;
-	pCdsma->id = id;
+	prtc_data_ctl_midi_button_t *pCdcma = (prtc_data_ctl_midi_button_t *)make_data_buff;
+	pCdcma->type = type;
+	pCdcma->status = status;
+	pCdcma->id = id;
 	
 	return make_data_buff;
 }
@@ -71,10 +71,10 @@ uint8_t *net_pda_midi_sub_pid_button_ctl(uint8_t type, uint8_t status, uint8_t i
   */
 uint8_t *net_pda_midi_sub_pid_button_rsp(uint8_t type, uint8_t status, uint8_t id)
 {
-	prtc_data_set_midi_button_t *pCdsma = (prtc_data_set_midi_button_t *)make_data_buff;
-	pCdsma->type = type;
-	pCdsma->status = status;
-	pCdsma->id = id;
+	prtc_data_rsp_midi_button_t *pCdrma = (prtc_data_rsp_midi_button_t *)make_data_buff;
+	pCdrma->type = type;
+	pCdrma->status = status;
+	pCdrma->id = id;
 	
 	return make_data_buff;
 }
@@ -98,9 +98,9 @@ uint8_t *net_pda_midi_sub_pid_button_rqt(void)
   */
 uint8_t *net_pda_midi_sub_pid_led_ctl(uint8_t type, uint32_t val)
 {
-	prtc_data_set_midi_led_t *pCdsml = (prtc_data_set_midi_led_t *)make_data_buff;
-	pCdsml->type = type;
-	pCdsml->val = val;
+	prtc_data_ctl_midi_led_t *pCdcml = (prtc_data_ctl_midi_led_t *)make_data_buff;
+	pCdcml->type = type;
+	pCdcml->val = val;
 	
 	return make_data_buff;
 }
@@ -113,9 +113,9 @@ uint8_t *net_pda_midi_sub_pid_led_ctl(uint8_t type, uint32_t val)
   */
 uint8_t *net_pda_midi_sub_pid_led_rsp(uint8_t type, uint32_t val)
 {
-	prtc_data_set_midi_led_t *pCdsml = (prtc_data_set_midi_led_t *)make_data_buff;
-	pCdsml->type = type;
-	pCdsml->val = val;
+	prtc_data_rsp_midi_led_t *pCdrml = (prtc_data_rsp_midi_led_t *)make_data_buff;
+	pCdrml->type = type;
+	pCdrml->val = val;
 	
 	return make_data_buff;
 }
@@ -127,8 +127,8 @@ uint8_t *net_pda_midi_sub_pid_led_rsp(uint8_t type, uint32_t val)
   */
 uint8_t *net_pda_midi_sub_pid_led_rqt(uint8_t type)
 {
-	prtc_data_get_midi_led_t *pCdgml = (prtc_data_get_midi_led_t *)make_data_buff;
-	pCdgml->type = type;
+	prtc_data_rqt_midi_led_t *pCdrml = (prtc_data_rqt_midi_led_t *)make_data_buff;
+	pCdrml->type = type;
 	return make_data_buff;
 }
 /******************************************MIDI SUB PID LED ASSEMBLE*********************************************/
@@ -147,15 +147,15 @@ uint8_t *net_pda_midi_sub_pid_led_rqt(uint8_t type)
   */
 uint8_t *net_pda_midi_sub_pid_id_ctl(uint8_t id1, uint8_t id2, uint8_t id3, uint8_t id4, uint8_t id5, uint8_t id6, uint8_t id7, uint8_t id8)
 {
-	prtc_data_set_midi_id_t *pCdsmi = (prtc_data_set_midi_id_t *)make_data_buff;
-	pCdsmi->sub_id1 = id1;
-	pCdsmi->sub_id1 = id2;
-	pCdsmi->sub_id1 = id3;
-	pCdsmi->sub_id1 = id4;
-	pCdsmi->sub_id1 = id5;
-	pCdsmi->sub_id1 = id6;
-	pCdsmi->sub_id1 = id7;
-	pCdsmi->sub_id1 = id8;
+	prtc_data_ctl_midi_id_t *pCdcmi = (prtc_data_ctl_midi_id_t *)make_data_buff;
+	pCdcmi->sub_id1 = id1;
+	pCdcmi->sub_id1 = id2;
+	pCdcmi->sub_id1 = id3;
+	pCdcmi->sub_id1 = id4;
+	pCdcmi->sub_id1 = id5;
+	pCdcmi->sub_id1 = id6;
+	pCdcmi->sub_id1 = id7;
+	pCdcmi->sub_id1 = id8;
 	
 	return make_data_buff;
 }
@@ -174,15 +174,15 @@ uint8_t *net_pda_midi_sub_pid_id_ctl(uint8_t id1, uint8_t id2, uint8_t id3, uint
   */
 uint8_t *net_pda_midi_sub_pid_id_rsp(uint8_t id1, uint8_t id2, uint8_t id3, uint8_t id4, uint8_t id5, uint8_t id6, uint8_t id7, uint8_t id8)
 {
-	prtc_data_set_midi_id_t *pCdsmi = (prtc_data_set_midi_id_t *)make_data_buff;
-	pCdsmi->sub_id1 = id1;
-	pCdsmi->sub_id1 = id2;
-	pCdsmi->sub_id1 = id3;
-	pCdsmi->sub_id1 = id4;
-	pCdsmi->sub_id1 = id5;
-	pCdsmi->sub_id1 = id6;
-	pCdsmi->sub_id1 = id7;
-	pCdsmi->sub_id1 = id8;
+	prtc_data_rsp_midi_id_t *pCdrmi = (prtc_data_rsp_midi_id_t *)make_data_buff;
+	pCdrmi->sub_id1 = id1;
+	pCdrmi->sub_id1 = id2;
+	pCdrmi->sub_id1 = id3;
+	pCdrmi->sub_id1 = id4;
+	pCdrmi->sub_id1 = id5;
+	pCdrmi->sub_id1 = id6;
+	pCdrmi->sub_id1 = id7;
+	pCdrmi->sub_id1 = id8;
 	
 	return make_data_buff;
 }

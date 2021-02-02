@@ -79,9 +79,7 @@ void proc_can_rx(void)
 {
 	if(can_rx_ring_buff.head != can_rx_ring_buff.tail){
 		prtc_header_t *pPh = (prtc_header_t *)&can_rx_ring_buff.can_header[can_rx_ring_buff.tail];
-		
 		if(pPh->target_id == my_can_id || pPh->target_id == CAN_BROADCAST){
-			//proc_can_protocol(can_rx_ring_buff.can_header[can_rx_ring_buff.tail], (uint8_t *)&can_rx_ring_buff.data[can_rx_ring_buff.tail]);
 			net_phd_pid(&can_rx_ring_buff.can_header[can_rx_ring_buff.tail], (uint8_t *)&can_rx_ring_buff.data[can_rx_ring_buff.tail]);
 		}
 		proc_rx_ring_buff_tail_chk();

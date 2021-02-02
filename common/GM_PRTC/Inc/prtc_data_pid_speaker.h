@@ -4,8 +4,11 @@
 /***********************************************************SPEAKER_SUB_PID_ACTION**********************************************************/
 typedef struct{
 	uint8_t 	action;
-}prtc_data_set_speaker_action_t;
+}prtc_data_ctl_speaker_action_t;
 
+typedef struct{
+	uint8_t 	action;
+}prtc_data_rsp_speaker_action_t;
 ///////////////////////////action///////////////////////////
 #define	SPEAKER_ACTION_SOUND_UP		0
 #define	SPEAKER_ACTION_SOUND_DN		1

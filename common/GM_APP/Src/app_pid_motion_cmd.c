@@ -20,13 +20,13 @@ __weak void app_rx_motion_sub_pid_adc_rqt(prtc_header_t *pPh, uint8_t *pData)
 
 void app_tx_motion_sub_pid_adc_ctl(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint16_t adc_val)
 {
-	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_set_motion_adc_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_ADC, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_motion_adc_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_ADC, sub_id), \
 			net_pda_motion_sub_pid_adc_ctl(adc_val));
 }
 
 void app_tx_motion_sub_pid_adc_rsp(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint16_t adc_val)
 {
-	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_set_motion_adc_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_ADC, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_motion_adc_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_ADC, sub_id), \
 			net_pda_motion_sub_pid_adc_rsp(adc_val));
 }
 
@@ -54,13 +54,13 @@ __weak void app_rx_motion_sub_pid_angle_rqt(prtc_header_t *pPh, uint8_t *pData)
 
 void app_tx_motion_sub_pid_angle_ctl(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint32_t angle_val)
 {
-	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_set_motion_angle_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_ANGLE, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_motion_angle_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_ANGLE, sub_id), \
 			net_pda_motion_sub_pid_angle_ctl(angle_val));
 }
 
 void app_tx_motion_sub_pid_angle_rsp(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint32_t angle_val)
 {
-	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_set_motion_adc_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_ANGLE, sub_id), \
+	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_motion_angle_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_ANGLE, sub_id), \
 			net_pda_motion_sub_pid_angle_rsp(angle_val));
 }
 

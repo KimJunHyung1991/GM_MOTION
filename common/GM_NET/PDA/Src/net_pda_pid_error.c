@@ -14,8 +14,8 @@ packet pid-error영역의 data 재조립
   */
 uint8_t *net_pda_error_sub_pid_rc_ctl(uint8_t error_code)
 {
-	prtc_data_set_error_rc_t *pCdser = (prtc_data_set_error_rc_t *)make_data_buff;
-	pCdser->error_code = error_code;
+	prtc_data_ctl_error_rc_t *pCdcer = (prtc_data_ctl_error_rc_t *)make_data_buff;
+	pCdcer->error_code = error_code;
 	
 	return make_data_buff;
 }
@@ -27,8 +27,8 @@ uint8_t *net_pda_error_sub_pid_rc_ctl(uint8_t error_code)
   */
 uint8_t *net_pda_error_sub_pid_rc_rsp(uint8_t error_code)
 {
-	prtc_data_set_error_rc_t *pCdser = (prtc_data_set_error_rc_t *)make_data_buff;
-	pCdser->error_code = error_code;
+	prtc_data_rsp_error_rc_t *pCdrer = (prtc_data_rsp_error_rc_t *)make_data_buff;
+	pCdrer->error_code = error_code;
 	
 	return make_data_buff;
 }
@@ -51,8 +51,8 @@ uint8_t *net_pda_error_sub_pid_rc_rqt(void)
   */
 uint8_t *net_pda_error_sub_pid_ac_ctl(uint8_t error_code)
 {
-	prtc_data_set_error_ac_t *pCdsea = (prtc_data_set_error_ac_t *)make_data_buff;
-	pCdsea->error_code = error_code;
+	prtc_data_ctl_error_ac_t *pCdcea = (prtc_data_ctl_error_ac_t *)make_data_buff;
+	pCdcea->error_code = error_code;
 	
 	return make_data_buff;
 }
@@ -64,8 +64,8 @@ uint8_t *net_pda_error_sub_pid_ac_ctl(uint8_t error_code)
   */
 uint8_t *net_pda_error_sub_pid_ac_rsp(uint8_t error_code)
 {
-	prtc_data_set_error_ac_t *pCdsea = (prtc_data_set_error_ac_t *)make_data_buff;
-	pCdsea->error_code = error_code;
+	prtc_data_rsp_error_ac_t *pCdrea = (prtc_data_rsp_error_ac_t *)make_data_buff;
+	pCdrea->error_code = error_code;
 	
 	return make_data_buff;
 }
@@ -88,8 +88,8 @@ uint8_t *net_pda_error_sub_pid_ac_rqt(void)
   */
 uint8_t *net_pda_error_sub_pid_bldc_ctl(uint8_t error_code)
 {
-	prtc_data_set_error_bldc_t *pCdseb = (prtc_data_set_error_bldc_t *)make_data_buff;
-	pCdseb->error_code = error_code;
+	prtc_data_ctl_error_bldc_t *pCdceb = (prtc_data_ctl_error_bldc_t *)make_data_buff;
+	pCdceb->error_code = error_code;
 	
 	return make_data_buff;
 }
@@ -101,8 +101,8 @@ uint8_t *net_pda_error_sub_pid_bldc_ctl(uint8_t error_code)
   */
 uint8_t *net_pda_error_sub_pid_bldc_rsp(uint8_t error_code)
 {
-	prtc_data_set_error_bldc_t *pCdseb = (prtc_data_set_error_bldc_t *)make_data_buff;
-	pCdseb->error_code = error_code;
+	prtc_data_rsp_error_bldc_t *pCdreb = (prtc_data_rsp_error_bldc_t *)make_data_buff;
+	pCdreb->error_code = error_code;
 	
 	return make_data_buff;
 }
