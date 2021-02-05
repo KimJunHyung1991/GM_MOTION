@@ -10,14 +10,13 @@
 #include "prtc_data_pid_error.h"
 #pragma pack(1)
 typedef struct{
-	uint8_t cmd1;
 	uint8_t dlc;
 	union{
 		struct{
 			uint32_t sub_id		:	5;
 			uint32_t sub_pid	:	5;
-			uint32_t pid		:	5;
-			uint32_t cmd2		:	1;
+			uint32_t pid		:	4;
+			uint32_t cmd		:	2;
 			uint32_t target_id	:	6;
 			uint32_t souce_id	:	6;
 			uint32_t priority	:	1;

@@ -43,8 +43,7 @@ void net_phd_error_sub_pid(prtc_header_t *pPh, uint8_t *pData)
   */
 void net_phd_error_sub_pid_rc(prtc_header_t *pPh, uint8_t *pData)
 {
-	uint8_t cmd = ret_protocol_header_cmd(pPh);
-	switch(cmd)
+	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
 			app_rx_error_sub_pid_rc_ctl(pPh, pData);
@@ -67,8 +66,7 @@ void net_phd_error_sub_pid_rc(prtc_header_t *pPh, uint8_t *pData)
   */
 void net_phd_error_sub_pid_ac(prtc_header_t *pPh, uint8_t *pData)
 {
-	uint8_t cmd = ret_protocol_header_cmd(pPh);
-	switch(cmd)
+	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
 			app_rx_error_sub_pid_ac_ctl(pPh, pData);
@@ -91,8 +89,7 @@ void net_phd_error_sub_pid_ac(prtc_header_t *pPh, uint8_t *pData)
   */
 void net_phd_error_sub_pid_bldc(prtc_header_t *pPh, uint8_t *pData)
 {
-	uint8_t cmd = ret_protocol_header_cmd(pPh);
-	switch(cmd)
+	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
 			app_rx_error_sub_pid_bldc_ctl(pPh, pData);
