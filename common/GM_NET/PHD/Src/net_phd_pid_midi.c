@@ -47,8 +47,7 @@ void net_phd_midi_sub_pid(prtc_header_t *pPh, uint8_t *pData)
   */
 void net_phd_midi_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData)
 {
-	uint8_t cmd = ret_protocol_header_cmd(pPh);
-	switch(cmd)
+	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
 			app_rx_midi_sub_pid_adc_ctl(pPh, pData);
@@ -71,8 +70,7 @@ void net_phd_midi_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData)
   */
 void net_phd_midi_sub_pid_button(prtc_header_t *pPh, uint8_t *pData)
 {
-	uint8_t cmd = ret_protocol_header_cmd(pPh);
-	switch(cmd)
+	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
 			app_rx_midi_sub_pid_button_ctl(pPh, pData);
@@ -95,8 +93,7 @@ void net_phd_midi_sub_pid_button(prtc_header_t *pPh, uint8_t *pData)
   */
 void net_phd_midi_sub_pid_led(prtc_header_t *pPh, uint8_t *pData)
 {
-	uint8_t cmd = ret_protocol_header_cmd(pPh);
-	switch(cmd)
+	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
 			app_rx_midi_sub_pid_led_ctl(pPh, pData);
@@ -119,8 +116,7 @@ void net_phd_midi_sub_pid_led(prtc_header_t *pPh, uint8_t *pData)
   */
 void net_phd_midi_sub_pid_id(prtc_header_t *pPh, uint8_t *pData)
 {
-	uint8_t cmd = ret_protocol_header_cmd(pPh);
-	switch(cmd)
+	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
 			app_rx_midi_sub_pid_id_ctl(pPh, pData);

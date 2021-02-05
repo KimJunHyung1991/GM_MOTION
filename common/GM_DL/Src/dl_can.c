@@ -17,10 +17,12 @@ uint8_t my_can_id = 1;
   */
 uint8_t ret_protocol_header_cmd(prtc_header_t *pPh)
 {
+	/*
 	uint8_t cmd = 0;
 	cmd = (pPh->cmd1 << 1);
 	cmd |= pPh->cmd2;
 	return cmd;
+	*/
 }
 /******************************************CMD ASSEMBLE*********************************************/
 

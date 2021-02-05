@@ -39,8 +39,7 @@ void net_phd_motion_sub_pid(prtc_header_t *pPh, uint8_t *pData)
   */
 void net_phd_motion_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData)
 {
-	uint8_t cmd = ret_protocol_header_cmd(pPh);
-	switch(cmd)
+	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
 			app_rx_motion_sub_pid_adc_ctl(pPh, pData);
@@ -63,8 +62,7 @@ void net_phd_motion_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData)
   */
 void net_phd_motion_sub_pid_angle(prtc_header_t *pPh, uint8_t *pData)
 {
-	uint8_t cmd = ret_protocol_header_cmd(pPh);
-	switch(cmd)
+	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
 			app_rx_motion_sub_pid_angle_ctl(pPh, pData);
