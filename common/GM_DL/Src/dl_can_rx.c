@@ -85,3 +85,38 @@ void proc_can_rx(void)
 	}
 }
 /******************************************PROCESS CAN RX*********************************************/
+
+#if 0
+void can_to_uart(prtc_header_t *pPh, uint8_t *pData)
+{
+	uint8_t pBuf[32];
+	packet_header_t2 *pCh = (packet_header_t2 *)pBuf;
+	
+	
+	pCh->stx = 		PACKET_START_CODE;
+	pCh->dlc = 		pPh->dlc;
+	pCh->src_id = 	pPh->souce_id;
+	pCh->tar_id = 	pPh->target_id;
+	pCh->cmd = 		pPh->cmd;
+	pCh->pid = 		pPh->pid;
+	pCh->sub_pid = 	pPh->sub_pid;
+	pCh->sub_id = 	pPh->sub_id;
+	
+	uart_tx_put_buff(0, (uint8_t *)pBuf, pCh->dlc + sizeof(packet_header_t2));
+	
+	
+	
+	flag_uart[0] = SET;
+}
+
+void proc_can_rx_test(void)
+{
+	if(can_rx_ring_buff.head != can_rx_ring_buff.tail){
+		prtc_header_t *pPh = (prtc_header_t *)&can_rx_ring_buff.can_header[can_rx_ring_buff.tail];
+		if(pPh->target_id == my_can_id || pPh->target_id == CAN_BROADCAST){
+			can_to_uart(&can_rx_ring_buff.can_header[can_rx_ring_buff.tail], (uint8_t *)&can_rx_ring_buff.data[can_rx_ring_buff.tail]);
+		}
+		proc_rx_ring_buff_tail_chk();
+	}
+}
+#endif
