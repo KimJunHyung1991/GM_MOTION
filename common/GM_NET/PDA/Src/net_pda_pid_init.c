@@ -152,6 +152,7 @@ uint8_t *net_pda_init_sub_pid_status_rsp(uint8_t step, uint8_t status)
 {
 	prtc_data_rsp_init_status_t *pCris = (prtc_data_rsp_init_status_t *)make_data_buff;
 	pCris->step = step;
+	pCris->status = status;
 	
 	return make_data_buff;
 }

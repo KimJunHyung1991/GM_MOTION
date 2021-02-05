@@ -102,6 +102,10 @@ void can_to_uart(prtc_header_t *pPh, uint8_t *pData)
 	pCh->sub_pid = 	pPh->sub_pid;
 	pCh->sub_id = 	pPh->sub_id;
 	
+	for(int i = 0; i < pCh->dlc; i++){
+		pCh->payload[i] = *pData++;
+	}
+	
 	uart_tx_put_buff(0, (uint8_t *)pBuf, pCh->dlc + sizeof(packet_header_t2));
 	
 	
