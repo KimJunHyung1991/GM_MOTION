@@ -81,10 +81,6 @@ void proc_can_tx(CAN_HandleTypeDef *canhd)
 	if(can_tx_ring_buff.head != can_tx_ring_buff.tail){
 		if(HAL_CAN_GetTxMailboxesFreeLevel(canhd) == 3){
 			TxHeader.IDE = CAN_ID_EXT;
-			
-			if(can_tx_ring_buff.can_header[can_tx_ring_buff.tail].cmd1 == 1) TxHeader.RTR = CAN_RTR_REMOTE;
-			else	TxHeader.RTR = CAN_RTR_DATA;
-			
 			TxHeader.DLC = can_tx_ring_buff.can_header[can_tx_ring_buff.tail].dlc;
 			TxHeader.ExtId = can_tx_ring_buff.can_header[can_tx_ring_buff.tail].protocol_header_32;
 			TxHeader.TransmitGlobalTime = DISABLE;

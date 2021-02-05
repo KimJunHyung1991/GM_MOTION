@@ -21,12 +21,11 @@ packet의 header 재조립
   */
 prtc_header_t *net_pha(uint8_t cmd, uint8_t dlc, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t pid, uint8_t sub_pid, uint8_t sub_id)
 {
-	make_header_buff.cmd1 = ((cmd >> 1) & 0x01);
 	make_header_buff.dlc = dlc;
 	make_header_buff.priority = priority;
 	make_header_buff.souce_id = souce_id;
 	make_header_buff.target_id = target_id;
-	make_header_buff.cmd2 = (cmd & 0x01);
+	make_header_buff.cmd = cmd;
 	make_header_buff.pid = pid;
 	make_header_buff.sub_pid = sub_pid;
 	make_header_buff.sub_id = sub_id;

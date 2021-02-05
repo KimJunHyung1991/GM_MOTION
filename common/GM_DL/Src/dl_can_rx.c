@@ -63,8 +63,6 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 	{
 		error_handler();
 	}
-	if(RxHeader.RTR)	can_rx_ring_buff.can_header[can_rx_ring_buff.head].cmd1 = 1;
-	else				can_rx_ring_buff.can_header[can_rx_ring_buff.head].cmd1 = 0;
 	can_rx_ring_buff.can_header[can_rx_ring_buff.head].dlc = RxHeader.DLC;
 	can_rx_ring_buff.can_header[can_rx_ring_buff.head].protocol_header_32 = RxHeader.ExtId;
 	proc_rx_ring_buff_head_chk();
