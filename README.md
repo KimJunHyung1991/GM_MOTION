@@ -1,4 +1,4 @@
-GM_MOTION_PROTOCOL
+GM_MOTION_PROTOCOL   
 ==================
 
 ##### protocol 1.5버전으로 기존의 protocol 1.0 버전의 치명적 문제(Source id가 DATA영역에 있어 제어 보드에서 브로드케스트로 명령을 송신했을때 응답을 못받는)해결 하기 위해 protocol header영역과 DATA영역을 새로 작성하였다 
@@ -23,6 +23,10 @@ GM_MOTION_PROTOCOL
 
 int main(void)
 {
+	/*CAN RX, TX  LED 매핑*/
+	gm_motion_RX_LED_init(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
+	gm_motion_TX_LED_init(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
+
 	/*HAL 설정 영역*/
 	while(1)
 	{
@@ -44,6 +48,26 @@ int main(void)
 #include "net_phd_pid.h"
 
 #endif /* __MAIN_H */
+```
+
+
+통신 LED mapping
+------
+1. 사용하지 않는다면 init 함수를 호출하지 않는다.
+2. RX TX LED에 같은 핀을 할당해도 된다.
+```cpp
+//GPIOx : LED가 연결된 포트  		e.g. GPIOA
+//GPIO_Pin : LED가 연결된 포트의 핀번호 	e.g. GPIO_PIN_10
+/////포트를 다른이름으로 define했다면 define 이름으로 사용해도 무관하다.
+//ledOnState : LED가 켜지기 위한 GPIO 상태  	e.g. GPIO_PIN_RESET
+void gm_motion_RX_LED_init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState ledOnState);
+
+//-----------------------------------------------------
+#define LED_2_Pin GPIO_PIN_10
+#define LED_2_GPIO_Port GPIOC
+gm_motion_RX_LED_init(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
+//GPIOC 의 10번 핀에 CAN RX LED가 연결되었으며, GPIO LOW 일때 LED가 켜진다.
+
 ```
 
 통신 함수 사용법
