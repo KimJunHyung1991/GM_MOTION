@@ -20,8 +20,8 @@ void app_tx_init_sub_pid_driver_data1_rqt(uint8_t priority, uint8_t souce_id, ui
 void app_rx_init_sub_pid_driver_data2_ctl(prtc_header_t *pPh, uint8_t *pData);
 void app_rx_init_sub_pid_driver_data2_rsp(prtc_header_t *pPh, uint8_t *pData);
 void app_rx_init_sub_pid_driver_data2_rqt(prtc_header_t *pPh, uint8_t *pData);
-void app_tx_init_sub_pid_driver_data2_ctl(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint16_t count, uint16_t rpm);
-void app_tx_init_sub_pid_driver_data2_rsp(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint16_t count, uint16_t rpm);
+void app_tx_init_sub_pid_driver_data2_ctl(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint32_t count, uint16_t rpm);
+void app_tx_init_sub_pid_driver_data2_rsp(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint32_t count, uint16_t rpm);
 void app_tx_init_sub_pid_driver_data2_rqt(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
 /**********************************************************************************/
 /**********************************************************************************/

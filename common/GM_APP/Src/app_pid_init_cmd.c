@@ -87,13 +87,13 @@ __weak void app_rx_init_sub_pid_driver_data2_rqt(prtc_header_t *pPh, uint8_t *pD
 	
 }
 
-void app_tx_init_sub_pid_driver_data2_ctl(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint16_t count, uint16_t rpm)
+void app_tx_init_sub_pid_driver_data2_ctl(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint32_t count, uint16_t rpm)
 {
 	hal_can_protocol_tx(net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_init_driver_data2_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA2, sub_id), \
 			net_pda_init_sub_pid_driver_data2_ctl(count, rpm));
 }
 
-void app_tx_init_sub_pid_driver_data2_rsp(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint16_t count, uint16_t rpm)
+void app_tx_init_sub_pid_driver_data2_rsp(uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint32_t count, uint16_t rpm)
 {
 	hal_can_protocol_tx(net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_init_driver_data2_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA2, sub_id), \
 			net_pda_init_sub_pid_driver_data2_rsp(count, rpm));
