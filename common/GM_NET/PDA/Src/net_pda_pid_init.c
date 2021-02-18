@@ -95,7 +95,7 @@ uint8_t *net_pda_init_sub_pid_driver_data1_rqt(void)
 			rpm : 설정 RPM
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_driver_data2_ctl(uint16_t count, uint16_t rpm)
+uint8_t *net_pda_init_sub_pid_driver_data2_ctl(uint32_t count, uint16_t rpm)
 {
 	prtc_data_ctl_init_driver_data2_t *pCdcidd = (prtc_data_ctl_init_driver_data2_t *)make_data_buff;
 	
@@ -111,7 +111,7 @@ uint8_t *net_pda_init_sub_pid_driver_data2_ctl(uint16_t count, uint16_t rpm)
 			rpm : 설정 RPM
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_driver_data2_rsp(uint16_t count, uint16_t rpm)
+uint8_t *net_pda_init_sub_pid_driver_data2_rsp(uint32_t count, uint16_t rpm)
 {
 	prtc_data_rsp_init_driver_data2_t *pCdridd = (prtc_data_rsp_init_driver_data2_t *)make_data_buff;
 	
