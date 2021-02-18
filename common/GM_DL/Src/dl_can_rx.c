@@ -2,7 +2,7 @@
 /*************************************************
 fail : dl_can_rx.c
 data link can rx
-4°èÃþÁß data linkÃþ¿¡ ÇØ´ç
+4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ data linkï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½
 
 **************************************************/
 
@@ -10,9 +10,10 @@ can_q_buff_t can_rx_ring_buff;
 CAN_RxHeaderTypeDef RxHeader;
 uint8_t	RxData[8];
 
+can_comm_led rx_led = {0,};	//210218 shs
 /******************************************ERROR HANDLER*********************************************/
 /**
-  * @brief  error Ã³¸® ÇÔ¼ö
+  * @brief  error Ã³ï¿½ï¿½ ï¿½Ô¼ï¿½
   * @param  none
   * @retval none
   */
@@ -23,9 +24,50 @@ static void error_handler(void)
 	}
 }
 /******************************************ERROR HANDLER*********************************************/
+
+/******************************************LED Driver*********************************************/
+//210218 shs
+//init
+void gm_motion_RX_LED_init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState ledOnState)
+{
+	rx_led.f_init = SET;
+	rx_led.GPIO = GPIOx;
+	rx_led.Pin = GPIO_Pin;
+	rx_led.ledOnState = ledOnState;
+}
+//led on
+static void gm_motion_RX_LED_ON(void)
+{
+	if(rx_led.f_init)
+	{
+		if(rx_led.ledOnState == GPIO_PIN_RESET)	//gpio low -> led on
+			rx_led.GPIO->ODR &= ~rx_led.Pin;
+		else
+			rx_led.GPIO->ODR |= rx_led.Pin;		//gpio high ->led on
+
+		rx_led.t_led_off = HAL_GetTick();
+	}
+}
+//led off
+static void gm_motion_RX_LED_OFF(void)
+{
+	if(rx_led.f_init)
+	{
+		if(rx_led.t_led_off != HAL_GetTick())
+		{
+			if (rx_led.ledOnState == GPIO_PIN_RESET)	//gpio high -> led off
+				rx_led.GPIO->ODR |= rx_led.Pin;
+			else
+				rx_led.GPIO->ODR &= ~rx_led.Pin;		//gpio low ->led off
+		}
+	}
+}
+//210218 shs
+/******************************************LED Driver*********************************************/
+
 /******************************************PROCESS RX RING BUF HEAD CHECK*********************************************/
 /**
-  * @brief  can_rx_ring_buffÀÇ head Ã³¸® ÇÔ¼ö
+  * @brief  can_rx_ring_buffï¿½ï¿½ head Ã³ï¿½ï¿½ ï¿½Ô¼ï¿½
   * @param  none
   * @retval none
   */
@@ -39,7 +81,7 @@ void proc_rx_ring_buff_head_chk(void)
 /******************************************PROCESS RX RING BUF HEAD CHECK*********************************************/
 /******************************************PROCESS RX RING BUF TAIL CHECK*********************************************/
 /**
-  * @brief  can_rx_ring_buffÀÇ tail Ã³¸® ÇÔ¼ö
+  * @brief  can_rx_ring_buffï¿½ï¿½ tail Ã³ï¿½ï¿½ ï¿½Ô¼ï¿½
   * @param  none
   * @retval none
   */
@@ -53,8 +95,8 @@ void proc_rx_ring_buff_tail_chk(void)
 /******************************************PROCESS RX RING BUF TAIL CHECK*********************************************/
 /******************************************HAL CAN RX CALL BACK*********************************************/
 /**
-  * @brief  hal_can_rx callback ÇÔ¼ö
-  * @param  CAN_HandleTypeDef *hcan : can ÇÚµé·¯
+  * @brief  hal_can_rx callback ï¿½Ô¼ï¿½
+  * @param  CAN_HandleTypeDef *hcan : can ï¿½Úµé·¯
   * @retval none
   */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
@@ -70,7 +112,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 /******************************************HAL CAN RX CALL BACK*********************************************/
 /******************************************PROCESS CAN RX*********************************************/
 /**
-  * @brief  can rxÃ³¸® ÇÔ¼ö
+  * @brief  can rxÃ³ï¿½ï¿½ ï¿½Ô¼ï¿½
   * @param  none
   * @retval none
   */
@@ -81,8 +123,10 @@ void proc_can_rx(void)
 		if(pPh->target_id == my_can_id || pPh->target_id == CAN_BROADCAST){
 			net_phd_pid(&can_rx_ring_buff.can_header[can_rx_ring_buff.tail], (uint8_t *)&can_rx_ring_buff.data[can_rx_ring_buff.tail]);
 		}
+		gm_motion_RX_LED_ON();//210218 shs
 		proc_rx_ring_buff_tail_chk();
 	}
+	gm_motion_RX_LED_OFF();//210218 shs
 }
 /******************************************PROCESS CAN RX*********************************************/
 

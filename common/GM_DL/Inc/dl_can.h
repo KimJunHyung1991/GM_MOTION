@@ -7,6 +7,20 @@
 #define CAN_BROADCAST	0
 
 #pragma pack(1)
+
+/////////////////////////////////////////////////////
+typedef struct{
+	uint8_t f_init;			//init ok = 1;   non init = 0
+
+	GPIO_TypeDef* GPIO;		//led port
+	uint16_t Pin;			//led pin num
+
+	GPIO_PinState ledOnState;	//led on state  // ex. gpio low  ->  led on? off?
+
+	uint32_t t_led_off;
+}can_comm_led;	//210218 shs
+/////////////////////////////////////////////////////
+
 /////////////////////////////////////////////////////
 typedef struct{
 	uint16_t tail;
@@ -40,5 +54,7 @@ typedef struct{
 	};
 }android_can_header_t;
 #pragma pack()
+
+void set_canid(void);
 
 #endif

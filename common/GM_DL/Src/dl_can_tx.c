@@ -3,7 +3,7 @@
 /*************************************************
 fail : dl_can_tx.c
 data link can tx
-4°èÃþÁß data linkÃþ¿¡ ÇØ´ç
+4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ data linkï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½
 
 **************************************************/
 
@@ -16,9 +16,10 @@ uint8_t make_data_buff[8];
 
 uint32_t TxMailbox;
 
+can_comm_led tx_led = {0,};	//210218 shs
 /******************************************ERROR HANDLER*********************************************/
 /**
-  * @brief  error Ã³¸® ÇÔ¼ö
+  * @brief  error Ã³ï¿½ï¿½ ï¿½Ô¼ï¿½
   * @param  none
   * @retval none
   */
@@ -29,9 +30,50 @@ static void error_handler(void)
 	}
 }
 /******************************************ERROR HANDLER*********************************************/
+
+/******************************************LED Driver*********************************************/
+//210218 shs
+//init
+void gm_motion_TX_LED_init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState ledOnState)
+{
+	tx_led.f_init = SET;
+	tx_led.GPIO = GPIOx;
+	tx_led.Pin = GPIO_Pin;
+	tx_led.ledOnState = ledOnState;
+}
+//led on
+static void gm_motion_TX_LED_ON(void)
+{
+	if(tx_led.f_init)
+	{
+		if(tx_led.ledOnState == GPIO_PIN_RESET)	//gpio low -> led on
+			tx_led.GPIO->ODR &= ~tx_led.Pin;
+		else
+			tx_led.GPIO->ODR |= tx_led.Pin;		//gpio high ->led on
+
+		tx_led.t_led_off = HAL_GetTick();
+	}
+}
+//led off
+static void gm_motion_TX_LED_OFF(void)
+{
+	if(tx_led.f_init)
+	{
+		if(tx_led.t_led_off != HAL_GetTick())
+		{
+			if (tx_led.ledOnState == GPIO_PIN_RESET)	//gpio high -> led off
+				tx_led.GPIO->ODR |= tx_led.Pin;
+			else
+				tx_led.GPIO->ODR &= ~tx_led.Pin;		//gpio low ->led off
+		}
+	}
+}
+//210218 shs
+/******************************************LED Driver*********************************************/
+
 /******************************************PROCESS TX RING BUF HEAD CHECK*********************************************/
 /**
-  * @brief  can_tx_ring_buffÀÇ head Ã³¸® ÇÔ¼ö
+  * @brief  can_tx_ring_buffï¿½ï¿½ head Ã³ï¿½ï¿½ ï¿½Ô¼ï¿½
   * @param  none
   * @retval none
   */
@@ -45,7 +87,7 @@ void proc_tx_ring_buff_head_chk(void)
 /******************************************PROCESS TX RING BUF HEAD CHECK*********************************************/
 /******************************************PROCESS TX RING BUF TAIL CHECK*********************************************/
 /**
-  * @brief  can_tx_ring_buffÀÇ tail Ã³¸® ÇÔ¼ö
+  * @brief  can_tx_ring_buffï¿½ï¿½ tail Ã³ï¿½ï¿½ ï¿½Ô¼ï¿½
   * @param  none
   * @retval none
   */
@@ -59,7 +101,7 @@ void proc_tx_ring_buff_tail_chk(void)
 /******************************************PROCESS TX RING BUF TAIL CHECK*********************************************/
 /******************************************PROCESS CAN TX *********************************************/
 /**
-  * @brief  can txÃ³¸® ÇÔ¼ö
+  * @brief  can txÃ³ï¿½ï¿½ ï¿½Ô¼ï¿½
   * @param  none
   * @retval none
   */
@@ -72,8 +114,8 @@ void hal_can_protocol_tx(prtc_header_t *can_header, uint8_t *pData)
 /******************************************PROCESS CAN TX *********************************************/
 /******************************************HAL CAN TX *********************************************/
 /**
-  * @brief  hal_can_tx ÇÔ¼ö
-  * @param  CAN_HandleTypeDef *hcan : can ÇÚµé·¯
+  * @brief  hal_can_tx ï¿½Ô¼ï¿½
+  * @param  CAN_HandleTypeDef *hcan : can ï¿½Úµé·¯
   * @retval none
   */
 void proc_can_tx(CAN_HandleTypeDef *canhd)
@@ -88,7 +130,9 @@ void proc_can_tx(CAN_HandleTypeDef *canhd)
 				error_handler();
 			}
 			proc_tx_ring_buff_tail_chk();
+			gm_motion_TX_LED_ON();//210218 shs
 		}
 	}
+	gm_motion_TX_LED_OFF();//210218 shs
 }
 /******************************************HAL CAN TX *********************************************/
