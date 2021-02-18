@@ -51,7 +51,7 @@ int main(void)
 ```
 
 
-통신 LED 매핑
+통신 LED mapping
 ------
 1. 사용하지 않는다면 init 함수를 호출하지 않는다.
 2. RX TX LED에 같은 핀을 할당해도 된다.
