@@ -3,8 +3,8 @@
 /*************************************************
 fail : net_phd_pid_edit.c
 network packet header disassemble parameter identification edit
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packetÀÇ header¿µ¿ªÀÇ PID(edit) ºĞÇØ
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packetì˜ headerì˜ì—­ì˜ PID(edit) ë¶„í•´
 **************************************************/
 
 
@@ -12,7 +12,7 @@ void net_phd_edit_sub_pid_action(prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************EDIT PID DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-editÀÇ sub_pid)
+  * @brief  packet header disassemble(PID-editì˜ sub_pid)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -29,7 +29,7 @@ void net_phd_edit_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 /******************************************EDIT PID DISASSEMBLE*********************************************/
 /******************************************EDIT SUB PID ACTION DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-editÀÇ sub_pid-actionÀÇ cmd)
+  * @brief  packet header disassemble(PID-editì˜ sub_pid-actionì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None

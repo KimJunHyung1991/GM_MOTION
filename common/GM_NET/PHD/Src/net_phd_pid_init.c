@@ -3,8 +3,8 @@
 /*************************************************
 fail : net_phd_pid_init.c
 network packet header disassemble parameter identification init
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packetÀÇ header¿µ¿ªÀÇ PID(init) ºĞÇØ
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packetì˜ headerì˜ì—­ì˜ PID(init) ë¶„í•´
 **************************************************/
 
 void net_phd_init_sub_pid_boot(prtc_header_t *pPh, uint8_t *pData);
@@ -17,7 +17,7 @@ void net_phd_init_sub_pid_move_init_position(prtc_header_t *pPh, uint8_t *pData)
 
 /******************************************INIT PID DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-initÀÇ sub_pid)
+  * @brief  packet header disassemble(PID-initì˜ sub_pid)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -52,7 +52,7 @@ void net_phd_init_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 /******************************************INIT PID DISASSEMBLE*********************************************/
 /******************************************INIT SUB PID BOOT DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-initÀÇ sub_pid-bootÀÇ cmd)
+  * @brief  packet header disassemble(PID-initì˜ sub_pid-bootì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -75,7 +75,7 @@ void net_phd_init_sub_pid_boot(prtc_header_t *pPh, uint8_t *pData)
 /******************************************INIT SUB PID BOOT DISASSEMBLE*********************************************/
 /******************************************INIT SUB PID DRIVER DATA1 DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-initÀÇ sub_pid-driver_data1ÀÇ cmd)
+  * @brief  packet header disassemble(PID-initì˜ sub_pid-driver_data1ì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -98,7 +98,7 @@ void net_phd_init_sub_pid_driver_data1(prtc_header_t *pPh, uint8_t *pData)
 /******************************************INIT SUB PID DRIVER DATA1 DISASSEMBLE*********************************************/
 /******************************************INIT SUB PID DRIVER DATA2 DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-initÀÇ sub_pid-driver_data2ÀÇ cmd)
+  * @brief  packet header disassemble(PID-initì˜ sub_pid-driver_data2ì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -121,7 +121,7 @@ void net_phd_init_sub_pid_driver_data2(prtc_header_t *pPh, uint8_t *pData)
 /******************************************INIT SUB PID DRIVER DATA2 DISASSEMBLE*********************************************/
 /******************************************INIT SUB PID STATUS DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-initÀÇ sub_pid-statusÀÇ cmd)
+  * @brief  packet header disassemble(PID-initì˜ sub_pid-statusì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -144,7 +144,7 @@ void net_phd_init_sub_pid_status(prtc_header_t *pPh, uint8_t *pData)
 /******************************************INIT SUB PID STATUS DISASSEMBLE*********************************************/
 /******************************************INIT SUB PID ABSOLUTE BATTERY DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-initÀÇ sub_pid-absolute_batteryÀÇ cmd)
+  * @brief  packet header disassemble(PID-initì˜ sub_pid-absolute_batteryì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -167,7 +167,7 @@ void net_phd_init_sub_pid_absolute_battery(prtc_header_t *pPh, uint8_t *pData)
 /******************************************INIT SUB PID ABSOLUTE BATTERY DISASSEMBLE*********************************************/
 /******************************************INIT SUB PID MOVE SENSOR DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-initÀÇ sub_pid-move_sensorÀÇ cmd)
+  * @brief  packet header disassemble(PID-initì˜ sub_pid-move_sensorì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -190,7 +190,7 @@ void net_phd_init_sub_pid_move_sensor(prtc_header_t *pPh, uint8_t *pData)
 /******************************************INIT SUB PID MOVE SENSOR DISASSEMBLE*********************************************/
 /******************************************INIT SUB PID MOVE INIT POSITION DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-initÀÇ sub_pid-move_init_positionÀÇ cmd)
+  * @brief  packet header disassemble(PID-initì˜ sub_pid-move_init_positionì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None

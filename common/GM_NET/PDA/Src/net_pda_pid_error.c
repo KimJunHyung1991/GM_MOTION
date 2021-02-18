@@ -2,15 +2,15 @@
 /*************************************************
 fail : net_pda_pid_error.c
 network packet data assemble prameter idemtification error
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packet pid-error¿µ¿ªÀÇ data ÀçÁ¶¸³
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packet pid-errorì˜ì—­ì˜ data ì¬ì¡°ë¦½
 **************************************************/
 
 /******************************************ERROR SUB PID RC ASSEMBLE*********************************************/
 /**
   * @brief  packet error-rc-control data assemble
   * @param  error_code : value(0~255)
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_error_sub_pid_rc_ctl(uint8_t error_code)
 {
@@ -23,7 +23,7 @@ uint8_t *net_pda_error_sub_pid_rc_ctl(uint8_t error_code)
 /**
   * @brief  packet error-rc-response data assemble
   * @param  error_code : value(0~255)
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_error_sub_pid_rc_rsp(uint8_t error_code)
 {
@@ -36,7 +36,7 @@ uint8_t *net_pda_error_sub_pid_rc_rsp(uint8_t error_code)
 /**
   * @brief  packet error-rc-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_error_sub_pid_rc_rqt(void)
 {
@@ -47,7 +47,7 @@ uint8_t *net_pda_error_sub_pid_rc_rqt(void)
 /**
   * @brief  packet error-ac-control data assemble
   * @param  error_code : value(0~255)
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_error_sub_pid_ac_ctl(uint8_t error_code)
 {
@@ -60,7 +60,7 @@ uint8_t *net_pda_error_sub_pid_ac_ctl(uint8_t error_code)
 /**
   * @brief  packet error-ac-response data assemble
   * @param  error_code : value(0~255)
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_error_sub_pid_ac_rsp(uint8_t error_code)
 {
@@ -73,7 +73,7 @@ uint8_t *net_pda_error_sub_pid_ac_rsp(uint8_t error_code)
 /**
   * @brief  packet error-ac-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_error_sub_pid_ac_rqt(void)
 {
@@ -84,7 +84,7 @@ uint8_t *net_pda_error_sub_pid_ac_rqt(void)
 /**
   * @brief  packet error-bldc-control data assemble
   * @param  error_code : value(0~255)
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_error_sub_pid_bldc_ctl(uint8_t error_code)
 {
@@ -97,7 +97,7 @@ uint8_t *net_pda_error_sub_pid_bldc_ctl(uint8_t error_code)
 /**
   * @brief  packet error-bldc-response data assemble
   * @param  error_code : value(0~255)
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_error_sub_pid_bldc_rsp(uint8_t error_code)
 {
@@ -110,7 +110,7 @@ uint8_t *net_pda_error_sub_pid_bldc_rsp(uint8_t error_code)
 /**
   * @brief  packet error-bldc-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_error_sub_pid_bldc_rqt(void)
 {

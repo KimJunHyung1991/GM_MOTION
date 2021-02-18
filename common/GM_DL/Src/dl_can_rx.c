@@ -2,7 +2,7 @@
 /*************************************************
 fail : dl_can_rx.c
 data link can rx
-4∞Ë√˛¡ﬂ data link√˛ø° «ÿ¥Á
+4Í≥ÑÏ∏µÏ§ë data linkÏ∏µÏóê Ìï¥Îãπ
 
 **************************************************/
 
@@ -12,7 +12,7 @@ uint8_t	RxData[8];
 
 /******************************************ERROR HANDLER*********************************************/
 /**
-  * @brief  error √≥∏Æ «‘ºˆ
+  * @brief  error Ï≤òÎ¶¨ Ìï®Ïàò
   * @param  none
   * @retval none
   */
@@ -25,7 +25,7 @@ static void error_handler(void)
 /******************************************ERROR HANDLER*********************************************/
 /******************************************PROCESS RX RING BUF HEAD CHECK*********************************************/
 /**
-  * @brief  can_rx_ring_buff¿« head √≥∏Æ «‘ºˆ
+  * @brief  can_rx_ring_buffÏùò head Ï≤òÎ¶¨ Ìï®Ïàò
   * @param  none
   * @retval none
   */
@@ -39,7 +39,7 @@ void proc_rx_ring_buff_head_chk(void)
 /******************************************PROCESS RX RING BUF HEAD CHECK*********************************************/
 /******************************************PROCESS RX RING BUF TAIL CHECK*********************************************/
 /**
-  * @brief  can_rx_ring_buff¿« tail √≥∏Æ «‘ºˆ
+  * @brief  can_rx_ring_buffÏùò tail Ï≤òÎ¶¨ Ìï®Ïàò
   * @param  none
   * @retval none
   */
@@ -53,8 +53,8 @@ void proc_rx_ring_buff_tail_chk(void)
 /******************************************PROCESS RX RING BUF TAIL CHECK*********************************************/
 /******************************************HAL CAN RX CALL BACK*********************************************/
 /**
-  * @brief  hal_can_rx callback «‘ºˆ
-  * @param  CAN_HandleTypeDef *hcan : can «⁄µÈ∑Ø
+  * @brief  hal_can_rx callback Ìï®Ïàò
+  * @param  CAN_HandleTypeDef *hcan : can Ìï∏Îì§Îü¨
   * @retval none
   */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
@@ -70,7 +70,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 /******************************************HAL CAN RX CALL BACK*********************************************/
 /******************************************PROCESS CAN RX*********************************************/
 /**
-  * @brief  can rx√≥∏Æ «‘ºˆ
+  * @brief  can rxÏ≤òÎ¶¨ Ìï®Ïàò
   * @param  none
   * @retval none
   */

@@ -3,15 +3,15 @@
 /*************************************************
 fail : net_phd_pid_sensor.c
 network packet header disassemble parameter identification sensor
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packetÀÇ header¿µ¿ªÀÇ PID(sensor) ºĞÇØ
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packetì˜ headerì˜ì—­ì˜ PID(sensor) ë¶„í•´
 **************************************************/
 
 void net_phd_sensor_sub_pid_detect(prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************SENSOR PID DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-sensorÀÇ sub_pid)
+  * @brief  packet header disassemble(PID-sensorì˜ sub_pid)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -28,7 +28,7 @@ void net_phd_sensor_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 /******************************************SENSOR PID DISASSEMBLE*********************************************/
 /******************************************SENSOR SUB PID DETECT DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-sensorÀÇ sub_pid-detectÀÇ cmd)
+  * @brief  packet header disassemble(PID-sensorì˜ sub_pid-detectì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None

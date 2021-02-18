@@ -2,17 +2,17 @@
 /*************************************************
 fail : net_pda_pid_sensor.c
 network packet data assemble prameter idemtification sensor
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packet pid-sensor¿µ¿ªÀÇ data ÀçÁ¶¸³
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packet pid-sensorì˜ì—­ì˜ data ì¬ì¡°ë¦½
 **************************************************/
 
 
 /******************************************SENSOR SUB PID DETECT ASSEMBLE*********************************************/
 /**
   * @brief  packet sensor-detect-control data assemble
-  * @param  cw : ½Ã°è ¹æÇâ ¼¾¼­ °¨Áö »óÅÂ°ª(0 : ¹Ì°¨Áö, 1 : °¨Áö)
-			ccw : ¹İ½Ã°è ¹æÇâ ¼¾¼­ °¨Áö »óÅÂ°ª(0 : ¹Ì°¨Áö, 1 : °¨Áö)
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  cw : ì‹œê³„ ë°©í–¥ ì„¼ì„œ ê°ì§€ ìƒíƒœê°’(0 : ë¯¸ê°ì§€, 1 : ê°ì§€)
+			ccw : ë°˜ì‹œê³„ ë°©í–¥ ì„¼ì„œ ê°ì§€ ìƒíƒœê°’(0 : ë¯¸ê°ì§€, 1 : ê°ì§€)
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_sensor_sub_pid_detect_ctl(uint8_t cw, uint8_t ccw)
 {
@@ -25,9 +25,9 @@ uint8_t *net_pda_sensor_sub_pid_detect_ctl(uint8_t cw, uint8_t ccw)
 
 /**
   * @brief  packet sensor-detect-response data assemble
-  * @param  cw : ½Ã°è ¹æÇâ ¼¾¼­ °¨Áö »óÅÂ°ª(0 : ¹Ì°¨Áö, 1 : °¨Áö)
-			ccw : ¹İ½Ã°è ¹æÇâ ¼¾¼­ °¨Áö »óÅÂ°ª(0 : ¹Ì°¨Áö, 1 : °¨Áö)
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  cw : ì‹œê³„ ë°©í–¥ ì„¼ì„œ ê°ì§€ ìƒíƒœê°’(0 : ë¯¸ê°ì§€, 1 : ê°ì§€)
+			ccw : ë°˜ì‹œê³„ ë°©í–¥ ì„¼ì„œ ê°ì§€ ìƒíƒœê°’(0 : ë¯¸ê°ì§€, 1 : ê°ì§€)
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_sensor_sub_pid_detect_rsp(uint8_t cw, uint8_t ccw)
 {
@@ -41,7 +41,7 @@ uint8_t *net_pda_sensor_sub_pid_detect_rsp(uint8_t cw, uint8_t ccw)
 /**
   * @brief  packet sensor-detect-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_sensor_sub_pid_detect_rqt(void)
 {

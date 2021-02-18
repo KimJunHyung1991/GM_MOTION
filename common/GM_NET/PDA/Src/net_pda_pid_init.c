@@ -2,15 +2,15 @@
 /*************************************************
 fail : net_pda_pid_error.c
 network packet data assemble prameter idemtification error
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packet pid-error¿µ¿ªÀÇ data ÀçÁ¶¸³
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packet pid-errorì˜ì—­ì˜ data ì¬ì¡°ë¦½
 **************************************************/
 
 /******************************************INIT SUB PID BOOT ASSEMBLE*********************************************/
 /**
   * @brief  packet init-boot-control data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_boot_ctl(void)
 {
@@ -20,7 +20,7 @@ uint8_t *net_pda_init_sub_pid_boot_ctl(void)
 /**
   * @brief  packet init-boot-response data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_boot_rsp(void)
 {
@@ -30,7 +30,7 @@ uint8_t *net_pda_init_sub_pid_boot_rsp(void)
 /**
   * @brief  packet init-boot-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_boot_rqt(void)
 {
@@ -40,11 +40,11 @@ uint8_t *net_pda_init_sub_pid_boot_rqt(void)
 /******************************************INIT SUB PID DRIVER DATA1 ASSEMBLE*********************************************/
 /**
   * @brief  packet init-driver_data1-control data assemble
-  * @param  direction : ÃÊ±âÈ­ °úÁ¤Áß ¼¾¼­ °¨Áö ¹æÇâ(0 : CW, 1 : CCW)
-			angle : ¸ğÅÍÀÇ µ¿ÀÛ ¹üÀ§
-			position : ÃÊ±âÈ­ °úÁ¤ÀÌ ³¡³­ ÈÄ À§Ä¡
-			reducer_ratio :	°¨¼Ó±â ºñÀ²
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  direction : ì´ˆê¸°í™” ê³¼ì •ì¤‘ ì„¼ì„œ ê°ì§€ ë°©í–¥(0 : CW, 1 : CCW)
+			angle : ëª¨í„°ì˜ ë™ì‘ ë²”ìœ„
+			position : ì´ˆê¸°í™” ê³¼ì •ì´ ëë‚œ í›„ ìœ„ì¹˜
+			reducer_ratio :	ê°ì†ê¸° ë¹„ìœ¨
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_driver_data1_ctl(uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio)
 {
@@ -60,11 +60,11 @@ uint8_t *net_pda_init_sub_pid_driver_data1_ctl(uint8_t direction, uint16_t angle
 
 /**
   * @brief  packet init-driver_data1-response data assemble
-  * @param  direction : ÃÊ±âÈ­ °úÁ¤Áß ¼¾¼­ °¨Áö ¹æÇâ(0 : CW, 1 : CCW)
-			angle : ¸ğÅÍÀÇ µ¿ÀÛ ¹üÀ§
-			position : ÃÊ±âÈ­ °úÁ¤ÀÌ ³¡³­ ÈÄ À§Ä¡
-			reducer_ratio :	°¨¼Ó±â ºñÀ²
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  direction : ì´ˆê¸°í™” ê³¼ì •ì¤‘ ì„¼ì„œ ê°ì§€ ë°©í–¥(0 : CW, 1 : CCW)
+			angle : ëª¨í„°ì˜ ë™ì‘ ë²”ìœ„
+			position : ì´ˆê¸°í™” ê³¼ì •ì´ ëë‚œ í›„ ìœ„ì¹˜
+			reducer_ratio :	ê°ì†ê¸° ë¹„ìœ¨
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_driver_data1_rsp(uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio)
 {
@@ -81,7 +81,7 @@ uint8_t *net_pda_init_sub_pid_driver_data1_rsp(uint8_t direction, uint16_t angle
 /**
   * @brief  packet init-driver_data1-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_driver_data1_rqt(void)
 {	
@@ -91,9 +91,9 @@ uint8_t *net_pda_init_sub_pid_driver_data1_rqt(void)
 /******************************************INIT SUB PID DRIVER DATA2 ASSEMBLE*********************************************/
 /**
   * @brief  packet init-driver_data2-control data assemble
-  * @param  count : ¸ğÅÍÀÇ ÇÑ¹ÙÄû Ä«¿îÆ®(±Ø¼ö x 3 x °¨¼Ó±â) 
-			rpm : ¼³Á¤ RPM
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  count : ëª¨í„°ì˜ í•œë°”í€´ ì¹´ìš´íŠ¸(ê·¹ìˆ˜ x 3 x ê°ì†ê¸°) 
+			rpm : ì„¤ì • RPM
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_driver_data2_ctl(uint16_t count, uint16_t rpm)
 {
@@ -107,9 +107,9 @@ uint8_t *net_pda_init_sub_pid_driver_data2_ctl(uint16_t count, uint16_t rpm)
 
 /**
   * @brief  packet init-driver_data2-response data assemble
-  * @param  count : ¸ğÅÍÀÇ ÇÑ¹ÙÄû Ä«¿îÆ®(±Ø¼ö x 3 x °¨¼Ó±â) 
-			rpm : ¼³Á¤ RPM
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  count : ëª¨í„°ì˜ í•œë°”í€´ ì¹´ìš´íŠ¸(ê·¹ìˆ˜ x 3 x ê°ì†ê¸°) 
+			rpm : ì„¤ì • RPM
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_driver_data2_rsp(uint16_t count, uint16_t rpm)
 {
@@ -124,7 +124,7 @@ uint8_t *net_pda_init_sub_pid_driver_data2_rsp(uint16_t count, uint16_t rpm)
 /**
   * @brief  packet init-driver_data2-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_driver_data2_rqt(void)
 {
@@ -135,7 +135,7 @@ uint8_t *net_pda_init_sub_pid_driver_data2_rqt(void)
 /**
   * @brief  packet init-status-control data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_status_ctl(void)
 {
@@ -144,9 +144,9 @@ uint8_t *net_pda_init_sub_pid_status_ctl(void)
 
 /**
   * @brief  packet init-status-response data assemble
-  * @param  step : ÃÊ±âÈ­ ´Ü°è
-			status : »óÅÂ°ª
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  step : ì´ˆê¸°í™” ë‹¨ê³„
+			status : ìƒíƒœê°’
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_status_rsp(uint8_t step, uint8_t status)
 {
@@ -159,9 +159,9 @@ uint8_t *net_pda_init_sub_pid_status_rsp(uint8_t step, uint8_t status)
 
 /**
   * @brief  packet init-status-request data assemble
-  * @param  step : ÃÊ±âÈ­ ´Ü°è
-			status : »óÅÂ°ª
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  step : ì´ˆê¸°í™” ë‹¨ê³„
+			status : ìƒíƒœê°’
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_status_rqt(uint8_t step)
 {
@@ -173,8 +173,8 @@ uint8_t *net_pda_init_sub_pid_status_rqt(uint8_t step)
 /******************************************INIT SUB PID ABSOLUTE BATTERY ASSEMBLE*********************************************/
 /**
   * @brief  packet init-absolute_battery-control data assemble
-  * @param  save_data : ¸ğÅÍ µå¶óÀÌ¹ö ÀúÀå Ä«¿îÆ®
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  save_data : ëª¨í„° ë“œë¼ì´ë²„ ì €ì¥ ì¹´ìš´íŠ¸
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_absolute_battery_ctl(uint32_t save_data)
 {
@@ -185,8 +185,8 @@ uint8_t *net_pda_init_sub_pid_absolute_battery_ctl(uint32_t save_data)
 
 /**
   * @brief  packet init-absolute_battery-response data assemble
-  * @param  save_data : ¸ğÅÍ µå¶óÀÌ¹ö ÀúÀå Ä«¿îÆ®
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  save_data : ëª¨í„° ë“œë¼ì´ë²„ ì €ì¥ ì¹´ìš´íŠ¸
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_absolute_battery_rsp(uint32_t save_data)
 {
@@ -199,7 +199,7 @@ uint8_t *net_pda_init_sub_pid_absolute_battery_rsp(uint32_t save_data)
 /**
   * @brief  packet init-absolute_battery-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_absolute_battery_rqt(void)
 {
@@ -210,7 +210,7 @@ uint8_t *net_pda_init_sub_pid_absolute_battery_rqt(void)
 /**
   * @brief  packet init-move_sensor-control data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_move_sensor_ctl(void)
 {
@@ -220,7 +220,7 @@ uint8_t *net_pda_init_sub_pid_move_sensor_ctl(void)
 /**
   * @brief  packet init-move_sensor-response data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_move_sensor_rsp(void)
 {
@@ -230,7 +230,7 @@ uint8_t *net_pda_init_sub_pid_move_sensor_rsp(void)
 /**
   * @brief  packet init-move_sensor-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_move_sensor_rqt(void)
 {
@@ -241,7 +241,7 @@ uint8_t *net_pda_init_sub_pid_move_sensor_rqt(void)
 /**
   * @brief  packet init-move_init_position-control data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_move_init_position_ctl(void)
 {
@@ -251,7 +251,7 @@ uint8_t *net_pda_init_sub_pid_move_init_position_ctl(void)
 /**
   * @brief  packet init-move_init_position-response data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_move_init_position_rsp(void)
 {
@@ -261,7 +261,7 @@ uint8_t *net_pda_init_sub_pid_move_init_position_rsp(void)
 /**
   * @brief  packet init-move_init_position-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_init_sub_pid_move_init_position_rqt(void)
 {

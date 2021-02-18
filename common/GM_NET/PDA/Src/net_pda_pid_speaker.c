@@ -2,8 +2,8 @@
 /*************************************************
 fail : net_pda_pid_speaker.c
 network packet data assemble prameter idemtification speaker
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packet pid-speaker¿µ¿ªÀÇ data ÀçÁ¶¸³
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packet pid-speakerì˜ì—­ì˜ data ì¬ì¡°ë¦½
 **************************************************/
 
 
@@ -11,7 +11,7 @@ packet pid-speaker¿µ¿ªÀÇ data ÀçÁ¶¸³
 /**
   * @brief  packet speaker-action-control data assemble
   * @param  action : value
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_speaker_sub_pid_action_ctl(uint8_t action)
 {
@@ -24,7 +24,7 @@ uint8_t *net_pda_speaker_sub_pid_action_ctl(uint8_t action)
 /**
   * @brief  packet speaker-action-response data assemble
   * @param  action : value
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_speaker_sub_pid_action_rsp(uint8_t action)
 {
@@ -37,7 +37,7 @@ uint8_t *net_pda_speaker_sub_pid_action_rsp(uint8_t action)
 /**
   * @brief  packet speaker-action-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_speaker_sub_pid_action_rqt(void)
 {

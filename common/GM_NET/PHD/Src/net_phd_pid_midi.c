@@ -3,8 +3,8 @@
 /*************************************************
 fail : net_phd_pid_midi.c
 network packet header disassemble parameter identification midi
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packetÀÇ header¿µ¿ªÀÇ PID(midi) ºĞÇØ
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packetì˜ headerì˜ì—­ì˜ PID(midi) ë¶„í•´
 **************************************************/
 
 void net_phd_midi_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData);
@@ -14,7 +14,7 @@ void net_phd_midi_sub_pid_id(prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************MIDI PID DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-midiÀÇ sub_pid)
+  * @brief  packet header disassemble(PID-midiì˜ sub_pid)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -40,7 +40,7 @@ void net_phd_midi_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 /******************************************MIDI PID DISASSEMBLE*********************************************/
 /******************************************MIDI SUB PID ADC DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-midiÀÇ sub_pid-adcÀÇ cmd)
+  * @brief  packet header disassemble(PID-midiì˜ sub_pid-adcì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -63,7 +63,7 @@ void net_phd_midi_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData)
 /******************************************MIDI SUB PID ADC DISASSEMBLE*********************************************/
 /******************************************MIDI SUB PID BUTTON DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-midiÀÇ sub_pid-buttonÀÇ cmd)
+  * @brief  packet header disassemble(PID-midiì˜ sub_pid-buttonì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -86,7 +86,7 @@ void net_phd_midi_sub_pid_button(prtc_header_t *pPh, uint8_t *pData)
 /******************************************MIDI SUB PID BUTTON DISASSEMBLE*********************************************/
 /******************************************MIDI SUB PID LED DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-midiÀÇ sub_pid-ledÀÇ cmd)
+  * @brief  packet header disassemble(PID-midiì˜ sub_pid-ledì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -109,7 +109,7 @@ void net_phd_midi_sub_pid_led(prtc_header_t *pPh, uint8_t *pData)
 /******************************************MIDI SUB PID LED DISASSEMBLE*********************************************/
 /******************************************MIDI SUB PID ID DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-midiÀÇ sub_pid-idÀÇ cmd)
+  * @brief  packet header disassemble(PID-midiì˜ sub_pid-idì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None

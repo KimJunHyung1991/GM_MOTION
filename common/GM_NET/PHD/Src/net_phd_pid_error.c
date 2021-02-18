@@ -3,8 +3,8 @@
 /*************************************************
 fail : net_phd_pid_error.c
 network packet header disassemble parameter identification error
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packetÀÇ header¿µ¿ªÀÇ PID(error) ºĞÇØ
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packetì˜ headerì˜ì—­ì˜ PID(error) ë¶„í•´
 **************************************************/
 
 void net_phd_error_sub_pid_rc(prtc_header_t *pPh, uint8_t *pData);
@@ -13,7 +13,7 @@ void net_phd_error_sub_pid_bldc(prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************ERROR PID DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-errorÀÇ sub_pid)
+  * @brief  packet header disassemble(PID-errorì˜ sub_pid)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -36,7 +36,7 @@ void net_phd_error_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 /******************************************ERROR PID DISASSEMBLE*********************************************/
 /******************************************ERROR SUB PID RC DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-errorÀÇ sub_pid-rcÀÇ cmd)
+  * @brief  packet header disassemble(PID-errorì˜ sub_pid-rcì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -59,7 +59,7 @@ void net_phd_error_sub_pid_rc(prtc_header_t *pPh, uint8_t *pData)
 /******************************************ERROR SUB PID RC DISASSEMBLE*********************************************/
 /******************************************ERROR SUB PID AC DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-errorÀÇ sub_pid-acÀÇ cmd)
+  * @brief  packet header disassemble(PID-errorì˜ sub_pid-acì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -82,7 +82,7 @@ void net_phd_error_sub_pid_ac(prtc_header_t *pPh, uint8_t *pData)
 /******************************************ERROR SUB PID AC DISASSEMBLE*********************************************/
 /******************************************ERROR SUB PID BLDC DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-errorÀÇ sub_pid-bldcÀÇ cmd)
+  * @brief  packet header disassemble(PID-errorì˜ sub_pid-bldcì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None

@@ -3,8 +3,8 @@
 /*************************************************
 fail : net_phd_pid_motion.c
 network packet header disassemble parameter identification motion
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packetÀÇ header¿µ¿ªÀÇ PID(motion) ºĞÇØ
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packetì˜ headerì˜ì—­ì˜ PID(motion) ë¶„í•´
 **************************************************/
 
 void net_phd_motion_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData);
@@ -12,7 +12,7 @@ void net_phd_motion_sub_pid_angle(prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************MOTION PID DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-motionÀÇ sub_pid)
+  * @brief  packet header disassemble(PID-motionì˜ sub_pid)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -32,7 +32,7 @@ void net_phd_motion_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 /******************************************MOTION PID DISASSEMBLE*********************************************/
 /******************************************MOTION SUB PID ADC DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-motionÀÇ sub_pid-adcÀÇ cmd)
+  * @brief  packet header disassemble(PID-motionì˜ sub_pid-adcì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -55,7 +55,7 @@ void net_phd_motion_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData)
 /******************************************MOTION SUB PID ADC DISASSEMBLE*********************************************/
 /******************************************MOTION SUB PID ANGLE DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-motionÀÇ sub_pid-angleÀÇ cmd)
+  * @brief  packet header disassemble(PID-motionì˜ sub_pid-angleì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None

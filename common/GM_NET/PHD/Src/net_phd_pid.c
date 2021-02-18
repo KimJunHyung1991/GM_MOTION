@@ -11,8 +11,8 @@
 /*************************************************
 fail : net_phd_pid.c
 network packet header disassemble parameter identification
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packetÀÇ header¿µ¿ªÀÇ PID ºĞÇØ
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packetì˜ headerì˜ì—­ì˜ PID ë¶„í•´
 **************************************************/
 
 

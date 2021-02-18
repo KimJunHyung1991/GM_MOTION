@@ -2,16 +2,16 @@
 /*************************************************
 fail : net_pda_pid_motion.c
 network packet data assemble prameter idemtification motion
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packet pid-motion¿µ¿ªÀÇ data ÀçÁ¶¸³
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packet pid-motionì˜ì—­ì˜ data ì¬ì¡°ë¦½
 **************************************************/
 
 
 /******************************************MOTION SUB PID ADC ASSEMBLE*********************************************/
 /**
   * @brief  packet motion-adc-control data assemble
-  * @param  adc_val : midi½½¶óÀÌ´õ 12bit(0~4095) value
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  adc_val : midiìŠ¬ë¼ì´ë” 12bit(0~4095) value
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_motion_sub_pid_adc_ctl(uint16_t adc_val)
 {
@@ -23,8 +23,8 @@ uint8_t *net_pda_motion_sub_pid_adc_ctl(uint16_t adc_val)
 
 /**
   * @brief  packet motion-adc-respose data assemble
-  * @param  adc_val : midi½½¶óÀÌ´õ 12bit(0~4095) value
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  adc_val : midiìŠ¬ë¼ì´ë” 12bit(0~4095) value
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_motion_sub_pid_adc_rsp(uint16_t adc_val)
 {
@@ -37,7 +37,7 @@ uint8_t *net_pda_motion_sub_pid_adc_rsp(uint16_t adc_val)
 /**
   * @brief  packet motion-adc-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_motion_sub_pid_adc_rqt(void)
 {
@@ -48,7 +48,7 @@ uint8_t *net_pda_motion_sub_pid_adc_rqt(void)
 /**
   * @brief  packet motion-angle-control data assemble
   * @param  angle_val :  value
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_motion_sub_pid_angle_ctl(uint32_t angle_val)
 {
@@ -61,7 +61,7 @@ uint8_t *net_pda_motion_sub_pid_angle_ctl(uint32_t angle_val)
 /**
   * @brief  packet motion-angle-response data assemble
   * @param  angle_val :  value
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_motion_sub_pid_angle_rsp(uint32_t angle_val)
 {
@@ -74,7 +74,7 @@ uint8_t *net_pda_motion_sub_pid_angle_rsp(uint32_t angle_val)
 /**
   * @brief  packet motion-angle-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_motion_sub_pid_angle_rqt(void)
 {

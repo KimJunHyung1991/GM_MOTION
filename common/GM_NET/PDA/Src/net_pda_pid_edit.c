@@ -2,15 +2,15 @@
 /*************************************************
 fail : net_pda_pid_edit.c
 network packet data assemble prameter idemtification edit
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packet pid-edit¿µ¿ªÀÇ data ÀçÁ¶¸³
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packet pid-editì˜ì—­ì˜ data ì¬ì¡°ë¦½
 **************************************************/
 
 /******************************************EDIT SUB PID ACTION ASSEMBLE*********************************************/
 /**
   * @brief  packet eidt-action-control data assemble
   * @param  action : value(0~255)
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_edit_sub_pid_action_ctl(uint8_t action)
 {
@@ -23,7 +23,7 @@ uint8_t *net_pda_edit_sub_pid_action_ctl(uint8_t action)
 /**
   * @brief  packet eidt-action-response data assemble
   * @param  action : value(0~255)
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_edit_sub_pid_rsp(uint8_t action)
 {
@@ -36,7 +36,7 @@ uint8_t *net_pda_edit_sub_pid_rsp(uint8_t action)
 /**
   * @brief  packet eidt-action-response data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_edit_sub_pid_rqt(void)
 {

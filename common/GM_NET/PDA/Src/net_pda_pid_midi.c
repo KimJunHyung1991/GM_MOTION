@@ -2,16 +2,16 @@
 /*************************************************
 fail : net_pda_pid_midi.c
 network packet data assemble prameter idemtification midi
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packet pid-midi¿µ¿ªÀÇ data ÀçÁ¶¸³
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packet pid-midiì˜ì—­ì˜ data ì¬ì¡°ë¦½
 **************************************************/
 
 
 /******************************************MIDI SUB PID ADC ASSEMBLE*********************************************/
 /**
   * @brief  packet midi-adc-control data assemble
-  * @param  adc_val : midi½½¶óÀÌ´õ 12bit(0~4095) value
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  adc_val : midiìŠ¬ë¼ì´ë” 12bit(0~4095) value
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_adc_ctl(uint16_t adc_val)
 {
@@ -23,8 +23,8 @@ uint8_t *net_pda_midi_sub_pid_adc_ctl(uint16_t adc_val)
 
 /**
   * @brief  packet midi-adc-response data assemble
-  * @param  adc_val : midi½½¶óÀÌ´õ 12bit(0~4095) value
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  adc_val : midiìŠ¬ë¼ì´ë” 12bit(0~4095) value
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_adc_rsp(uint16_t adc_val)
 {
@@ -36,8 +36,8 @@ uint8_t *net_pda_midi_sub_pid_adc_rsp(uint16_t adc_val)
 
 /**
   * @brief  packet midi-adc-request data assemble
-  * @param  adc_val : midi½½¶óÀÌ´õ 12bit(0~4095) value
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  adc_val : midiìŠ¬ë¼ì´ë” 12bit(0~4095) value
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_adc_rqt(void)
 {
@@ -47,10 +47,10 @@ uint8_t *net_pda_midi_sub_pid_adc_rqt(void)
 /******************************************MIDI SUB PID BUTTON ASSEMBLE*********************************************/
 /**
   * @brief  packet midi-button-control data assemble
-  * @param  type : midi button Á¾·ù
-			status : ¹öÆ°ÀÇ »óÅÂ°ª
-			id : ¹öÆ°ÀÇ id
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  type : midi button ì¢…ë¥˜
+			status : ë²„íŠ¼ì˜ ìƒíƒœê°’
+			id : ë²„íŠ¼ì˜ id
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_button_ctl(uint8_t type, uint8_t status, uint8_t id)
 {
@@ -64,10 +64,10 @@ uint8_t *net_pda_midi_sub_pid_button_ctl(uint8_t type, uint8_t status, uint8_t i
 
 /**
   * @brief  packet midi-button-response data assemble
-  * @param  type : midi button Á¾·ù
-			status : ¹öÆ°ÀÇ »óÅÂ°ª
-			id : ¹öÆ°ÀÇ id
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  type : midi button ì¢…ë¥˜
+			status : ë²„íŠ¼ì˜ ìƒíƒœê°’
+			id : ë²„íŠ¼ì˜ id
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_button_rsp(uint8_t type, uint8_t status, uint8_t id)
 {
@@ -82,7 +82,7 @@ uint8_t *net_pda_midi_sub_pid_button_rsp(uint8_t type, uint8_t status, uint8_t i
 /**
   * @brief  packet midi-button-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_button_rqt(void)
 {
@@ -92,9 +92,9 @@ uint8_t *net_pda_midi_sub_pid_button_rqt(void)
 /******************************************MIDI SUB PID LED ASSEMBLE*********************************************/
 /**
   * @brief  packet midi-led-control data assemble
-  * @param  type : midi led Á¾·ù
-			val : idÀÌ¸ç »óÅÂ°ª
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  type : midi led ì¢…ë¥˜
+			val : idì´ë©° ìƒíƒœê°’
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_led_ctl(uint8_t type, uint32_t val)
 {
@@ -107,9 +107,9 @@ uint8_t *net_pda_midi_sub_pid_led_ctl(uint8_t type, uint32_t val)
 
 /**
   * @brief  packet midi-led-response data assemble
-  * @param  type : midi led Á¾·ù
-			val : idÀÌ¸ç »óÅÂ°ª
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  type : midi led ì¢…ë¥˜
+			val : idì´ë©° ìƒíƒœê°’
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_led_rsp(uint8_t type, uint32_t val)
 {
@@ -122,8 +122,8 @@ uint8_t *net_pda_midi_sub_pid_led_rsp(uint8_t type, uint32_t val)
 
 /**
   * @brief  packet midi-led-request data assemble
-  * @param  type : midi led Á¾·ù
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  type : midi led ì¢…ë¥˜
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_led_rqt(uint8_t type)
 {
@@ -135,15 +135,15 @@ uint8_t *net_pda_midi_sub_pid_led_rqt(uint8_t type)
 /******************************************MIDI SUB PID ID ASSEMBLE*********************************************/
 /**
   * @brief  packet midi-id-control data assemble
-  * @param  id1 : midi 1¹øÃà ID
-			id2 : midi 2¹øÃà ID
-			id3 : midi 3¹øÃà ID
-			id4 : midi 4¹øÃà ID
-			id5 : midi 5¹øÃà ID
-			id6 : midi 6¹øÃà ID
-			id7 : midi 7¹øÃà ID
-			id8 : midi 8¹øÃà ID
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  id1 : midi 1ë²ˆì¶• ID
+			id2 : midi 2ë²ˆì¶• ID
+			id3 : midi 3ë²ˆì¶• ID
+			id4 : midi 4ë²ˆì¶• ID
+			id5 : midi 5ë²ˆì¶• ID
+			id6 : midi 6ë²ˆì¶• ID
+			id7 : midi 7ë²ˆì¶• ID
+			id8 : midi 8ë²ˆì¶• ID
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_id_ctl(uint8_t id1, uint8_t id2, uint8_t id3, uint8_t id4, uint8_t id5, uint8_t id6, uint8_t id7, uint8_t id8)
 {
@@ -162,15 +162,15 @@ uint8_t *net_pda_midi_sub_pid_id_ctl(uint8_t id1, uint8_t id2, uint8_t id3, uint
 
 /**
   * @brief  packet midi-id-response data assemble
-  * @param  id1 : midi 1¹øÃà ID
-			id2 : midi 2¹øÃà ID
-			id3 : midi 3¹øÃà ID
-			id4 : midi 4¹øÃà ID
-			id5 : midi 5¹øÃà ID
-			id6 : midi 6¹øÃà ID
-			id7 : midi 7¹øÃà ID
-			id8 : midi 8¹øÃà ID
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @param  id1 : midi 1ë²ˆì¶• ID
+			id2 : midi 2ë²ˆì¶• ID
+			id3 : midi 3ë²ˆì¶• ID
+			id4 : midi 4ë²ˆì¶• ID
+			id5 : midi 5ë²ˆì¶• ID
+			id6 : midi 6ë²ˆì¶• ID
+			id7 : midi 7ë²ˆì¶• ID
+			id8 : midi 8ë²ˆì¶• ID
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_id_rsp(uint8_t id1, uint8_t id2, uint8_t id3, uint8_t id4, uint8_t id5, uint8_t id6, uint8_t id7, uint8_t id8)
 {
@@ -190,7 +190,7 @@ uint8_t *net_pda_midi_sub_pid_id_rsp(uint8_t id1, uint8_t id2, uint8_t id3, uint
 /**
   * @brief  packet midi-id-request data assemble
   * @param  none
-  * @retval make_data_buff  : µ¥ÀÌÅÍ ¹öÆÛ Æ÷ÀÎÅÍ
+  * @retval make_data_buff  : ë°ì´í„° ë²„í¼ í¬ì¸í„°
   */
 uint8_t *net_pda_midi_sub_pid_id_rqt(void)
 {

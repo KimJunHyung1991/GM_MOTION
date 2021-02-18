@@ -2,22 +2,22 @@
 /*************************************************
 fail : net_pha.c
 network packet header assemble
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packetÀÇ header ÀçÁ¶¸³
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packetì˜ header ì¬ì¡°ë¦½
 **************************************************/
 
 
 /**
   * @brief  packet header assemble
-  * @param  cmd : Ä¿¸Çµå (0 : Á¦¾î/¼¼ÆÃ, 1 : ÀÀ´ä, 2 : ¿äÃ»)
-			dlc : µ¥ÀÌÅÍ ¿µ¿ªÀÇ ±æÀÌ
-			priority : ÆĞÅ¶ÀÇ Áß¿äµµ(0 :±ä±Ş , 1 : º¸Åë)
-			souce_id : ¼Û½ÅÀÚ CAN ID
-			targer_id : ¼ö½ÅÀÚ CAN ID
+  * @param  cmd : ì»¤ë§¨ë“œ (0 : ì œì–´/ì„¸íŒ…, 1 : ì‘ë‹µ, 2 : ìš”ì²­)
+			dlc : ë°ì´í„° ì˜ì—­ì˜ ê¸¸ì´
+			priority : íŒ¨í‚·ì˜ ì¤‘ìš”ë„(0 :ê¸´ê¸‰ , 1 : ë³´í†µ)
+			souce_id : ì†¡ì‹ ì CAN ID
+			targer_id : ìˆ˜ì‹ ì CAN ID
 			pid : prameter idemtification
 			sub_pid : sub prameter idemtification
-			sub_id : CAN IDÀÇ SUB ID
-  * @retval prtc_header_t * : ÇØ´õ ±¸Á¶Ã¼ Æ÷ÀÎÅÍ
+			sub_id : CAN IDì˜ SUB ID
+  * @retval prtc_header_t * : í•´ë” êµ¬ì¡°ì²´ í¬ì¸í„°
   */
 prtc_header_t *net_pha(uint8_t cmd, uint8_t dlc, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t pid, uint8_t sub_pid, uint8_t sub_id)
 {

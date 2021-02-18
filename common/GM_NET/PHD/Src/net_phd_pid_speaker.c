@@ -3,14 +3,14 @@
 /*************************************************
 fail : net_phd_pid_speaker.c
 network packet header disassemble parameter identification speaker
-4°èÃşÁß networkÃş¿¡ ÇØ´ç
-packetÀÇ header¿µ¿ªÀÇ PID(speaker) ºĞÇØ
+4ê³„ì¸µì¤‘ networkì¸µì— í•´ë‹¹
+packetì˜ headerì˜ì—­ì˜ PID(speaker) ë¶„í•´
 **************************************************/
 
 void net_phd_speaker_sub_pid_action(prtc_header_t *pPh, uint8_t *pData);
 /******************************************SPEAKER PID DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-speakerÀÇ sub_pid)
+  * @brief  packet header disassemble(PID-speakerì˜ sub_pid)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -27,7 +27,7 @@ void net_phd_speaker_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 /******************************************SPEAKER PID DISASSEMBLE*********************************************/
 /******************************************SPEAKER SUB PID ACTION DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-speakerÀÇ sub_pid-actionÀÇ cmd)
+  * @brief  packet header disassemble(PID-speakerì˜ sub_pid-actionì˜ cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
