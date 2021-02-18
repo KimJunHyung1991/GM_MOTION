@@ -25,12 +25,12 @@ typedef struct{
 /***********************************************************INIT_SUB_PID_DRIVER_DATA1**********************************************************/
 /***********************************************************INIT_SUB_PID_DRIVER_DATA2**********************************************************/
 typedef struct{
-	uint16_t 	count;
+	uint32_t 	count;
 	uint16_t 	rpm;
 }prtc_data_ctl_init_driver_data2_t;
 
 typedef struct{
-	uint16_t 	count;
+	uint32_t 	count;
 	uint16_t 	rpm;
 }prtc_data_rsp_init_driver_data2_t;
 /***********************************************************INIT_SUB_PID_DRIVER_DATA2**********************************************************/
