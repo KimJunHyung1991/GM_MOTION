@@ -23,6 +23,46 @@ static void error_handler(void)
 	}
 }
 /******************************************ERROR HANDLER*********************************************/
+
+/******************************************LED Driver*********************************************/
+//210218 shs
+//init
+void gm_motion_RX_LED_init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState ledOnState)
+{
+	rx_led.f_init = SET;
+	rx_led.GPIO = GPIOx;
+	rx_led.Pin = GPIO_Pin;
+	rx_led.ledOnState = ledOnState;
+}
+//led on
+static void gm_motion_RX_LED_ON(void)
+{
+	if(rx_led.f_init)
+	{
+		if(rx_led.ledOnState == GPIO_PIN_RESET)	//gpio low -> led on
+			rx_led.GPIO->ODR &= ~rx_led.Pin;
+		else
+			rx_led.GPIO->ODR |= rx_led.Pin;		//gpio high ->led on
+
+		rx_led.t_led_off = HAL_GetTick();
+	}
+}
+//led off
+static void gm_motion_RX_LED_OFF(void)
+{
+	if(rx_led.f_init)
+	{
+		if(rx_led.t_led_off != HAL_GetTick())
+		{
+			if (rx_led.ledOnState == GPIO_PIN_RESET)	//gpio high -> led off
+				rx_led.GPIO->ODR |= rx_led.Pin;
+			else
+				rx_led.GPIO->ODR &= ~rx_led.Pin;		//gpio low ->led off
+		}
+	}
+}
+//210218 shs
+/******************************************LED Driver*********************************************/
 /******************************************PROCESS RX RING BUF HEAD CHECK*********************************************/
 /**
   * @brief  can_rx_ring_buff의 head 처리 함수
@@ -79,10 +119,12 @@ void proc_can_rx(void)
 	if(can_rx_ring_buff.head != can_rx_ring_buff.tail){
 		prtc_header_t *pPh = (prtc_header_t *)&can_rx_ring_buff.can_header[can_rx_ring_buff.tail];
 		if(pPh->target_id == my_can_id || pPh->target_id == CAN_BROADCAST){
+			gm_motion_RX_LED_ON();//210218 shs
 			net_phd_pid(&can_rx_ring_buff.can_header[can_rx_ring_buff.tail], (uint8_t *)&can_rx_ring_buff.data[can_rx_ring_buff.tail]);
 		}
 		proc_rx_ring_buff_tail_chk();
 	}
+	gm_motion_RX_LED_OFF();//210218 shs
 }
 /******************************************PROCESS CAN RX*********************************************/
 

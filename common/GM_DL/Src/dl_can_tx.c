@@ -29,6 +29,47 @@ static void error_handler(void)
 	}
 }
 /******************************************ERROR HANDLER*********************************************/
+
+/******************************************LED Driver*********************************************/
+//210218 shs
+//init
+void gm_motion_TX_LED_init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState ledOnState)
+{
+	tx_led.f_init = SET;
+	tx_led.GPIO = GPIOx;
+	tx_led.Pin = GPIO_Pin;
+	tx_led.ledOnState = ledOnState;
+}
+//led on
+static void gm_motion_TX_LED_ON(void)
+{
+	if(tx_led.f_init)
+	{
+		if(tx_led.ledOnState == GPIO_PIN_RESET)	//gpio low -> led on
+			tx_led.GPIO->ODR &= ~tx_led.Pin;
+		else
+			tx_led.GPIO->ODR |= tx_led.Pin;		//gpio high ->led on
+
+		tx_led.t_led_off = HAL_GetTick();
+	}
+}
+//led off
+static void gm_motion_TX_LED_OFF(void)
+{
+	if(tx_led.f_init)
+	{
+		if(tx_led.t_led_off != HAL_GetTick())
+		{
+			if (tx_led.ledOnState == GPIO_PIN_RESET)	//gpio high -> led off
+				tx_led.GPIO->ODR |= tx_led.Pin;
+			else
+				tx_led.GPIO->ODR &= ~tx_led.Pin;		//gpio low ->led off
+		}
+	}
+}
+//210218 shs
+/******************************************LED Driver*********************************************/
+
 /******************************************PROCESS TX RING BUF HEAD CHECK*********************************************/
 /**
   * @brief  can_tx_ring_buff의 head 처리 함수
@@ -88,7 +129,9 @@ void proc_can_tx(CAN_HandleTypeDef *canhd)
 				error_handler();
 			}
 			proc_tx_ring_buff_tail_chk();
+			gm_motion_TX_LED_ON();//210218 shs
 		}
 	}
+	gm_motion_TX_LED_OFF();//210218 shs
 }
 /******************************************HAL CAN TX *********************************************/
