@@ -16,6 +16,8 @@ uint8_t make_data_buff[8];
 
 uint32_t TxMailbox;
 
+can_comm_led tx_led = {0,};	//210218 shs
+
 /******************************************ERROR HANDLER*********************************************/
 /**
   * @brief  error 처리 함수

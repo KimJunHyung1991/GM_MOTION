@@ -10,6 +10,8 @@ can_q_buff_t can_rx_ring_buff;
 CAN_RxHeaderTypeDef RxHeader;
 uint8_t	RxData[8];
 
+can_comm_led rx_led = {0,};	//210218 shs
+
 /******************************************ERROR HANDLER*********************************************/
 /**
   * @brief  error 처리 함수
