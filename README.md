@@ -48,17 +48,33 @@ GM_MOTION_PROTOCOL
 ```cpp
 #include "main.h"
 
+
+CAN_HandleTypeDef     can1;
+CAN_HandleTypeDef     can2;
+
 int main(void)
 {
 	/*CAN RX, TX  LED 매핑*/
 	gm_motion_RX_LED_init(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
 	gm_motion_TX_LED_init(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
+	
+	/*CAN HANDLE 매핑*/
+	
+	// CAN 1개일 경우
+	can_init_data_save(&can1);
+	
+	/*
+	// CAN 2개일 경우
+	can_init_data_save(&can1);
+	can_init_data_save(&can2);
+	*/
+
 
 	/*HAL 설정 영역*/
 	while(1)
 	{
 		proc_can_rx();
-		proc_can_tx(&CanHandle);
+		proc_can_tx();
 	}
 }
 ```
