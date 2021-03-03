@@ -16,6 +16,32 @@ GM_MOTION_PROTOCOL
 ##### CAN -
 ##### RAM - `main.h` 의 `CAN_Q_BUFF_SIZE` 에 설정한다.
 ##### RAM사용량 = ((헤더 4 Byte + 데이터 8 Byte) x CAN_Q_BUFF_SIZE) x 2(rx,tx)
+```
+`main.h`
+```cpp
+#ifndef __MAIN_H
+#define __MAIN_H
+
+/*************자신에 RAM버퍼에 따라 수정******************/
+#define CAN_Q_BUFF_SIZE 	512   //  ((헤더 4 Byte + 데이터 8 Byte) x 512(CAN_Q_BUFF_SIZE)) x 2(rx,tx) = 12,288 Byte
+// CAN 1개일 경우
+#define CAN_1	0 // 네이밍 알아서 define
+#define CAN_CNT 1
+/*
+// CAN 2개일 경우
+#define CAN_1	0 // 네이밍 알아서 define
+#define CAN_2	1
+#define CAN_CNT 2
+*/
+
+/*************자신에 RAM버퍼에 따라 수정******************/
+	  
+#include "dl_can.h"
+#include "net_phd_pid.h"
+
+#endif /* __MAIN_H */
+```
+
 
 `main.c`
 ```cpp
@@ -34,21 +60,7 @@ int main(void)
 		proc_can_tx(&CanHandle);
 	}
 }
-```
-`main.h`
-```cpp
-#ifndef __MAIN_H
-#define __MAIN_H
 
-/*************자신에 RAM버퍼에 따라 수정******************/
-#define CAN_Q_BUFF_SIZE 	512   //  ((헤더 4 Byte + 데이터 8 Byte) x 512(CAN_Q_BUFF_SIZE)) x 2(rx,tx) = 12,288 Byte
-/*************자신에 RAM버퍼에 따라 수정******************/
-	  
-#include "dl_can.h"
-#include "net_phd_pid.h"
-
-#endif /* __MAIN_H */
-```
 
 
 통신 LED mapping
