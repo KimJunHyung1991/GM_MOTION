@@ -17,37 +17,66 @@ GM_MOTION_PROTOCOL
 ##### RAM - `main.h` 의 `CAN_Q_BUFF_SIZE` 에 설정한다.
 ##### RAM사용량 = ((헤더 4 Byte + 데이터 8 Byte) x CAN_Q_BUFF_SIZE) x 2(rx,tx)
 
-`main.c`
-```cpp
-#include "main.h"
-
-int main(void)
-{
-	/*CAN RX, TX  LED 매핑*/
-	gm_motion_RX_LED_init(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
-	gm_motion_TX_LED_init(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
-
-	/*HAL 설정 영역*/
-	while(1)
-	{
-		proc_can_rx();
-		proc_can_tx(&CanHandle);
-	}
-}
-```
 `main.h`
+
 ```cpp
 #ifndef __MAIN_H
 #define __MAIN_H
 
 /*************자신에 RAM버퍼에 따라 수정******************/
 #define CAN_Q_BUFF_SIZE 	512   //  ((헤더 4 Byte + 데이터 8 Byte) x 512(CAN_Q_BUFF_SIZE)) x 2(rx,tx) = 12,288 Byte
+// CAN 1개일 경우
+#define CAN_1	0 // 네이밍 알아서 define
+#define CAN_CNT 1
+/*
+// CAN 2개일 경우
+#define CAN_1	0 // 네이밍 알아서 define
+#define CAN_2	1
+#define CAN_CNT 2
+*/
+
 /*************자신에 RAM버퍼에 따라 수정******************/
 	  
 #include "dl_can.h"
 #include "net_phd_pid.h"
 
 #endif /* __MAIN_H */
+```
+
+
+`main.c`
+```cpp
+#include "main.h"
+
+
+CAN_HandleTypeDef     can1;
+CAN_HandleTypeDef     can2;
+
+int main(void)
+{
+	/*CAN RX, TX  LED 매핑*/
+	gm_motion_RX_LED_init(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
+	gm_motion_TX_LED_init(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
+	
+	/*CAN HANDLE 매핑*/
+	
+	// CAN 1개일 경우
+	can_init_data_save(&can1);
+	
+	/*
+	// CAN 2개일 경우
+	can_init_data_save(&can1);
+	can_init_data_save(&can2);
+	*/
+
+
+	/*HAL 설정 영역*/
+	while(1)
+	{
+		proc_can_rx();
+		proc_can_tx();
+	}
+}
 ```
 
 
@@ -87,7 +116,7 @@ gm_motion_RX_LED_init(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
 - app_pid_edit_cmd.c   [__weak 설명](https://en.wikipedia.org/wiki/Weak_symbol)
 
 ```cpp
-__weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  //전처리 __weak
+__weak void app_rx_edit_sub_pid_action_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)  //전처리 __weak
 {
 	//여기에 코드를 절대!! 작성하지 않는다.
 }
@@ -95,8 +124,9 @@ __weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  
 
 - 예시.c
 ```cpp
-void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)//재정의
+void app_rx_edit_sub_pid_action_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)//재정의
 {
+	//num을 통해 CAN통신의 종류 
 	//action 명령 수신시 동작코드 .
 }  
 ```
