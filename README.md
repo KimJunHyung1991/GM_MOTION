@@ -17,12 +17,8 @@ GM_MOTION_PROTOCOL
 ##### RAM - `main.h` 의 `CAN_Q_BUFF_SIZE` 에 설정한다.
 ##### RAM사용량 = ((헤더 4 Byte + 데이터 8 Byte) x CAN_Q_BUFF_SIZE) x 2(rx,tx)
 
-
-```
-
-
-
 `main.h`
+
 ```cpp
 #ifndef __MAIN_H
 #define __MAIN_H
@@ -65,7 +61,7 @@ int main(void)
 		proc_can_tx(&CanHandle);
 	}
 }
-
+```
 
 
 통신 LED mapping
