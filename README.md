@@ -116,7 +116,7 @@ gm_motion_RX_LED_init(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
 - app_pid_edit_cmd.c   [__weak 설명](https://en.wikipedia.org/wiki/Weak_symbol)
 
 ```cpp
-__weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  //전처리 __weak
+__weak void app_rx_edit_sub_pid_action_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)  //전처리 __weak
 {
 	//여기에 코드를 절대!! 작성하지 않는다.
 }
@@ -124,8 +124,9 @@ __weak void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)  
 
 - 예시.c
 ```cpp
-void app_rx_edit_sub_pid_action_ctl(prtc_header_t *pPh, uint8_t *pData)//재정의
+void app_rx_edit_sub_pid_action_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)//재정의
 {
+	//num을 통해 CAN통신의 종류 
 	//action 명령 수신시 동작코드 .
 }  
 ```
