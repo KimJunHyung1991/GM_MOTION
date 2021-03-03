@@ -7,7 +7,7 @@ network packet header disassemble parameter identification speaker
 packet의 header영역의 PID(speaker) 분해
 **************************************************/
 
-void net_phd_speaker_sub_pid_action(prtc_header_t *pPh, uint8_t *pData);
+void net_phd_speaker_sub_pid_action(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 /******************************************SPEAKER PID DISASSEMBLE*********************************************/
 /**
   * @brief  packet header disassemble(PID-speaker의 sub_pid)
@@ -15,12 +15,12 @@ void net_phd_speaker_sub_pid_action(prtc_header_t *pPh, uint8_t *pData);
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_speaker_sub_pid(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_speaker_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->sub_pid)
 	{
 		case SPEAKER_SUB_PID_ACTION:
-			net_phd_speaker_sub_pid_action(pPh, pData);
+			net_phd_speaker_sub_pid_action(num, pPh, pData);
 		break;
 	}
 }
@@ -32,18 +32,18 @@ void net_phd_speaker_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_speaker_sub_pid_action(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_speaker_sub_pid_action(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_speaker_sub_pid_action_ctl(pPh, pData);
+			app_rx_speaker_sub_pid_action_ctl(num, pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_speaker_sub_pid_action_rsp(pPh, pData);
+			app_rx_speaker_sub_pid_action_rsp(num, pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_speaker_sub_pid_action_rqt(pPh, pData);
+			app_rx_speaker_sub_pid_action_rqt(num, pPh, pData);
 		break;
 	}
 }

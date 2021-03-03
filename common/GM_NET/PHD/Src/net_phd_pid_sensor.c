@@ -7,7 +7,7 @@ network packet header disassemble parameter identification sensor
 packet의 header영역의 PID(sensor) 분해
 **************************************************/
 
-void net_phd_sensor_sub_pid_detect(prtc_header_t *pPh, uint8_t *pData);
+void net_phd_sensor_sub_pid_detect(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************SENSOR PID DISASSEMBLE*********************************************/
 /**
@@ -16,12 +16,12 @@ void net_phd_sensor_sub_pid_detect(prtc_header_t *pPh, uint8_t *pData);
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_sensor_sub_pid(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_sensor_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->sub_pid)
 	{
 		case SENSOR_SUB_PID_DETECT:
-			net_phd_sensor_sub_pid_detect(pPh, pData);
+			net_phd_sensor_sub_pid_detect(num, pPh, pData);
 		break;
 	}
 }
@@ -33,18 +33,18 @@ void net_phd_sensor_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_sensor_sub_pid_detect(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_sensor_sub_pid_detect(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_sensor_sub_pid_detect_ctl(pPh, pData);
+			app_rx_sensor_sub_pid_detect_ctl(num, pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_sensor_sub_pid_detect_rsp(pPh, pData);
+			app_rx_sensor_sub_pid_detect_rsp(num, pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_sensor_sub_pid_detect_rqt(pPh, pData);
+			app_rx_sensor_sub_pid_detect_rqt(num, pPh, pData);
 		break;
 	}
 }

@@ -7,13 +7,13 @@ network packet header disassemble parameter identification init
 packet의 header영역의 PID(init) 분해
 **************************************************/
 
-void net_phd_init_sub_pid_boot(prtc_header_t *pPh, uint8_t *pData);
-void net_phd_init_sub_pid_driver_data1(prtc_header_t *pPh, uint8_t *pData);
-void net_phd_init_sub_pid_driver_data2(prtc_header_t *pPh, uint8_t *pData);
-void net_phd_init_sub_pid_status(prtc_header_t *pPh, uint8_t *pData);
-void net_phd_init_sub_pid_absolute_battery(prtc_header_t *pPh, uint8_t *pData);
-void net_phd_init_sub_pid_move_sensor(prtc_header_t *pPh, uint8_t *pData);
-void net_phd_init_sub_pid_move_init_position(prtc_header_t *pPh, uint8_t *pData);
+void net_phd_init_sub_pid_boot(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_init_sub_pid_driver_data1(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_init_sub_pid_driver_data2(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_init_sub_pid_status(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_init_sub_pid_absolute_battery(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_init_sub_pid_move_sensor(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_init_sub_pid_move_init_position(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************INIT PID DISASSEMBLE*********************************************/
 /**
@@ -22,30 +22,30 @@ void net_phd_init_sub_pid_move_init_position(prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_init_sub_pid(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_init_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->sub_pid)
 	{
 		case INIT_SUB_PID_BOOT:
-			net_phd_init_sub_pid_boot(pPh, pData);
+			net_phd_init_sub_pid_boot(num, pPh, pData);
 		break;
 		case INIT_SUB_PID_DRIVER_DATA1:
-			net_phd_init_sub_pid_driver_data1(pPh, pData);
+			net_phd_init_sub_pid_driver_data1(num, pPh, pData);
 		break;
 		case INIT_SUB_PID_DRIVER_DATA2:
-			net_phd_init_sub_pid_driver_data2(pPh, pData);
+			net_phd_init_sub_pid_driver_data2(num, pPh, pData);
 		break;
 		case INIT_SUB_PID_STATUS:
-			net_phd_init_sub_pid_status(pPh, pData);
+			net_phd_init_sub_pid_status(num, pPh, pData);
 		break;
 		case INIT_SUB_PID_ABSOLUTE_BATTERY:
-			net_phd_init_sub_pid_absolute_battery(pPh, pData);
+			net_phd_init_sub_pid_absolute_battery(num, pPh, pData);
 		break;
 		case INIT_SUB_PID_MOVE_SENSOR:
-			net_phd_init_sub_pid_move_sensor(pPh, pData);
+			net_phd_init_sub_pid_move_sensor(num, pPh, pData);
 		break;
 		case INIT_SUB_PID_MOVE_INIT_POSITION:
-			net_phd_init_sub_pid_move_init_position(pPh, pData);
+			net_phd_init_sub_pid_move_init_position(num, pPh, pData);
 		break;
 	}
 }
@@ -57,18 +57,18 @@ void net_phd_init_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_init_sub_pid_boot(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_init_sub_pid_boot(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_boot_ctl(pPh, pData);
+			app_rx_init_sub_pid_boot_ctl(num, pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_boot_rsp(pPh, pData);
+			app_rx_init_sub_pid_boot_rsp(num, pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_init_sub_pid_boot_rqt(pPh, pData);
+			app_rx_init_sub_pid_boot_rqt(num, pPh, pData);
 		break;
 	}
 }
@@ -80,18 +80,18 @@ void net_phd_init_sub_pid_boot(prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_init_sub_pid_driver_data1(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_init_sub_pid_driver_data1(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_driver_data1_ctl(pPh, pData);
+			app_rx_init_sub_pid_driver_data1_ctl(num, pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_driver_data1_rsp(pPh, pData);
+			app_rx_init_sub_pid_driver_data1_rsp(num, pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_init_sub_pid_driver_data1_rqt(pPh, pData);
+			app_rx_init_sub_pid_driver_data1_rqt(num, pPh, pData);
 		break;
 	}
 }
@@ -103,18 +103,18 @@ void net_phd_init_sub_pid_driver_data1(prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_init_sub_pid_driver_data2(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_init_sub_pid_driver_data2(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_driver_data2_ctl(pPh, pData);
+			app_rx_init_sub_pid_driver_data2_ctl(num, pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_driver_data2_rsp(pPh, pData);
+			app_rx_init_sub_pid_driver_data2_rsp(num, pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_init_sub_pid_driver_data2_rqt(pPh, pData);
+			app_rx_init_sub_pid_driver_data2_rqt(num, pPh, pData);
 		break;
 	}
 }
@@ -126,18 +126,18 @@ void net_phd_init_sub_pid_driver_data2(prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_init_sub_pid_status(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_init_sub_pid_status(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_status_ctl(pPh, pData);
+			app_rx_init_sub_pid_status_ctl(num, pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_status_rsp(pPh, pData);
+			app_rx_init_sub_pid_status_rsp(num, pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_init_sub_pid_status_rqt(pPh, pData);
+			app_rx_init_sub_pid_status_rqt(num, pPh, pData);
 		break;
 	}
 }
@@ -149,18 +149,18 @@ void net_phd_init_sub_pid_status(prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_init_sub_pid_absolute_battery(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_init_sub_pid_absolute_battery(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_absolute_battery_ctl(pPh, pData);
+			app_rx_init_sub_pid_absolute_battery_ctl(num, pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_absolute_battery_rsp(pPh, pData);
+			app_rx_init_sub_pid_absolute_battery_rsp(num, pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_init_sub_pid_absolute_battery_rqt(pPh, pData);
+			app_rx_init_sub_pid_absolute_battery_rqt(num, pPh, pData);
 		break;
 	}
 }
@@ -172,18 +172,18 @@ void net_phd_init_sub_pid_absolute_battery(prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_init_sub_pid_move_sensor(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_init_sub_pid_move_sensor(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_move_sensor_ctl(pPh, pData);
+			app_rx_init_sub_pid_move_sensor_ctl(num, pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_move_sensor_rsp(pPh, pData);
+			app_rx_init_sub_pid_move_sensor_rsp(num, pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_init_sub_pid_move_sensor_rqt(pPh, pData);
+			app_rx_init_sub_pid_move_sensor_rqt(num, pPh, pData);
 		break;
 	}
 }
@@ -195,18 +195,18 @@ void net_phd_init_sub_pid_move_sensor(prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_init_sub_pid_move_init_position(prtc_header_t *pPh, uint8_t *pData)
+void net_phd_init_sub_pid_move_init_position(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_move_init_position_ctl(pPh, pData);
+			app_rx_init_sub_pid_move_init_position_ctl(num, pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_move_init_position_rsp(pPh, pData);
+			app_rx_init_sub_pid_move_init_position_rsp(num, pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_init_sub_pid_move_init_position_rqt(pPh, pData);
+			app_rx_init_sub_pid_move_init_position_rqt(num, pPh, pData);
 		break;
 	}
 }

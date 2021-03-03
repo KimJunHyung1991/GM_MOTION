@@ -7,14 +7,9 @@ data link can tx
 
 **************************************************/
 
-can_q_buff_t can_tx_ring_buff;
-CAN_TxHeaderTypeDef   TxHeader;
-uint8_t TxData[8];
-
+can_q_buff_t can_tx_ring_buff[CAN_CNT];
 prtc_header_t make_header_buff;
 uint8_t make_data_buff[8];
-
-uint32_t TxMailbox;
 
 can_comm_led tx_led = {0,};	//210218 shs
 
@@ -78,11 +73,11 @@ static void gm_motion_TX_LED_OFF(void)
   * @param  none
   * @retval none
   */
-void proc_tx_ring_buff_head_chk(void)
+void proc_tx_ring_buff_head_chk(uint8_t num)
 {
-	can_tx_ring_buff.head++;
-	if(can_tx_ring_buff.head > CAN_Q_BUFF_SIZE-1){
-		can_tx_ring_buff.head = 0;
+	can_tx_ring_buff[num].head++;
+	if(can_tx_ring_buff[num].head > CAN_Q_BUFF_SIZE-1){
+		can_tx_ring_buff[num].head = 0;
 	}
 }
 /******************************************PROCESS TX RING BUF HEAD CHECK*********************************************/
@@ -92,11 +87,11 @@ void proc_tx_ring_buff_head_chk(void)
   * @param  none
   * @retval none
   */
-void proc_tx_ring_buff_tail_chk(void)
+void proc_tx_ring_buff_tail_chk(uint8_t num)
 {
-	can_tx_ring_buff.tail++;
-	if(can_tx_ring_buff.tail >= CAN_Q_BUFF_SIZE){
-		can_tx_ring_buff.tail = 0;
+	can_tx_ring_buff[num].tail++;
+	if(can_tx_ring_buff[num].tail >= CAN_Q_BUFF_SIZE){
+		can_tx_ring_buff[num].tail = 0;
 	}
 }
 /******************************************PROCESS TX RING BUF TAIL CHECK*********************************************/
@@ -106,11 +101,11 @@ void proc_tx_ring_buff_tail_chk(void)
   * @param  none
   * @retval none
   */
-void hal_can_protocol_tx(prtc_header_t *can_header, uint8_t *pData)
+void hal_can_protocol_tx(uint8_t num, prtc_header_t *can_header, uint8_t *pData)
 {
-	memcpy((void *)&can_tx_ring_buff.can_header[can_tx_ring_buff.head], can_header, sizeof(prtc_header_t));
-	memcpy((void *)&can_tx_ring_buff.data[can_tx_ring_buff.head][0], pData, can_header->dlc);
-	proc_tx_ring_buff_head_chk();
+	memcpy((void *)&can_tx_ring_buff[num].can_header[can_tx_ring_buff[num].head], can_header, sizeof(prtc_header_t));
+	memcpy((void *)&can_tx_ring_buff[num].data[can_tx_ring_buff[num].head][0], pData, can_header->dlc);
+	proc_tx_ring_buff_head_chk(num);
 }
 /******************************************PROCESS CAN TX *********************************************/
 /******************************************HAL CAN TX *********************************************/
@@ -119,19 +114,21 @@ void hal_can_protocol_tx(prtc_header_t *can_header, uint8_t *pData)
   * @param  CAN_HandleTypeDef *hcan : can 핸들러
   * @retval none
   */
-void proc_can_tx(CAN_HandleTypeDef *canhd)
+void proc_can_tx(void)
 {
-	if(can_tx_ring_buff.head != can_tx_ring_buff.tail){
-		if(HAL_CAN_GetTxMailboxesFreeLevel(canhd) == 3){
-			TxHeader.IDE = CAN_ID_EXT;
-			TxHeader.DLC = can_tx_ring_buff.can_header[can_tx_ring_buff.tail].dlc;
-			TxHeader.ExtId = can_tx_ring_buff.can_header[can_tx_ring_buff.tail].protocol_header_32;
-			TxHeader.TransmitGlobalTime = DISABLE;
-			if (HAL_CAN_AddTxMessage(canhd, &TxHeader, (uint8_t *)&can_tx_ring_buff.data[can_tx_ring_buff.tail][0], &TxMailbox) != HAL_OK){
-				error_handler();
+	for(int i = 0; i < can_init.cnt; i++){
+		if(can_tx_ring_buff[i].head != can_tx_ring_buff[i].tail){
+			if(HAL_CAN_GetTxMailboxesFreeLevel(can_init.data[i].canhandle) == 3){
+				can_init.data[i].txheader.IDE = CAN_ID_EXT;
+				can_init.data[i].txheader.DLC = can_tx_ring_buff[i].can_header[can_tx_ring_buff[i].tail].dlc;
+				can_init.data[i].txheader.ExtId = can_tx_ring_buff[i].can_header[can_tx_ring_buff[i].tail].protocol_header_32;
+				can_init.data[i].txheader.TransmitGlobalTime = DISABLE;
+				if (HAL_CAN_AddTxMessage(can_init.data[i].canhandle, &can_init.data[i].txheader, (uint8_t *)&can_tx_ring_buff[i].data[can_tx_ring_buff[i].tail][0], (uint32_t *)&can_init.data[i].txmailbox) != HAL_OK){
+					error_handler();
+				}
+				proc_tx_ring_buff_tail_chk(i);
+				gm_motion_TX_LED_ON();//210218 shs
 			}
-			proc_tx_ring_buff_tail_chk();
-			gm_motion_TX_LED_ON();//210218 shs
 		}
 	}
 	gm_motion_TX_LED_OFF();//210218 shs
