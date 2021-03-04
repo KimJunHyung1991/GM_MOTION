@@ -8,7 +8,7 @@ packet의 header영역의 PID(edit) 분해
 **************************************************/
 
 
-void net_phd_edit_sub_pid_action(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_edit_sub_pid_action(prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************EDIT PID DISASSEMBLE*********************************************/
 /**
@@ -17,12 +17,12 @@ void net_phd_edit_sub_pid_action(uint8_t num, prtc_header_t *pPh, uint8_t *pData
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_edit_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_edit_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->sub_pid)
 	{
 		case EDIT_SUB_PID_ACTION:
-			net_phd_edit_sub_pid_action(num, pPh, pData);
+			net_phd_edit_sub_pid_action(pPh, pData);
 		break;
 	}
 }
@@ -34,18 +34,18 @@ void net_phd_edit_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_edit_sub_pid_action(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_edit_sub_pid_action(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_edit_sub_pid_action_ctl(num, pPh, pData);
+			app_rx_edit_sub_pid_action_ctl(pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_edit_sub_pid_action_rsp(num, pPh, pData);
+			app_rx_edit_sub_pid_action_rsp(pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_edit_sub_pid_action_rqt(num, pPh, pData);
+			app_rx_edit_sub_pid_action_rqt(pPh, pData);
 		break;
 	}
 }

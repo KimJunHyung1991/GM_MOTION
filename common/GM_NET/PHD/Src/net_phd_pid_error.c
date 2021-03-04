@@ -7,9 +7,9 @@ network packet header disassemble parameter identification error
 packet의 header영역의 PID(error) 분해
 **************************************************/
 
-void net_phd_error_sub_pid_rc(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void net_phd_error_sub_pid_ac(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void net_phd_error_sub_pid_bldc(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_error_sub_pid_rc(prtc_header_t *pPh, uint8_t *pData);
+void net_phd_error_sub_pid_ac(prtc_header_t *pPh, uint8_t *pData);
+void net_phd_error_sub_pid_bldc(prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************ERROR PID DISASSEMBLE*********************************************/
 /**
@@ -18,18 +18,18 @@ void net_phd_error_sub_pid_bldc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_error_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_error_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->sub_pid)
 	{
 		case ERROR_SUB_PID_RC:
-			net_phd_error_sub_pid_rc(num, pPh, pData);
+			net_phd_error_sub_pid_rc(pPh, pData);
 		break;
 		case ERROR_SUB_PID_AC:
-			net_phd_error_sub_pid_ac(num, pPh, pData);
+			net_phd_error_sub_pid_ac(pPh, pData);
 		break;
 		case ERROR_SUB_PID_BLDC:
-			net_phd_error_sub_pid_bldc(num, pPh, pData);
+			net_phd_error_sub_pid_bldc(pPh, pData);
 		break;
 	}
 }
@@ -41,18 +41,18 @@ void net_phd_error_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_error_sub_pid_rc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_error_sub_pid_rc(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_error_sub_pid_rc_ctl(num, pPh, pData);
+			app_rx_error_sub_pid_rc_ctl(pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_error_sub_pid_rc_rsp(num, pPh, pData);
+			app_rx_error_sub_pid_rc_rsp(pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_error_sub_pid_rc_rqt(num, pPh, pData);
+			app_rx_error_sub_pid_rc_rqt(pPh, pData);
 		break;
 	}
 }
@@ -64,18 +64,18 @@ void net_phd_error_sub_pid_rc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_error_sub_pid_ac(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_error_sub_pid_ac(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_error_sub_pid_ac_ctl(num, pPh, pData);
+			app_rx_error_sub_pid_ac_ctl(pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_error_sub_pid_ac_rsp(num, pPh, pData);
+			app_rx_error_sub_pid_ac_rsp(pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_error_sub_pid_ac_rqt(num, pPh, pData);
+			app_rx_error_sub_pid_ac_rqt(pPh, pData);
 		break;
 	}
 }
@@ -87,18 +87,18 @@ void net_phd_error_sub_pid_ac(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_error_sub_pid_bldc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_error_sub_pid_bldc(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_error_sub_pid_bldc_ctl(num, pPh, pData);
+			app_rx_error_sub_pid_bldc_ctl(pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_error_sub_pid_bldc_rsp(num, pPh, pData);
+			app_rx_error_sub_pid_bldc_rsp(pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_error_sub_pid_bldc_rqt(num, pPh, pData);
+			app_rx_error_sub_pid_bldc_rqt(pPh, pData);
 		break;
 	}
 }

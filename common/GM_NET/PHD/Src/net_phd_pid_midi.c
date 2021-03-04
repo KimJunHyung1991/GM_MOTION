@@ -7,10 +7,10 @@ network packet header disassemble parameter identification midi
 packet의 header영역의 PID(midi) 분해
 **************************************************/
 
-void net_phd_midi_sub_pid_adc(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void net_phd_midi_sub_pid_button(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void net_phd_midi_sub_pid_led(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void net_phd_midi_sub_pid_id(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_midi_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData);
+void net_phd_midi_sub_pid_button(prtc_header_t *pPh, uint8_t *pData);
+void net_phd_midi_sub_pid_led(prtc_header_t *pPh, uint8_t *pData);
+void net_phd_midi_sub_pid_id(prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************MIDI PID DISASSEMBLE*********************************************/
 /**
@@ -19,21 +19,21 @@ void net_phd_midi_sub_pid_id(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_midi_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_midi_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->sub_pid)
 	{
 		case MIDI_SUB_PID_ADC:
-			net_phd_midi_sub_pid_adc(num, pPh, pData);
+			net_phd_midi_sub_pid_adc(pPh, pData);
 		break;
 		case MIDI_SUB_PID_BUTTON:
-			net_phd_midi_sub_pid_button(num, pPh, pData);
+			net_phd_midi_sub_pid_button(pPh, pData);
 		break;
 		case MIDI_SUB_PID_LED:
-			net_phd_midi_sub_pid_led(num, pPh, pData);
+			net_phd_midi_sub_pid_led(pPh, pData);
 		break;
 		case MIDI_SUB_PID_ID:
-			net_phd_midi_sub_pid_id(num, pPh, pData);
+			net_phd_midi_sub_pid_id(pPh, pData);
 		break;
 	}
 }
@@ -45,18 +45,18 @@ void net_phd_midi_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_midi_sub_pid_adc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_midi_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_adc_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_adc_ctl(pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_adc_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_adc_rsp(pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_midi_sub_pid_adc_rqt(num, pPh, pData);
+			app_rx_midi_sub_pid_adc_rqt(pPh, pData);
 		break;
 	}
 }
@@ -68,18 +68,18 @@ void net_phd_midi_sub_pid_adc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_midi_sub_pid_button(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_midi_sub_pid_button(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_button_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_button_ctl(pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_button_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_button_rsp(pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_midi_sub_pid_button_rqt(num, pPh, pData);
+			app_rx_midi_sub_pid_button_rqt(pPh, pData);
 		break;
 	}
 }
@@ -91,18 +91,18 @@ void net_phd_midi_sub_pid_button(uint8_t num, prtc_header_t *pPh, uint8_t *pData
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_midi_sub_pid_led(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_midi_sub_pid_led(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_led_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_led_ctl(pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_led_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_led_rsp(pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_midi_sub_pid_led_rqt(num, pPh, pData);
+			app_rx_midi_sub_pid_led_rqt(pPh, pData);
 		break;
 	}
 }
@@ -114,18 +114,18 @@ void net_phd_midi_sub_pid_led(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_midi_sub_pid_id(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_midi_sub_pid_id(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_id_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_id_ctl(pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_id_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_id_rsp(pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_midi_sub_pid_id_rqt(num, pPh, pData);
+			app_rx_midi_sub_pid_id_rqt(pPh, pData);
 		break;
 	}
 }

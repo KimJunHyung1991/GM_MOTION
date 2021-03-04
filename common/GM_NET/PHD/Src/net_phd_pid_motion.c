@@ -7,8 +7,8 @@ network packet header disassemble parameter identification motion
 packet의 header영역의 PID(motion) 분해
 **************************************************/
 
-void net_phd_motion_sub_pid_adc(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void net_phd_motion_sub_pid_angle(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_motion_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData);
+void net_phd_motion_sub_pid_angle(prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************MOTION PID DISASSEMBLE*********************************************/
 /**
@@ -17,15 +17,15 @@ void net_phd_motion_sub_pid_angle(uint8_t num, prtc_header_t *pPh, uint8_t *pDat
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_motion_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_motion_sub_pid(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->sub_pid)
 	{
 		case MOTION_SUB_PID_ADC:
-			net_phd_motion_sub_pid_adc(num, pPh, pData);
+			net_phd_motion_sub_pid_adc(pPh, pData);
 		break;
 		case MOTION_SUB_PID_ANGLE:
-			net_phd_motion_sub_pid_angle(num, pPh, pData);
+			net_phd_motion_sub_pid_angle(pPh, pData);
 		break;
 	}
 }
@@ -37,18 +37,18 @@ void net_phd_motion_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_motion_sub_pid_adc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_motion_sub_pid_adc(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_motion_sub_pid_adc_ctl(num, pPh, pData);
+			app_rx_motion_sub_pid_adc_ctl(pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_motion_sub_pid_adc_rsp(num, pPh, pData);
+			app_rx_motion_sub_pid_adc_rsp(pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_motion_sub_pid_adc_rqt(num, pPh, pData);
+			app_rx_motion_sub_pid_adc_rqt(pPh, pData);
 		break;
 	}
 }
@@ -60,18 +60,18 @@ void net_phd_motion_sub_pid_adc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_motion_sub_pid_angle(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_motion_sub_pid_angle(prtc_header_t *pPh, uint8_t *pData)
 {
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_motion_sub_pid_angle_ctl(num, pPh, pData);
+			app_rx_motion_sub_pid_angle_ctl(pPh, pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_motion_sub_pid_angle_rsp(num, pPh, pData);
+			app_rx_motion_sub_pid_angle_rsp(pPh, pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_motion_sub_pid_angle_rqt(num, pPh, pData);
+			app_rx_motion_sub_pid_angle_rqt(pPh, pData);
 		break;
 	}
 }

@@ -23,30 +23,30 @@ packet의 header영역의 PID 분해
 			*pData : packet data pointer
   * @retval None
   */
-void net_phd_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void net_phd_pid(prtc_header_t *pPh, uint8_t *pData)
 {	
 	switch(pPh->pid)
 	{
 		case PID_INIT:
-			net_phd_init_sub_pid(num, pPh, pData);
+			net_phd_init_sub_pid(pPh, pData);
 		break;
 		case PID_MOTION:
-			net_phd_motion_sub_pid(num, pPh, pData);
+			net_phd_motion_sub_pid(pPh, pData);
 		break;
 		case PID_MIDI:
-			net_phd_midi_sub_pid(num, pPh, pData);
+			net_phd_midi_sub_pid(pPh, pData);
 		break;
 		case PID_EDIT:
-			net_phd_edit_sub_pid(num, pPh, pData);
+			net_phd_edit_sub_pid(pPh, pData);
 		break;
 		case PID_SPEAKER:
-			net_phd_speaker_sub_pid(num, pPh, pData);
+			net_phd_speaker_sub_pid(pPh, pData);
 		break;
 		case PID_SENSOR:
-			net_phd_sensor_sub_pid(num, pPh, pData);
+			net_phd_sensor_sub_pid(pPh, pData);
 		break;
 		case PID_ERROR:
-			net_phd_error_sub_pid(num, pPh, pData);
+			net_phd_error_sub_pid(pPh, pData);
 		break;
 	}
 }

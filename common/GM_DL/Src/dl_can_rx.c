@@ -6,7 +6,10 @@ data link can rx
 
 **************************************************/
 
-can_q_buff_t can_rx_ring_buff[CAN_CNT];
+can_q_buff_t can_rx_ring_buff;
+CAN_RxHeaderTypeDef RxHeader;
+uint8_t	RxData[8];
+
 can_comm_led rx_led = {0,};	//210218 shs
 
 /******************************************ERROR HANDLER*********************************************/
@@ -68,11 +71,11 @@ static void gm_motion_RX_LED_OFF(void)
   * @param  none
   * @retval none
   */
-void proc_rx_ring_buff_head_chk(uint8_t num)
+void proc_rx_ring_buff_head_chk(void)
 {
-	can_rx_ring_buff[num].head++;
-	if(can_rx_ring_buff[num].head >= CAN_Q_BUFF_SIZE){
-		can_rx_ring_buff[num].head = 0;
+	can_rx_ring_buff.head++;
+	if(can_rx_ring_buff.head >= CAN_Q_BUFF_SIZE){
+		can_rx_ring_buff.head = 0;
 	}
 }
 /******************************************PROCESS RX RING BUF HEAD CHECK*********************************************/
@@ -82,11 +85,11 @@ void proc_rx_ring_buff_head_chk(uint8_t num)
   * @param  none
   * @retval none
   */
-void proc_rx_ring_buff_tail_chk(uint8_t num)
+void proc_rx_ring_buff_tail_chk(void)
 {
-	can_rx_ring_buff[num].tail++;
-	if(can_rx_ring_buff[num].tail >= CAN_Q_BUFF_SIZE){
-		can_rx_ring_buff[num].tail = 0;
+	can_rx_ring_buff.tail++;
+	if(can_rx_ring_buff.tail >= CAN_Q_BUFF_SIZE){
+		can_rx_ring_buff.tail = 0;
 	}
 }
 /******************************************PROCESS RX RING BUF TAIL CHECK*********************************************/
@@ -98,18 +101,13 @@ void proc_rx_ring_buff_tail_chk(uint8_t num)
   */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
-	for(int i = 0; i < can_init.cnt; i++){
-		if(hcan->Instance == can_init.data[i].canhandle->Instance){
-			if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &can_init.data[i].rxheader, (uint8_t *)&can_rx_ring_buff[i].data[can_rx_ring_buff[i].head][0]) != HAL_OK)
-			{
-				error_handler();
-			}
-			can_rx_ring_buff[i].can_header[can_rx_ring_buff[i].head].dlc = can_init.data[i].rxheader.DLC;
-			can_rx_ring_buff[i].can_header[can_rx_ring_buff[i].head].protocol_header_32 = can_init.data[i].rxheader.ExtId;
-			proc_rx_ring_buff_head_chk(i);
-			
-		}
+	if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, (uint8_t *)&can_rx_ring_buff.data[can_rx_ring_buff.head][0]) != HAL_OK)
+	{
+		error_handler();
 	}
+	can_rx_ring_buff.can_header[can_rx_ring_buff.head].dlc = RxHeader.DLC;
+	can_rx_ring_buff.can_header[can_rx_ring_buff.head].protocol_header_32 = RxHeader.ExtId;
+	proc_rx_ring_buff_head_chk();
 }
 /******************************************HAL CAN RX CALL BACK*********************************************/
 /******************************************PROCESS CAN RX*********************************************/
@@ -120,15 +118,13 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
   */
 void proc_can_rx(void)
 {
-	for(int i = 0; i < can_init.cnt; i++){
-		if(can_rx_ring_buff[i].head != can_rx_ring_buff[i].tail){
-			prtc_header_t *pPh = (prtc_header_t *)&can_rx_ring_buff[i].can_header[can_rx_ring_buff[i].tail];
-			if(pPh->target_id == my_can_id || pPh->target_id == CAN_ID_BROAD_CAST){
-				gm_motion_RX_LED_ON();//210218 shs
-				net_phd_pid(i, &can_rx_ring_buff[i].can_header[can_rx_ring_buff[i].tail], (uint8_t *)&can_rx_ring_buff[i].data[can_rx_ring_buff[i].tail]);
-			}
-			proc_rx_ring_buff_tail_chk(i);
+	if(can_rx_ring_buff.head != can_rx_ring_buff.tail){
+		prtc_header_t *pPh = (prtc_header_t *)&can_rx_ring_buff.can_header[can_rx_ring_buff.tail];
+		if(pPh->target_id == my_can_id || pPh->target_id == CAN_ID_BROAD_CAST){
+			gm_motion_RX_LED_ON();//210218 shs
+			net_phd_pid(&can_rx_ring_buff.can_header[can_rx_ring_buff.tail], (uint8_t *)&can_rx_ring_buff.data[can_rx_ring_buff.tail]);
 		}
+		proc_rx_ring_buff_tail_chk();
 	}
 	gm_motion_RX_LED_OFF();//210218 shs
 }
