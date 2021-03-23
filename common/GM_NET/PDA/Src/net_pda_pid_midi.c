@@ -197,3 +197,140 @@ uint8_t *net_pda_midi_sub_pid_id_rqt(void)
 	return make_data_buff;
 }
 /******************************************MIDI SUB PID ID ASSEMBLE*********************************************/
+/******************************************MIDI SUB PID NICK_NAME_H ASSEMBLE*********************************************/
+/**
+  * @brief  packet midi-nick name h-control data assemble
+  * @param  motor_num : 대표 ID
+			set_page_num : 
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_nick_name_h_ctl(uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+{
+	prtc_data_ctl_midi_nick_name_h_t *pCdcmnnh = (prtc_data_ctl_midi_nick_name_h_t *)make_data_buff;
+	pCdcmnnh->motor_num = motor_num;
+	pCdcmnnh->set_page_num = set_page_num;
+	
+	strncpy(pCdcmnnh->nick_name, nick_name, sizeof(pCdcmnnh->nick_name));
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet midi-nick name h-response data assemble
+  * @param  motor_num : 대표 ID
+			set_page_num : 
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_nick_name_h_rsp(uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+{
+	prtc_data_rsp_midi_nick_name_h_t *pCdrmnnh = (prtc_data_rsp_midi_nick_name_h_t *)make_data_buff;
+	pCdrmnnh->motor_num = motor_num;
+	pCdrmnnh->set_page_num = set_page_num;
+	
+	strncpy(pCdrmnnh->nick_name, nick_name, sizeof(pCdrmnnh->nick_name));
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet midi-nick name h-request data assemble
+  * @param  motor_num : 대표 ID
+			set_page_num : 
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_nick_name_h_rqt(void)
+{	
+	return make_data_buff;
+}
+/******************************************MIDI SUB PID NICK_NAME_H ASSEMBLE*********************************************/
+/******************************************MIDI SUB PID NICK_NAME_L ASSEMBLE*********************************************/
+/**
+  * @brief  packet midi-nick name l-control data assemble
+  * @param  motor_num : 대표 ID
+			set_page_num : 
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_nick_name_l_ctl(uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+{
+	prtc_data_ctl_midi_nick_name_l_t *pCdcmnnl = (prtc_data_ctl_midi_nick_name_l_t *)make_data_buff;
+	pCdcmnnl->motor_num = motor_num;
+	pCdcmnnl->set_page_num = set_page_num;
+	
+	strncpy(pCdcmnnl->nick_name, nick_name, sizeof(pCdcmnnl->nick_name));
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet midi-nick name l-response data assemble
+  * @param  motor_num : 대표 ID
+			set_page_num : 
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_nick_name_l_rsp(uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+{
+	prtc_data_rsp_midi_nick_name_l_t *pCdrmnnl = (prtc_data_rsp_midi_nick_name_l_t *)make_data_buff;
+	pCdrmnnl->motor_num = motor_num;
+	pCdrmnnl->set_page_num = set_page_num;
+	
+	strncpy(pCdrmnnl->nick_name, nick_name, sizeof(pCdrmnnl->nick_name));
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet midi-nick name l-request data assemble
+  * @param  motor_num : 대표 ID
+			set_page_num : 
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_nick_name_l_rqt(void)
+{	
+	return make_data_buff;
+}
+/******************************************MIDI SUB PID NICK_NAME_L ASSEMBLE*********************************************/
+/******************************************MIDI SUB PID RANGE_DATA ASSEMBLE*********************************************/
+/**
+  * @brief  packet midi-range data-control data assemble
+  * @param  motor_num : 대표 ID
+			set_page_num : 
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min)
+{
+	prtc_data_ctl_midi_range_data_t *pCdcmrd = (prtc_data_ctl_midi_range_data_t *)make_data_buff;
+	pCdcmrd->motor_num = motor_num;
+	pCdcmrd->set_page_num = set_page_num;
+	pCdcmrd->max = max;
+	pCdcmrd->min = min;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet midi-range data-response data assemble
+  * @param  motor_num : 대표 ID
+			set_page_num : 
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_range_data_rsp(uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min)
+{
+	prtc_data_rsp_midi_range_data_t *pCdrmrd = (prtc_data_rsp_midi_range_data_t *)make_data_buff;
+	pCdrmrd->motor_num = motor_num;
+	pCdrmrd->set_page_num = set_page_num;
+	pCdrmrd->max = max;
+	pCdrmrd->min = min;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet midi-range data-request data assemble
+  * @param  
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_range_data_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************MIDI SUB PID RANGE_DATA ASSEMBLE*********************************************/

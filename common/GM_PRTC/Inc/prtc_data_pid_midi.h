@@ -3,10 +3,12 @@
 #pragma pack(1)
 /***********************************************************MIDI_SUB_PID_ADC**********************************************************/
 typedef struct{
+	uint8_t		id;
 	uint16_t	adc_val;
 }prtc_data_ctl_midi_adc_t;
 
 typedef struct{
+	uint8_t		id;
 	uint16_t	adc_val;
 }prtc_data_rsp_midi_adc_t;
 /***********************************************************MIDI_SUB_PID_ADC**********************************************************/
@@ -100,6 +102,47 @@ typedef struct{
 	uint8_t		sub_id8;
 }prtc_data_rsp_midi_id_t;
 
-/***********************************************************MIDI_SUB_PID_ID**********************************************************/
+/***********************************************************MIDI_SUB_PID_NICK_NAME_H**********************************************************/
+typedef struct{
+	uint8_t motor_num;
+	uint8_t set_page_num;
+	char nick_name[6];
+}prtc_data_ctl_midi_nick_name_h_t;
+
+typedef struct{
+	uint8_t motor_num;
+	uint8_t set_page_num;
+	char nick_name[6];
+}prtc_data_rsp_midi_nick_name_h_t;
+/***********************************************************MIDI_SUB_PID_NICK_NAME_H**********************************************************/
+/***********************************************************MIDI_SUB_PID_NICK_NAME_L**********************************************************/
+typedef struct{
+	uint8_t motor_num;
+	uint8_t set_page_num;
+	char nick_name[4];
+}prtc_data_ctl_midi_nick_name_l_t;
+
+typedef struct{
+	uint8_t motor_num;
+	uint8_t set_page_num;
+	char nick_name[4];
+}prtc_data_rsp_midi_nick_name_l_t;
+/***********************************************************MIDI_SUB_PID_NICK_NAME_L**********************************************************/
+/***********************************************************MIDI_SUB_PID_RANG_DATA**********************************************************/
+typedef struct{
+	uint8_t motor_num;
+	uint8_t set_page_num;
+	uint16_t max;
+	uint16_t min;
+}prtc_data_ctl_midi_range_data_t;
+
+typedef struct{
+	uint8_t motor_num;
+	uint8_t set_page_num;
+	uint16_t max;
+	uint16_t min;
+}prtc_data_rsp_midi_range_data_t;
+
+/***********************************************************MIDI_SUB_PID_RANG_DATA**********************************************************/
 #pragma pack()
 #endif

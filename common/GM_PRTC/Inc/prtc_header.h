@@ -69,10 +69,13 @@ typedef struct{
 #define MOTION_SUB_PID_ANGLE	1
 /*******************************************PID_MOTION의 SUB_PID******************************************************************/
 /*******************************************PID_MIDI의 SUB_PID******************************************************************/
-#define MIDI_SUB_PID_ADC		0
-#define MIDI_SUB_PID_BUTTON		1
-#define MIDI_SUB_PID_LED		2
-#define MIDI_SUB_PID_ID			3
+#define MIDI_SUB_PID_ADC			0
+#define MIDI_SUB_PID_BUTTON			1
+#define MIDI_SUB_PID_LED			2
+#define MIDI_SUB_PID_ID				3
+#define MIDI_SUB_PID_NICK_NAME_H	4
+#define MIDI_SUB_PID_NICK_NAME_L	5
+#define MIDI_SUB_PID_RANGE_DATA		6
 /*******************************************PID_MIDI의 SUB_PID******************************************************************/
 /*******************************************PID_VIDEO의 SUB_PID******************************************************************/
 #define EDIT_SUB_PID_ACTION		0

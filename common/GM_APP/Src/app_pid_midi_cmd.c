@@ -169,3 +169,105 @@ void app_tx_midi_sub_pid_id_rqt(uint8_t num, uint8_t priority, uint8_t souce_id,
 }
 
 /******************************************MIDI SUB PID ID APPLICATION*********************************************/
+/******************************************MIDI SUB PID NICK_NAME_H APPLICATION*********************************************/
+__weak void app_rx_midi_sub_pid_nick_name_h_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+__weak void app_rx_midi_sub_pid_nick_name_h_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+__weak void app_rx_midi_sub_pid_nick_name_h_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+void app_tx_midi_sub_pid_nick_name_h_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_midi_nick_name_h_t), priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_NICK_NAME_H, sub_id), \
+			net_pda_midi_sub_pid_nick_name_h_ctl(motor_num, set_page_num, nick_name));
+}
+
+void app_tx_midi_sub_pid_nick_name_h_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_midi_nick_name_h_t), priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_NICK_NAME_H, sub_id), \
+			net_pda_midi_sub_pid_nick_name_h_rsp(motor_num, set_page_num, nick_name));
+}
+
+void app_tx_midi_sub_pid_nick_name_h_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_NICK_NAME_H, sub_id), \
+			net_pda_midi_sub_pid_nick_name_h_rqt());
+}
+/******************************************MIDI SUB PID NICK_NAME_H APPLICATION*********************************************/
+/******************************************MIDI SUB PID NICK_NAME_L APPLICATION*********************************************/
+__weak void app_rx_midi_sub_pid_nick_name_l_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+__weak void app_rx_midi_sub_pid_nick_name_l_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+__weak void app_rx_midi_sub_pid_nick_name_l_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+void app_tx_midi_sub_pid_nick_name_l_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_midi_nick_name_l_t), priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_NICK_NAME_L, sub_id), \
+			net_pda_midi_sub_pid_nick_name_l_ctl(motor_num, set_page_num, nick_name));
+}
+
+void app_tx_midi_sub_pid_nick_name_l_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_ctl_midi_nick_name_l_t), priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_NICK_NAME_L, sub_id), \
+			net_pda_midi_sub_pid_nick_name_l_rsp(motor_num, set_page_num, nick_name));
+}
+
+void app_tx_midi_sub_pid_nick_name_l_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_NICK_NAME_L, sub_id), \
+			net_pda_midi_sub_pid_nick_name_l_rqt());
+}
+/******************************************MIDI SUB PID NICK_NAME_L APPLICATION*********************************************/
+/******************************************MIDI SUB PID RANGE_DATA APPLICATION*********************************************/
+__weak void app_rx_midi_sub_pid_range_data_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+__weak void app_rx_midi_sub_pid_range_data_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+__weak void app_rx_midi_sub_pid_range_data_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+void app_tx_midi_sub_pid_range_data_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_midi_nick_name_l_t), priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_RANGE_DATA, sub_id), \
+			net_pda_midi_sub_pid_range_data_ctl(motor_num, set_page_num, max, min));
+}
+
+void app_tx_midi_sub_pid_range_data_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_ctl_midi_nick_name_l_t), priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_RANGE_DATA, sub_id), \
+			net_pda_midi_sub_pid_range_data_rsp(motor_num, set_page_num, max, min));
+}
+
+void app_tx_midi_sub_pid_range_data_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_RANGE_DATA, sub_id), \
+			net_pda_midi_sub_pid_range_data_rqt());
+}
+/******************************************MIDI SUB PID RANGE_DATA APPLICATION*********************************************/

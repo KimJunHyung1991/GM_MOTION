@@ -33,4 +33,28 @@ void app_tx_midi_sub_pid_id_ctl(uint8_t num, uint8_t priority, uint8_t souce_id,
 void app_tx_midi_sub_pid_id_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t id1, uint8_t id2, uint8_t id3, uint8_t id4, uint8_t id5, uint8_t id6, uint8_t id7, uint8_t id8);
 void app_tx_midi_sub_pid_id_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
 /**********************************************************************************/
+/**********************************************************************************/
+void app_rx_midi_sub_pid_nick_name_h_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_rx_midi_sub_pid_nick_name_h_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_rx_midi_sub_pid_nick_name_h_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_tx_midi_sub_pid_nick_name_h_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, char *nick_name);
+void app_tx_midi_sub_pid_nick_name_h_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, char *nick_name);
+void app_tx_midi_sub_pid_nick_name_h_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
+/**********************************************************************************/
+/**********************************************************************************/
+void app_rx_midi_sub_pid_nick_name_l_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_rx_midi_sub_pid_nick_name_l_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_rx_midi_sub_pid_nick_name_l_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_tx_midi_sub_pid_nick_name_l_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, char *nick_name);
+void app_tx_midi_sub_pid_nick_name_l_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, char *nick_name);
+void app_tx_midi_sub_pid_nick_name_l_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
+/**********************************************************************************/
+/**********************************************************************************/
+void app_rx_midi_sub_pid_range_data_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_rx_midi_sub_pid_range_data_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_rx_midi_sub_pid_range_data_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_tx_midi_sub_pid_range_data_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min);
+void app_tx_midi_sub_pid_range_data_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min);
+void app_tx_midi_sub_pid_range_data_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
+/**********************************************************************************/
 #endif
