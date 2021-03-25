@@ -101,7 +101,6 @@ typedef struct{
 	uint8_t		sub_id7;
 	uint8_t		sub_id8;
 }prtc_data_rsp_midi_id_t;
-
 /***********************************************************MIDI_SUB_PID_NICK_NAME_H**********************************************************/
 typedef struct{
 	uint8_t motor_num;
@@ -142,7 +141,33 @@ typedef struct{
 	uint16_t max;
 	uint16_t min;
 }prtc_data_rsp_midi_range_data_t;
-
 /***********************************************************MIDI_SUB_PID_RANG_DATA**********************************************************/
+/***********************************************************MIDI_SUB_PID_PAGE**********************************************************/
+typedef struct{
+	uint8_t page;
+	uint8_t motor_num;
+	uint8_t set_page_num;
+}prtc_data_ctl_midi_page_t;
+
+typedef struct{
+	uint8_t page;
+	uint8_t motor_num;
+	uint8_t set_page_num;
+}prtc_data_rsp_midi_page_t;
+/***********************************************************MIDI_SUB_PID_PAGE**********************************************************/
+/***********************************************************MIDI_SUB_PID_EXIST**********************************************************/
+#if 0
+typedef struct{
+	uint8_t device;
+}prtc_data_ctl_midi_exist_t;
+
+typedef struct{
+	uint8_t device;
+}prtc_data_rsp_midi_exist_t;
+///////////////////////////device///////////////////////////
+#define MIDI_EXIST_DEVICE_MIDI		0
+///////////////////////////device///////////////////////////
+#endif
+/***********************************************************MIDI_SUB_PID_EXIST**********************************************************/
 #pragma pack()
 #endif

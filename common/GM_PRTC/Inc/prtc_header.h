@@ -76,6 +76,9 @@ typedef struct{
 #define MIDI_SUB_PID_NICK_NAME_H	4
 #define MIDI_SUB_PID_NICK_NAME_L	5
 #define MIDI_SUB_PID_RANGE_DATA		6
+#define MIDI_SUB_PID_PAGE			7
+#define MIDI_SUB_PID_EXIST			8
+
 /*******************************************PID_MIDIÀÇ SUB_PID******************************************************************/
 /*******************************************PID_VIDEOÀÇ SUB_PID******************************************************************/
 #define EDIT_SUB_PID_ACTION		0

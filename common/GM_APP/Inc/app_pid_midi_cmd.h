@@ -57,4 +57,20 @@ void app_tx_midi_sub_pid_range_data_ctl(uint8_t num, uint8_t priority, uint8_t s
 void app_tx_midi_sub_pid_range_data_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min);
 void app_tx_midi_sub_pid_range_data_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
 /**********************************************************************************/
+/**********************************************************************************/
+void app_rx_midi_sub_pid_page_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_rx_midi_sub_pid_page_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_rx_midi_sub_pid_page_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_tx_midi_sub_pid_page_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t page, uint8_t motor_num, uint8_t set_page_num);
+void app_tx_midi_sub_pid_page_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t page, uint8_t motor_num, uint8_t set_page_num);
+void app_tx_midi_sub_pid_page_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
+/**********************************************************************************/
+/**********************************************************************************/
+void app_rx_midi_sub_pid_exist_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_rx_midi_sub_pid_exist_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_rx_midi_sub_pid_exist_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_tx_midi_sub_pid_exist_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
+void app_tx_midi_sub_pid_exist_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
+void app_tx_midi_sub_pid_exist_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
+/**********************************************************************************/
 #endif

@@ -29,4 +29,12 @@ uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_num, uint8_t set_page
 uint8_t *net_pda_midi_sub_pid_range_data_rsp(uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min);
 uint8_t *net_pda_midi_sub_pid_range_data_rqt(void);
 
+uint8_t *net_pda_midi_sub_pid_page_ctl(uint8_t page, uint8_t motor_num, uint8_t set_page_num);
+uint8_t *net_pda_midi_sub_pid_page_rsp(uint8_t page, uint8_t motor_num, uint8_t set_page_num);
+uint8_t *net_pda_midi_sub_pid_page_rqt(void);
+
+uint8_t *net_pda_midi_sub_pid_exist_ctl(void);
+uint8_t *net_pda_midi_sub_pid_exist_rsp(void);
+uint8_t *net_pda_midi_sub_pid_exist_rqt(void);
+
 #endif
