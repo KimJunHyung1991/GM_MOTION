@@ -323,19 +323,19 @@ __weak void app_rx_midi_sub_pid_exist_rqt(uint8_t num, prtc_header_t *pPh, uint8
 
 void app_tx_midi_sub_pid_exist_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
 {
-	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_PAGE, sub_id), \
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_EXIST, sub_id), \
 			net_pda_midi_sub_pid_exist_ctl());
 }
 
 void app_tx_midi_sub_pid_exist_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
 {
-	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_PAGE, sub_id), \
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_EXIST, sub_id), \
 			net_pda_midi_sub_pid_exist_rsp());
 }
 
 void app_tx_midi_sub_pid_exist_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
 {
-	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_PAGE, sub_id), \
+	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_EXIST, sub_id), \
 			net_pda_midi_sub_pid_exist_rqt());
 }
 /******************************************MIDI SUB PID PAGE EXIST*********************************************/
