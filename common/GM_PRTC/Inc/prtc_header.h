@@ -78,6 +78,7 @@ typedef struct{
 #define MIDI_SUB_PID_RANGE_DATA		6
 #define MIDI_SUB_PID_PAGE			7
 #define MIDI_SUB_PID_EXIST			8
+#define MIDI_SUB_PID_LAST_PAGE		9
 
 /*******************************************PID_MIDIÀÇ SUB_PID******************************************************************/
 /*******************************************PID_VIDEOÀÇ SUB_PID******************************************************************/

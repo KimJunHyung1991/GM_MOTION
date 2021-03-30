@@ -400,3 +400,32 @@ uint8_t *net_pda_midi_sub_pid_exist_rqt(void)
 	return make_data_buff;
 }
 /******************************************MIDI SUB PID EXIST ASSEMBLE*********************************************/
+/******************************************MIDI SUB PID LAST PAGE ASSEMBLE*********************************************/
+uint8_t *net_pda_midi_sub_pid_last_page_ctl(uint8_t last_page)
+{	
+	prtc_data_ctl_midi_last_page_t *pCdcmlp = (prtc_data_ctl_midi_last_page_t *)make_data_buff;
+	pCdcmlp->last_page = last_page;
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet midi-range data-response data assemble
+  * @param  motor_num : 대표 ID
+			set_page_num : 
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_last_page_rsp(void)
+{
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet midi-range data-request data assemble
+  * @param  
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_midi_sub_pid_last_page_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************MIDI SUB PID LAST PAGE ASSEMBLE*********************************************/

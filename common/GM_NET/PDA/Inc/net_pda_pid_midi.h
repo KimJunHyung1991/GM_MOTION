@@ -37,4 +37,8 @@ uint8_t *net_pda_midi_sub_pid_exist_ctl(void);
 uint8_t *net_pda_midi_sub_pid_exist_rsp(void);
 uint8_t *net_pda_midi_sub_pid_exist_rqt(void);
 
+uint8_t *net_pda_midi_sub_pid_last_page_ctl(uint8_t last_page);
+uint8_t *net_pda_midi_sub_pid_last_page_rsp(void);
+uint8_t *net_pda_midi_sub_pid_last_page_rqt(void);
+
 #endif

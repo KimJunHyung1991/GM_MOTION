@@ -339,3 +339,37 @@ void app_tx_midi_sub_pid_exist_rqt(uint8_t num, uint8_t priority, uint8_t souce_
 			net_pda_midi_sub_pid_exist_rqt());
 }
 /******************************************MIDI SUB PID PAGE EXIST*********************************************/
+/******************************************MIDI SUB PID LAST PAGE*********************************************/
+__weak void app_rx_midi_sub_pid_last_page_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+__weak void app_rx_midi_sub_pid_last_page_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+__weak void app_rx_midi_sub_pid_last_page_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+void app_tx_midi_sub_pid_last_page_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t last_page)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_LAST_PAGE, sub_id), \
+			net_pda_midi_sub_pid_last_page_ctl(last_page));
+}
+
+void app_tx_midi_sub_pid_last_page_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_LAST_PAGE, sub_id), \
+			net_pda_midi_sub_pid_last_page_rsp());
+}
+
+void app_tx_midi_sub_pid_last_page_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_LAST_PAGE, sub_id), \
+			net_pda_midi_sub_pid_last_page_rqt());
+}
+/******************************************MIDI SUB PID LAST PAGE*********************************************/
