@@ -1,8 +1,8 @@
 #ifndef _NET_PDA_PID_MIDI_H_
 #define _NET_PDA_PID_MIDI_H_
 
-uint8_t *net_pda_midi_sub_pid_adc_ctl(uint16_t adc_val);
-uint8_t *net_pda_midi_sub_pid_adc_rsp(uint16_t adc_val);
+uint8_t *net_pda_midi_sub_pid_adc_ctl(uint8_t id, uint16_t adc_val);
+uint8_t *net_pda_midi_sub_pid_adc_rsp(uint8_t id, uint16_t adc_val);
 uint8_t *net_pda_midi_sub_pid_adc_rqt(void);
 
 uint8_t *net_pda_midi_sub_pid_button_ctl(uint8_t type, uint8_t status, uint8_t id);

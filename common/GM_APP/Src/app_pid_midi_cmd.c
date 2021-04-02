@@ -25,16 +25,16 @@ __weak void app_rx_midi_sub_pid_adc_rqt(uint8_t num, prtc_header_t *pPh, uint8_t
 	
 }
 
-void app_tx_midi_sub_pid_adc_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint16_t adc_val)
+void app_tx_midi_sub_pid_adc_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t id, uint16_t adc_val)
 {
 	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_midi_adc_t), priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_ADC, sub_id), \
-			net_pda_midi_sub_pid_adc_ctl(adc_val));
+			net_pda_midi_sub_pid_adc_ctl(id, adc_val));
 }
 
-void app_tx_midi_sub_pid_adc_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint16_t adc_val)
+void app_tx_midi_sub_pid_adc_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t id, uint16_t adc_val)
 {
 	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_midi_adc_t), priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_ADC, sub_id), \
-			net_pda_midi_sub_pid_adc_rsp(adc_val));
+			net_pda_midi_sub_pid_adc_rsp(id, adc_val));
 }
 
 void app_tx_midi_sub_pid_adc_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
