@@ -65,8 +65,9 @@ typedef struct{
 #define INIT_SUB_PID_MOVE_INIT_POSITION		6
 /*******************************************PID_INIT의 SUB_PID******************************************************************/
 /*******************************************PID_MOTION의 SUB_PID******************************************************************/
-#define MOTION_SUB_PID_ADC		0
-#define MOTION_SUB_PID_ANGLE	1
+#define MOTION_SUB_PID_ADC			0
+#define MOTION_SUB_PID_ANGLE		1
+#define MOTION_SUB_PID_DIRECTION	2
 /*******************************************PID_MOTION의 SUB_PID******************************************************************/
 /*******************************************PID_MIDI의 SUB_PID******************************************************************/
 #define MIDI_SUB_PID_ADC			0
