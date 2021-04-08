@@ -81,3 +81,44 @@ uint8_t *net_pda_motion_sub_pid_angle_rqt(void)
 	return make_data_buff;
 }
 /******************************************MOTION SUB PID ANGLE ASSEMBLE*********************************************/
+/******************************************MOTION SUB PID ANGLE DIRECTION*********************************************/
+/**
+  * @brief  packet motion-angle-control data assemble
+  * @param  angle_val :  value
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_direction_ctl(uint8_t id, uint8_t direction, uint8_t val)
+{
+	prtc_data_ctl_motion_direction_t *pCdcmd = (prtc_data_ctl_motion_direction_t *)make_data_buff;
+	pCdcmd->id = id;
+	pCdcmd->direction = direction;
+	pCdcmd->val = val;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet motion-angle-response data assemble
+  * @param  angle_val :  value
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_direction_rsp(uint8_t id, uint8_t direction, uint8_t val)
+{
+	prtc_data_rsp_motion_direction_t *pCdrmd = (prtc_data_rsp_motion_direction_t *)make_data_buff;
+	pCdrmd->id = id;
+	pCdrmd->direction = direction;
+	pCdrmd->val = val;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet motion-angle-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_direction_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************MOTION SUB PID ANGLE DIRECTION*********************************************/

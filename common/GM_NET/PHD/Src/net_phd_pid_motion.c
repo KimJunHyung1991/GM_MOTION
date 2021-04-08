@@ -9,6 +9,7 @@ packet의 header영역의 PID(motion) 분해
 
 void net_phd_motion_sub_pid_adc(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void net_phd_motion_sub_pid_angle(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_motion_sub_pid_direction(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************MOTION PID DISASSEMBLE*********************************************/
 /**
@@ -26,6 +27,9 @@ void net_phd_motion_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 		break;
 		case MOTION_SUB_PID_ANGLE:
 			net_phd_motion_sub_pid_angle(num, pPh, pData);
+		break;
+		case MOTION_SUB_PID_DIRECTION:
+			net_phd_motion_sub_pid_direction(num, pPh, pData);
 		break;
 	}
 }
@@ -76,3 +80,26 @@ void net_phd_motion_sub_pid_angle(uint8_t num, prtc_header_t *pPh, uint8_t *pDat
 	}
 }
 /******************************************MOTION SUB PID ANGLE DISASSEMBLE*********************************************/
+/******************************************MOTION SUB PID DIRECTION DISASSEMBLE*********************************************/
+/**
+  * @brief  packet header disassemble(PID-motion의 sub_pid-angle의 cmd)
+  * @param  *pPh : packet header pointer
+			*pData : packet data pointer
+  * @retval None
+  */
+void net_phd_motion_sub_pid_direction(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	switch(pPh->cmd)
+	{
+		case CMD_CONTROL:
+			app_rx_motion_sub_pid_direction_ctl(num, pPh, pData);
+		break;
+		case CMD_RESPONSE:
+			app_rx_motion_sub_pid_direction_rsp(num, pPh, pData);
+		break;
+		case CMD_REQUEST:
+			app_rx_motion_sub_pid_direction_rqt(num, pPh, pData);
+		break;
+	}
+}
+/******************************************MOTION SUB PID DIRECTION DISASSEMBLE*********************************************/
