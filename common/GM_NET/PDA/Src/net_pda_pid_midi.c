@@ -337,10 +337,11 @@ uint8_t *net_pda_midi_sub_pid_range_data_rqt(void)
 }
 /******************************************MIDI SUB PID RANGE_DATA ASSEMBLE*********************************************/
 /******************************************MIDI SUB PID PAGE ASSEMBLE*********************************************/
-uint8_t *net_pda_midi_sub_pid_page_ctl(uint8_t page, uint8_t motor_num, uint8_t set_page_num)
+uint8_t *net_pda_midi_sub_pid_page_ctl(uint8_t page, uint8_t slot_num, uint8_t motor_num, uint8_t set_page_num)
 {
 	prtc_data_ctl_midi_page_t *pCdcmip = (prtc_data_ctl_midi_page_t *)make_data_buff;
 	pCdcmip->page = page;
+	pCdcmip->slot_num = slot_num;
 	pCdcmip->motor_num = motor_num;
 	pCdcmip->set_page_num = set_page_num;
 	
@@ -354,10 +355,11 @@ uint8_t *net_pda_midi_sub_pid_page_ctl(uint8_t page, uint8_t motor_num, uint8_t 
 			set_page_num : 
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_page_rsp(uint8_t page, uint8_t motor_num, uint8_t set_page_num)
+uint8_t *net_pda_midi_sub_pid_page_rsp(uint8_t page, uint8_t slot_num, uint8_t motor_num, uint8_t set_page_num)
 {
 	prtc_data_rsp_midi_page_t *pCdrmp = (prtc_data_rsp_midi_page_t *)make_data_buff;
 	pCdrmp->page = page;
+	pCdrmp->slot_num = slot_num;
 	pCdrmp->motor_num = motor_num;
 	pCdrmp->set_page_num = set_page_num;
 	

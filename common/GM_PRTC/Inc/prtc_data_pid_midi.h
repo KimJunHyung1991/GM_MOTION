@@ -145,12 +145,14 @@ typedef struct{
 /***********************************************************MIDI_SUB_PID_PAGE**********************************************************/
 typedef struct{
 	uint8_t page;
+	uint8_t slot_num;
 	uint8_t motor_num;
 	uint8_t set_page_num;
 }prtc_data_ctl_midi_page_t;
 
 typedef struct{
 	uint8_t page;
+	uint8_t slot_num;
 	uint8_t motor_num;
 	uint8_t set_page_num;
 }prtc_data_rsp_midi_page_t;
