@@ -11,6 +11,10 @@ typedef struct{
 	uint8_t		id;
 	uint16_t	adc_val;
 }prtc_data_rsp_midi_adc_t;
+
+typedef struct{
+	uint8_t		id;
+}prtc_data_rqt_midi_adc_t;
 /***********************************************************MIDI_SUB_PID_ADC**********************************************************/
 /***********************************************************MIDI_SUB_PID_BUTTON**********************************************************/
 typedef struct{

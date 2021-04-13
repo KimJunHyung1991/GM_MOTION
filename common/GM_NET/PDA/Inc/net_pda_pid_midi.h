@@ -3,7 +3,7 @@
 
 uint8_t *net_pda_midi_sub_pid_adc_ctl(uint8_t id, uint16_t adc_val);
 uint8_t *net_pda_midi_sub_pid_adc_rsp(uint8_t id, uint16_t adc_val);
-uint8_t *net_pda_midi_sub_pid_adc_rqt(void);
+uint8_t *net_pda_midi_sub_pid_adc_rqt(uint8_t id);
 
 uint8_t *net_pda_midi_sub_pid_button_ctl(uint8_t type, uint8_t status, uint8_t id);
 uint8_t *net_pda_midi_sub_pid_button_rsp(uint8_t type, uint8_t status, uint8_t id);

@@ -41,8 +41,10 @@ uint8_t *net_pda_midi_sub_pid_adc_rsp(uint8_t id, uint16_t adc_val)
   * @param  adc_val : midi슬라이더 12bit(0~4095) value
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_adc_rqt(void)
+uint8_t *net_pda_midi_sub_pid_adc_rqt(uint8_t id)
 {
+	prtc_data_rqt_midi_adc_t *pCdrma = (prtc_data_rqt_midi_adc_t *)make_data_buff;
+	pCdrma->id = id;
 	return make_data_buff;
 }
 /******************************************MIDI SUB PID ADC ASSEMBLE*********************************************/

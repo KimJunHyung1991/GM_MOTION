@@ -37,10 +37,10 @@ void app_tx_midi_sub_pid_adc_rsp(uint8_t num, uint8_t priority, uint8_t souce_id
 			net_pda_midi_sub_pid_adc_rsp(id, adc_val));
 }
 
-void app_tx_midi_sub_pid_adc_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
+void app_tx_midi_sub_pid_adc_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t id)
 {
 	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_ADC, sub_id), \
-			net_pda_midi_sub_pid_adc_rqt());
+			net_pda_midi_sub_pid_adc_rqt(id));
 }
 /******************************************MIDI SUB PID ADC APPLICATION*********************************************/
 /******************************************MIDI SUB PID BUTTON APPLICATION*********************************************/
