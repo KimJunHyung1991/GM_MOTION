@@ -37,6 +37,11 @@ typedef struct{
 /***********************************************************INIT_SUB_PID_STATUS**********************************************************/
 typedef struct{
 	uint8_t		step;
+	uint8_t		status;
+}prtc_data_ctl_init_status_t;
+
+typedef struct{
+	uint8_t		step;
 }prtc_data_rqt_init_status_t;
 
 typedef struct{

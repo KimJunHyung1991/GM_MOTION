@@ -28,7 +28,7 @@ void app_tx_init_sub_pid_driver_data2_rqt(uint8_t num, uint8_t priority, uint8_t
 void app_rx_init_sub_pid_status_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void app_rx_init_sub_pid_status_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void app_rx_init_sub_pid_status_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void app_tx_init_sub_pid_status_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
+void app_tx_init_sub_pid_status_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t step, uint8_t status);
 void app_tx_init_sub_pid_status_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t step, uint8_t status);
 void app_tx_init_sub_pid_status_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t step);
 /**********************************************************************************/

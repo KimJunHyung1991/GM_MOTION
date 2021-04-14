@@ -137,8 +137,12 @@ uint8_t *net_pda_init_sub_pid_driver_data2_rqt(void)
   * @param  none
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_status_ctl(void)
+uint8_t *net_pda_init_sub_pid_status_ctl(uint8_t step, uint8_t status)
 {
+	prtc_data_ctl_init_status_t *pCdcis = (prtc_data_ctl_init_status_t *)make_data_buff;
+	pCdcis->step = step;
+	pCdcis->status = status;
+	
 	return make_data_buff;
 }
 

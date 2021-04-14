@@ -13,7 +13,7 @@ uint8_t *net_pda_init_sub_pid_driver_data2_ctl(uint32_t count, uint16_t rpm);
 uint8_t *net_pda_init_sub_pid_driver_data2_rsp(uint32_t count, uint16_t rpm);
 uint8_t *net_pda_init_sub_pid_driver_data2_rqt(void);
 
-uint8_t *net_pda_init_sub_pid_status_ctl(void);
+uint8_t *net_pda_init_sub_pid_status_ctl(uint8_t step, uint8_t status);
 uint8_t *net_pda_init_sub_pid_status_rsp(uint8_t step, uint8_t status);
 uint8_t *net_pda_init_sub_pid_status_rqt(uint8_t step);
 

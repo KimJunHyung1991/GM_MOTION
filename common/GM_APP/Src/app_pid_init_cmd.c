@@ -149,10 +149,10 @@ __weak void app_rx_init_sub_pid_status_rqt(uint8_t num, prtc_header_t *pPh, uint
 	
 }
 
-void app_tx_init_sub_pid_status_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id)
+void app_tx_init_sub_pid_status_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t step, uint8_t status)
 {
-	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, 0, priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_STATUS, sub_id), \
-			net_pda_init_sub_pid_status_ctl());
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_init_status_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_STATUS, sub_id), \
+			net_pda_init_sub_pid_status_ctl(step, status));
 }
 
 void app_tx_init_sub_pid_status_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t step, uint8_t status)
