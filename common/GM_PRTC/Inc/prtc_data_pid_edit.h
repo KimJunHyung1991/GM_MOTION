@@ -54,6 +54,8 @@ typedef struct{
 #define	EDIT_ACTION_PLAY_AND_REC_FILE_PLAY_START		40
 #define	EDIT_ACTION_PLAY_AND_REC_FILE_PLAY_END			41
 #define	EDIT_ACTION_PLAY_AND_REC_FILE_OVERWRITE			42
+#define	EDIT_ACTION_SD_SAVE_STRART						43
+#define	EDIT_ACTION_SD_SAVE_END							44
 ///////////////////////////action///////////////////////////
 
 /***********************************************************EDIT_SUB_PID_ACTION**********************************************************/
