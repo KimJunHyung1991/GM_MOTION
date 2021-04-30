@@ -11,7 +11,7 @@ can_q_buff_t can_tx_ring_buff[CAN_CNT];
 prtc_header_t make_header_buff;
 uint8_t make_data_buff[8];
 
-can_comm_led tx_led = {0,};	//210218 shs
+can_comm_led tx_led = {0,};	//210218 shs//210430kjh
 
 /******************************************ERROR HANDLER*********************************************/
 /**
@@ -28,39 +28,43 @@ static void error_handler(void)
 /******************************************ERROR HANDLER*********************************************/
 
 /******************************************LED Driver*********************************************/
-//210218 shs
+//210218 shs//210430kjh
 //init
 void gm_motion_TX_LED_init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState ledOnState)
 {
-	tx_led.f_init = SET;
-	tx_led.GPIO = GPIOx;
-	tx_led.Pin = GPIO_Pin;
-	tx_led.ledOnState = ledOnState;
+	if(tx_led.cnt >= CAN_CNT) return;
+	tx_led.data[tx_led.cnt].f_init = SET;
+	tx_led.data[tx_led.cnt].GPIO = GPIOx;
+	tx_led.data[tx_led.cnt].Pin = GPIO_Pin;
+	tx_led.data[tx_led.cnt++].ledOnState = ledOnState;
 }
 //led on
-static void gm_motion_TX_LED_ON(void)
+static void gm_motion_TX_LED_ON(uint8_t num)
 {
-	if(tx_led.f_init)
+	if(num >= CAN_CNT) return;
+	if(tx_led.data[num].f_init)
 	{
-		if(tx_led.ledOnState == GPIO_PIN_RESET)	//gpio low -> led on
-			tx_led.GPIO->ODR &= ~tx_led.Pin;
+		if(tx_led.data[num].ledOnState == GPIO_PIN_RESET)	//gpio low -> led on
+			tx_led.data[num].GPIO->ODR &= ~tx_led.data[num].Pin;
 		else
-			tx_led.GPIO->ODR |= tx_led.Pin;		//gpio high ->led on
+			tx_led.data[num].GPIO->ODR |= tx_led.data[num].Pin;		//gpio high ->led on
 
-		tx_led.t_led_off = HAL_GetTick();
+		tx_led.data[num].t_led_off = HAL_GetTick();
 	}
 }
 //led off
 static void gm_motion_TX_LED_OFF(void)
 {
-	if(tx_led.f_init)
-	{
-		if(tx_led.t_led_off != HAL_GetTick())
+	for(int i = 0; i < tx_led.cnt; i++){
+		if(tx_led.data[i].f_init)
 		{
-			if (tx_led.ledOnState == GPIO_PIN_RESET)	//gpio high -> led off
-				tx_led.GPIO->ODR |= tx_led.Pin;
-			else
-				tx_led.GPIO->ODR &= ~tx_led.Pin;		//gpio low ->led off
+			if(tx_led.data[i].t_led_off != HAL_GetTick())
+			{
+				if (tx_led.data[i].ledOnState == GPIO_PIN_RESET)	//gpio high -> led off
+					tx_led.data[i].GPIO->ODR |= tx_led.data[i].Pin;
+				else
+					tx_led.data[i].GPIO->ODR &= ~tx_led.data[i].Pin;		//gpio low ->led off
+			}
 		}
 	}
 }
@@ -127,7 +131,7 @@ void proc_can_tx(void)
 					error_handler();
 				}
 				proc_tx_ring_buff_tail_chk(i);
-				gm_motion_TX_LED_ON();//210218 shs
+				gm_motion_TX_LED_ON(i);//210218 shs//210430kjh
 			}
 		}
 	}

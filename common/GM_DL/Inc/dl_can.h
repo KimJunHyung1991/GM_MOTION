@@ -30,7 +30,12 @@ typedef struct{
 	uint16_t Pin;			//led pin num
 	GPIO_PinState ledOnState;	//led on state  // ex. gpio low  ->  led on? off?
 	uint32_t t_led_off;
-}can_comm_led;	//210218 shs
+}can_comm_data_led;	//210218 shs//210430kjh
+
+typedef struct{
+	uint8_t cnt;
+	can_comm_data_led data[CAN_CNT];
+}can_comm_led;	////210430kjh
 /////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////

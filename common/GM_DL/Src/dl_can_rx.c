@@ -7,7 +7,7 @@ data link can rx
 **************************************************/
 
 can_q_buff_t can_rx_ring_buff[CAN_CNT];
-can_comm_led rx_led = {0,};	//210218 shs
+can_comm_led rx_led = {0,};	//210218 shs//210430kjh
 
 /******************************************ERROR HANDLER*********************************************/
 /**
@@ -24,39 +24,43 @@ static void error_handler(void)
 /******************************************ERROR HANDLER*********************************************/
 
 /******************************************LED Driver*********************************************/
-//210218 shs
+//210218 shs//210430kjh
 //init
 void gm_motion_RX_LED_init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState ledOnState)
 {
-	rx_led.f_init = SET;
-	rx_led.GPIO = GPIOx;
-	rx_led.Pin = GPIO_Pin;
-	rx_led.ledOnState = ledOnState;
+	if(rx_led.cnt >= CAN_CNT) return;
+	rx_led.data[rx_led.cnt].f_init = SET;
+	rx_led.data[rx_led.cnt].GPIO = GPIOx;
+	rx_led.data[rx_led.cnt].Pin = GPIO_Pin;
+	rx_led.data[rx_led.cnt++].ledOnState = ledOnState;
 }
 //led on
-static void gm_motion_RX_LED_ON(void)
+static void gm_motion_RX_LED_ON(uint8_t num)
 {
-	if(rx_led.f_init)
+	if(num >= CAN_CNT) return;
+	if(rx_led.data[num].f_init)
 	{
-		if(rx_led.ledOnState == GPIO_PIN_RESET)	//gpio low -> led on
-			rx_led.GPIO->ODR &= ~rx_led.Pin;
+		if(rx_led.data[num].ledOnState == GPIO_PIN_RESET)	//gpio low -> led on
+			rx_led.data[num].GPIO->ODR &= ~rx_led.data[num].Pin;
 		else
-			rx_led.GPIO->ODR |= rx_led.Pin;		//gpio high ->led on
+			rx_led.data[num].GPIO->ODR |= rx_led.data[num].Pin;		//gpio high ->led on
 
-		rx_led.t_led_off = HAL_GetTick();
+		rx_led.data[num].t_led_off = HAL_GetTick();
 	}
 }
 //led off
 static void gm_motion_RX_LED_OFF(void)
 {
-	if(rx_led.f_init)
-	{
-		if(rx_led.t_led_off != HAL_GetTick())
+	for(int i = 0; i < rx_led.cnt; i++){
+		if(rx_led.data[i].f_init)
 		{
-			if (rx_led.ledOnState == GPIO_PIN_RESET)	//gpio high -> led off
-				rx_led.GPIO->ODR |= rx_led.Pin;
-			else
-				rx_led.GPIO->ODR &= ~rx_led.Pin;		//gpio low ->led off
+			if(rx_led.data[i].t_led_off != HAL_GetTick())
+			{
+				if (rx_led.data[i].ledOnState == GPIO_PIN_RESET)	//gpio high -> led off
+					rx_led.data[i].GPIO->ODR |= rx_led.data[i].Pin;
+				else
+					rx_led.data[i].GPIO->ODR &= ~rx_led.data[i].Pin;		//gpio low ->led off
+			}
 		}
 	}
 }
@@ -124,7 +128,7 @@ void proc_can_rx(void)
 		if(can_rx_ring_buff[i].head != can_rx_ring_buff[i].tail){
 			prtc_header_t *pPh = (prtc_header_t *)&can_rx_ring_buff[i].can_header[can_rx_ring_buff[i].tail];
 			if(pPh->target_id == my_can_id || pPh->target_id == CAN_ID_BROAD_CAST){
-				gm_motion_RX_LED_ON();//210218 shs
+				gm_motion_RX_LED_ON(i);//210218 shs//210430kjh
 				net_phd_pid(i, &can_rx_ring_buff[i].can_header[can_rx_ring_buff[i].tail], (uint8_t *)&can_rx_ring_buff[i].data[can_rx_ring_buff[i].tail]);
 			}
 			proc_rx_ring_buff_tail_chk(i);
