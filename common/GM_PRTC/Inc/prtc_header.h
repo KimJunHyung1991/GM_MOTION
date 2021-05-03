@@ -8,6 +8,7 @@
 #include "prtc_data_pid_speaker.h"
 #include "prtc_data_pid_sensor.h"
 #include "prtc_data_pid_error.h"
+#include "prtc_data_pid_inspection.h"
 #pragma pack(1)
 typedef struct{
 	uint8_t dlc;
@@ -54,6 +55,7 @@ typedef struct{
 #define PID_SPEAKER				4
 #define PID_SENSOR				5
 #define PID_ERROR				6
+#define PID_INSPECTION			7
 /*******************************************Header영역의 PID******************************************************************/
 /*******************************************PID_INIT의 SUB_PID******************************************************************/
 #define INIT_SUB_PID_BOOT					0
@@ -96,5 +98,8 @@ typedef struct{
 #define ERROR_SUB_PID_AC		1
 #define ERROR_SUB_PID_BLDC		2
 /*******************************************PID_ERROR의 SUB_PID******************************************************************/
+/*******************************************PID_INSPECTION의 SUB_PID******************************************************************/
+#define INSPECTION_SUB_PID_DATA		0
+/*******************************************PID_INSPECTION의 SUB_PID******************************************************************/
 #pragma pack()
 #endif

@@ -7,6 +7,7 @@
 #include "net_phd_pid_speaker.h"
 #include "net_phd_pid_sensor.h"
 #include "net_phd_pid_error.h"
+#include "net_phd_pid_inspection.h"
 
 /*************************************************
 fail : net_phd_pid.c
@@ -47,6 +48,9 @@ void net_phd_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 		break;
 		case PID_ERROR:
 			net_phd_error_sub_pid(num, pPh, pData);
+		break;
+		case PID_INSPECTION:
+			net_phd_inspection_sub_pid(num, pPh, pData);
 		break;
 	}
 }
