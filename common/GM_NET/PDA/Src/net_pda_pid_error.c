@@ -117,3 +117,40 @@ uint8_t *net_pda_error_sub_pid_bldc_rqt(void)
 	return make_data_buff;
 }
 /******************************************ERROR SUB PID BLDC ASSEMBLE*********************************************/
+/******************************************ERROR SUB PID CLEAR ASSEMBLE*********************************************/
+/**
+  * @brief  packet error-clear-control data assemble
+  * @param  error_code : value(0~0xFFFFFFFF)
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_clear_ctl(uint32_t error_code)
+{
+	prtc_data_ctl_error_clear_t *pCdcec = (prtc_data_ctl_error_clear_t *)make_data_buff;
+	pCdcec->error_code = error_code;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-clear-response data assemble
+  * @param  error_code : value(0~0xFFFFFFFF)
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_clear_rsp(uint32_t error_code)
+{
+	prtc_data_rsp_error_clear_t *pCdrec = (prtc_data_rsp_error_clear_t *)make_data_buff;
+	pCdrec->error_code = error_code;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-clear-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_clear_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************ERROR SUB PID CLEAR ASSEMBLE*********************************************/

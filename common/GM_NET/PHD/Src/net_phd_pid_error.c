@@ -10,6 +10,7 @@ packet의 header영역의 PID(error) 분해
 void net_phd_error_sub_pid_rc(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void net_phd_error_sub_pid_ac(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void net_phd_error_sub_pid_bldc(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_error_sub_pid_clear(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 
 /******************************************ERROR PID DISASSEMBLE*********************************************/
 /**
@@ -30,6 +31,9 @@ void net_phd_error_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 		break;
 		case ERROR_SUB_PID_BLDC:
 			net_phd_error_sub_pid_bldc(num, pPh, pData);
+		break;
+		case ERROR_SUB_PID_CLEAR:
+			net_phd_error_sub_pid_clear(num, pPh, pData);
 		break;
 	}
 }
@@ -103,3 +107,26 @@ void net_phd_error_sub_pid_bldc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 	}
 }
 /******************************************ERROR SUB PID BLDC DISASSEMBLE*********************************************/
+/******************************************ERROR SUB PID CLEAR DISASSEMBLE*********************************************/
+/**
+  * @brief  packet header disassemble(PID-error의 sub_pid-clear의 cmd)
+  * @param  *pPh : packet header pointer
+			*pData : packet data pointer
+  * @retval None
+  */
+void net_phd_error_sub_pid_clear(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	switch(pPh->cmd)
+	{
+		case CMD_CONTROL:
+			app_rx_error_sub_pid_clear_ctl(num, pPh, pData);
+		break;
+		case CMD_RESPONSE:
+			app_rx_error_sub_pid_clear_rsp(num, pPh, pData);
+		break;
+		case CMD_REQUEST:
+			app_rx_error_sub_pid_clear_rqt(num, pPh, pData);
+		break;
+	}
+}
+/******************************************ERROR SUB PID CLEAR DISASSEMBLE*********************************************/

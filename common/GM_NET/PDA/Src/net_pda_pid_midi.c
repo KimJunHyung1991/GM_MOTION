@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /*************************************************
 fail : net_pda_pid_midi.c
 network packet data assemble prameter idemtification midi

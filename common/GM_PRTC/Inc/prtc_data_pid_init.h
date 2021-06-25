@@ -54,6 +54,7 @@ typedef struct{
 #define DRIVER_DATA2		2
 #define MOVE_SENSOR			3
 #define MOVE_INIT_POSITION	4
+#define BATTERY_CHECK		5
 ///////////////////////////step///////////////////////////
 ///////////////////////////status///////////////////////////
 #define STATUS_WAIT			0
