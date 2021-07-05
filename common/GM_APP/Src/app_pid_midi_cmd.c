@@ -10,17 +10,17 @@
 			*pData : packet data pointer
   * @retval None
   */
-__weak void app_rx_midi_sub_pid_adc_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_adc_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_adc_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_adc_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_adc_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_adc_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_adc_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_adc_rqt(uint8_t num, prtc_header_t *pPh, prtc_data_rqt_midi_adc_t *pData)
 {
 	
 }
@@ -51,17 +51,17 @@ void app_tx_midi_sub_pid_adc_rqt(uint8_t num, uint8_t priority, uint8_t souce_id
 			*pData : packet data pointer
   * @retval None
   */
-__weak void app_rx_midi_sub_pid_button_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_button_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_button_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_button_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_button_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_button_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_button_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_button_rqt(uint8_t num, prtc_header_t *pPh, prtc_data_rqt_midi_button_t *pData)
 {
 	
 }
@@ -93,17 +93,17 @@ void app_tx_midi_sub_pid_button_rqt(uint8_t num, uint8_t priority, uint8_t souce
 			*pData : packet data pointer
   * @retval None
   */
-__weak void app_rx_midi_sub_pid_led_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_led_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_led_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_led_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_led_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_led_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_led_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_led_rqt(uint8_t num, prtc_header_t *pPh, prtc_data_rqt_midi_led_t *pData)
 {
 	
 }
@@ -135,12 +135,12 @@ void app_tx_midi_sub_pid_led_rqt(uint8_t num, uint8_t priority, uint8_t souce_id
 			*pData : packet data pointer
   * @retval None
   */
-__weak void app_rx_midi_sub_pid_id_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_id_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_id_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_id_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_id_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_id_t *pData)
 {
 	
 }
@@ -170,12 +170,12 @@ void app_tx_midi_sub_pid_id_rqt(uint8_t num, uint8_t priority, uint8_t souce_id,
 
 /******************************************MIDI SUB PID ID APPLICATION*********************************************/
 /******************************************MIDI SUB PID NICK_NAME_H APPLICATION*********************************************/
-__weak void app_rx_midi_sub_pid_nick_name_h_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_nick_name_h_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_nick_name_h_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_nick_name_h_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_nick_name_h_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_nick_name_h_t *pData)
 {
 	
 }
@@ -204,12 +204,12 @@ void app_tx_midi_sub_pid_nick_name_h_rqt(uint8_t num, uint8_t priority, uint8_t 
 }
 /******************************************MIDI SUB PID NICK_NAME_H APPLICATION*********************************************/
 /******************************************MIDI SUB PID NICK_NAME_L APPLICATION*********************************************/
-__weak void app_rx_midi_sub_pid_nick_name_l_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_nick_name_l_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_nick_name_l_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_nick_name_l_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_nick_name_l_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_nick_name_l_t *pData)
 {
 	
 }
@@ -238,12 +238,12 @@ void app_tx_midi_sub_pid_nick_name_l_rqt(uint8_t num, uint8_t priority, uint8_t 
 }
 /******************************************MIDI SUB PID NICK_NAME_L APPLICATION*********************************************/
 /******************************************MIDI SUB PID RANGE_DATA APPLICATION*********************************************/
-__weak void app_rx_midi_sub_pid_range_data_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_range_data_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_range_data_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_range_data_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_range_data_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_range_data_t *pData)
 {
 	
 }
@@ -272,12 +272,12 @@ void app_tx_midi_sub_pid_range_data_rqt(uint8_t num, uint8_t priority, uint8_t s
 }
 /******************************************MIDI SUB PID RANGE_DATA APPLICATION*********************************************/
 /******************************************MIDI SUB PID PAGE APPLICATION*********************************************/
-__weak void app_rx_midi_sub_pid_page_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_page_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_page_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_page_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_page_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_page_t *pData)
 {
 	
 }
@@ -306,12 +306,12 @@ void app_tx_midi_sub_pid_page_rqt(uint8_t num, uint8_t priority, uint8_t souce_i
 }
 /******************************************MIDI SUB PID PAGE APPLICATION*********************************************/
 /******************************************MIDI SUB PID PAGE EXIST*********************************************/
-__weak void app_rx_midi_sub_pid_exist_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_exist_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_exist_t *pData)
 {
 	
 }
 
-__weak void app_rx_midi_sub_pid_exist_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_exist_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_exist_t *pData)
 {
 	
 }
@@ -340,7 +340,7 @@ void app_tx_midi_sub_pid_exist_rqt(uint8_t num, uint8_t priority, uint8_t souce_
 }
 /******************************************MIDI SUB PID PAGE EXIST*********************************************/
 /******************************************MIDI SUB PID LAST PAGE*********************************************/
-__weak void app_rx_midi_sub_pid_last_page_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_midi_sub_pid_last_page_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_last_page_t *pData)
 {
 	
 }

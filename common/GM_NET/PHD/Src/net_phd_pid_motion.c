@@ -46,10 +46,10 @@ void net_phd_motion_sub_pid_adc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_motion_sub_pid_adc_ctl(num, pPh, pData);
+			app_rx_motion_sub_pid_adc_ctl(num, pPh, (prtc_data_ctl_motion_adc_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_motion_sub_pid_adc_rsp(num, pPh, pData);
+			app_rx_motion_sub_pid_adc_rsp(num, pPh, (prtc_data_rsp_motion_adc_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_motion_sub_pid_adc_rqt(num, pPh, pData);
@@ -69,10 +69,10 @@ void net_phd_motion_sub_pid_angle(uint8_t num, prtc_header_t *pPh, uint8_t *pDat
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_motion_sub_pid_angle_ctl(num, pPh, pData);
+			app_rx_motion_sub_pid_angle_ctl(num, pPh, (prtc_data_ctl_motion_angle_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_motion_sub_pid_angle_rsp(num, pPh, pData);
+			app_rx_motion_sub_pid_angle_rsp(num, pPh, (prtc_data_rsp_motion_angle_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_motion_sub_pid_angle_rqt(num, pPh, pData);
@@ -92,10 +92,10 @@ void net_phd_motion_sub_pid_direction(uint8_t num, prtc_header_t *pPh, uint8_t *
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_motion_sub_pid_direction_ctl(num, pPh, pData);
+			app_rx_motion_sub_pid_direction_ctl(num, pPh, (prtc_data_ctl_motion_direction_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_motion_sub_pid_direction_rsp(num, pPh, pData);
+			app_rx_motion_sub_pid_direction_rsp(num, pPh, (prtc_data_rsp_motion_direction_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_motion_sub_pid_direction_rqt(num, pPh, pData);

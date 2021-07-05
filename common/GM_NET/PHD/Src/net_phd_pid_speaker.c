@@ -37,10 +37,10 @@ void net_phd_speaker_sub_pid_action(uint8_t num, prtc_header_t *pPh, uint8_t *pD
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_speaker_sub_pid_action_ctl(num, pPh, pData);
+			app_rx_speaker_sub_pid_action_ctl(num, pPh, (prtc_data_ctl_speaker_action_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_speaker_sub_pid_action_rsp(num, pPh, pData);
+			app_rx_speaker_sub_pid_action_rsp(num, pPh, (prtc_data_rsp_speaker_action_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_speaker_sub_pid_action_rqt(num, pPh, pData);

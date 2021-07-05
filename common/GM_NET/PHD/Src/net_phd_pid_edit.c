@@ -39,10 +39,10 @@ void net_phd_edit_sub_pid_action(uint8_t num, prtc_header_t *pPh, uint8_t *pData
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_edit_sub_pid_action_ctl(num, pPh, pData);
+			app_rx_edit_sub_pid_action_ctl(num, pPh, (prtc_data_ctl_edit_action_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_edit_sub_pid_action_rsp(num, pPh, pData);
+			app_rx_edit_sub_pid_action_rsp(num, pPh, (prtc_data_rsp_edit_action_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_edit_sub_pid_action_rqt(num, pPh, pData);

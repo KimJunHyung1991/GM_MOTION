@@ -38,10 +38,10 @@ void net_phd_sensor_sub_pid_detect(uint8_t num, prtc_header_t *pPh, uint8_t *pDa
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_sensor_sub_pid_detect_ctl(num, pPh, pData);
+			app_rx_sensor_sub_pid_detect_ctl(num, pPh, (prtc_data_ctl_sensor_detect_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_sensor_sub_pid_detect_rsp(num, pPh, pData);
+			app_rx_sensor_sub_pid_detect_rsp(num, pPh, (prtc_data_rsp_sensor_detect_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_sensor_sub_pid_detect_rqt(num, pPh, pData);

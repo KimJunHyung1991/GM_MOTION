@@ -10,12 +10,12 @@
 			*pData : packet data pointer
   * @retval None
   */
-__weak void app_rx_speaker_sub_pid_action_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_speaker_sub_pid_action_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_speaker_action_t *pData)
 {
 	
 }
 
-__weak void app_rx_speaker_sub_pid_action_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_speaker_sub_pid_action_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_speaker_action_t *pData)
 {
 	
 }

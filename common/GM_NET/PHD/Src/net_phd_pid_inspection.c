@@ -19,10 +19,10 @@ void net_phd_inspection_sub_pid_data(uint8_t num, prtc_header_t *pPh, uint8_t *p
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_inspection_sub_pid_data_ctl(num, pPh, pData);
+			app_rx_inspection_sub_pid_data_ctl(num, pPh, (prtc_data_ctl_inspection_data_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_inspection_sub_pid_data_rsp(num, pPh, pData);
+			app_rx_inspection_sub_pid_data_rsp(num, pPh, (prtc_data_rsp_inspection_data_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_inspection_sub_pid_data_rqt(num, pPh, pData);

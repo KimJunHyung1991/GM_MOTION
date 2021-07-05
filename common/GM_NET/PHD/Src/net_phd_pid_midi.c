@@ -73,13 +73,13 @@ void net_phd_midi_sub_pid_adc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_adc_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_adc_ctl(num, pPh, (prtc_data_ctl_midi_adc_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_adc_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_adc_rsp(num, pPh, (prtc_data_rsp_midi_adc_t *)pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_midi_sub_pid_adc_rqt(num, pPh, pData);
+			app_rx_midi_sub_pid_adc_rqt(num, pPh, (prtc_data_rqt_midi_adc_t *)pData);
 		break;
 	}
 }
@@ -96,13 +96,13 @@ void net_phd_midi_sub_pid_button(uint8_t num, prtc_header_t *pPh, uint8_t *pData
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_button_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_button_ctl(num, pPh, (prtc_data_ctl_midi_button_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_button_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_button_rsp(num, pPh, (prtc_data_rsp_midi_button_t *)pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_midi_sub_pid_button_rqt(num, pPh, pData);
+			app_rx_midi_sub_pid_button_rqt(num, pPh, (prtc_data_rqt_midi_button_t *)pData);
 		break;
 	}
 }
@@ -119,13 +119,13 @@ void net_phd_midi_sub_pid_led(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_led_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_led_ctl(num, pPh, (prtc_data_ctl_midi_led_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_led_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_led_rsp(num, pPh, (prtc_data_rsp_midi_led_t *)pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_midi_sub_pid_led_rqt(num, pPh, pData);
+			app_rx_midi_sub_pid_led_rqt(num, pPh, (prtc_data_rqt_midi_led_t *)pData);
 		break;
 	}
 }
@@ -142,10 +142,10 @@ void net_phd_midi_sub_pid_id(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_id_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_id_ctl(num, pPh, (prtc_data_ctl_midi_id_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_id_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_id_rsp(num, pPh, (prtc_data_rsp_midi_id_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_midi_sub_pid_id_rqt(num, pPh, pData);
@@ -165,10 +165,10 @@ void net_phd_midi_sub_pid_nick_name_h(uint8_t num, prtc_header_t *pPh, uint8_t *
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_nick_name_h_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_nick_name_h_ctl(num, pPh, (prtc_data_ctl_midi_nick_name_h_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_nick_name_h_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_nick_name_h_rsp(num, pPh, (prtc_data_rsp_midi_nick_name_h_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_midi_sub_pid_nick_name_h_rqt(num, pPh, pData);
@@ -188,10 +188,10 @@ void net_phd_midi_sub_pid_nick_name_l(uint8_t num, prtc_header_t *pPh, uint8_t *
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_nick_name_l_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_nick_name_l_ctl(num, pPh, (prtc_data_ctl_midi_nick_name_l_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_nick_name_l_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_nick_name_l_rsp(num, pPh, (prtc_data_rsp_midi_nick_name_l_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_midi_sub_pid_nick_name_l_rqt(num, pPh, pData);
@@ -211,10 +211,10 @@ void net_phd_midi_sub_pid_range_data(uint8_t num, prtc_header_t *pPh, uint8_t *p
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_range_data_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_range_data_ctl(num, pPh, (prtc_data_ctl_midi_range_data_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_range_data_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_range_data_rsp(num, pPh, (prtc_data_rsp_midi_range_data_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_midi_sub_pid_range_data_rqt(num, pPh, pData);
@@ -234,10 +234,10 @@ void net_phd_midi_sub_pid_page(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_page_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_page_ctl(num, pPh, (prtc_data_ctl_midi_page_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_page_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_page_rsp(num, pPh, (prtc_data_rsp_midi_page_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_midi_sub_pid_page_rqt(num, pPh, pData);
@@ -257,10 +257,10 @@ void net_phd_midi_sub_pid_exist(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_exist_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_exist_ctl(num, pPh, (prtc_data_ctl_midi_exist_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_midi_sub_pid_exist_rsp(num, pPh, pData);
+			app_rx_midi_sub_pid_exist_rsp(num, pPh, (prtc_data_rsp_midi_exist_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_midi_sub_pid_exist_rqt(num, pPh, pData);
@@ -280,7 +280,7 @@ void net_phd_midi_sub_pid_last_page(uint8_t num, prtc_header_t *pPh, uint8_t *pD
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_midi_sub_pid_last_page_ctl(num, pPh, pData);
+			app_rx_midi_sub_pid_last_page_ctl(num, pPh, (prtc_data_ctl_midi_last_page_t *)pData);
 		break;
 		case CMD_RESPONSE:
 			app_rx_midi_sub_pid_last_page_rsp(num, pPh, pData);

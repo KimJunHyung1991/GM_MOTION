@@ -42,12 +42,12 @@ typedef struct{
 
 typedef struct{
 	uint8_t		step;
-}prtc_data_rqt_init_status_t;
+	uint8_t		status;
+}prtc_data_rsp_init_status_t;
 
 typedef struct{
 	uint8_t		step;
-	uint8_t		status;
-}prtc_data_rsp_init_status_t;
+}prtc_data_rqt_init_status_t;
 ///////////////////////////step///////////////////////////
 #define ABSOLUTE_BATTERY	0
 #define DRIVER_DATA1		1

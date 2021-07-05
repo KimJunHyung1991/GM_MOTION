@@ -85,10 +85,10 @@ void net_phd_init_sub_pid_driver_data1(uint8_t num, prtc_header_t *pPh, uint8_t 
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_driver_data1_ctl(num, pPh, pData);
+			app_rx_init_sub_pid_driver_data1_ctl(num, pPh, (prtc_data_ctl_init_driver_data1_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_driver_data1_rsp(num, pPh, pData);
+			app_rx_init_sub_pid_driver_data1_rsp(num, pPh, (prtc_data_rsp_init_driver_data1_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_init_sub_pid_driver_data1_rqt(num, pPh, pData);
@@ -108,10 +108,10 @@ void net_phd_init_sub_pid_driver_data2(uint8_t num, prtc_header_t *pPh, uint8_t 
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_driver_data2_ctl(num, pPh, pData);
+			app_rx_init_sub_pid_driver_data2_ctl(num, pPh, (prtc_data_ctl_init_driver_data2_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_driver_data2_rsp(num, pPh, pData);
+			app_rx_init_sub_pid_driver_data2_rsp(num, pPh, (prtc_data_rsp_init_driver_data2_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_init_sub_pid_driver_data2_rqt(num, pPh, pData);
@@ -131,13 +131,13 @@ void net_phd_init_sub_pid_status(uint8_t num, prtc_header_t *pPh, uint8_t *pData
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_status_ctl(num, pPh, pData);
+			app_rx_init_sub_pid_status_ctl(num, pPh, (prtc_data_ctl_init_status_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_status_rsp(num, pPh, pData);
+			app_rx_init_sub_pid_status_rsp(num, pPh, (prtc_data_rsp_init_status_t *)pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_init_sub_pid_status_rqt(num, pPh, pData);
+			app_rx_init_sub_pid_status_rqt(num, pPh, (prtc_data_rqt_init_status_t *)pData);
 		break;
 	}
 }
@@ -154,10 +154,10 @@ void net_phd_init_sub_pid_absolute_battery(uint8_t num, prtc_header_t *pPh, uint
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_init_sub_pid_absolute_battery_ctl(num, pPh, pData);
+			app_rx_init_sub_pid_absolute_battery_ctl(num, pPh, (prtc_data_ctl_init_absolute_battery_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_init_sub_pid_absolute_battery_rsp(num, pPh, pData);
+			app_rx_init_sub_pid_absolute_battery_rsp(num, pPh, (prtc_data_rsp_init_absolute_battery_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_init_sub_pid_absolute_battery_rqt(num, pPh, pData);

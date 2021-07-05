@@ -50,10 +50,10 @@ void net_phd_error_sub_pid_rc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_error_sub_pid_rc_ctl(num, pPh, pData);
+			app_rx_error_sub_pid_rc_ctl(num, pPh, (prtc_data_ctl_error_rc_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_error_sub_pid_rc_rsp(num, pPh, pData);
+			app_rx_error_sub_pid_rc_rsp(num, pPh, (prtc_data_rsp_error_rc_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_error_sub_pid_rc_rqt(num, pPh, pData);
@@ -73,10 +73,10 @@ void net_phd_error_sub_pid_ac(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_error_sub_pid_ac_ctl(num, pPh, pData);
+			app_rx_error_sub_pid_ac_ctl(num, pPh, (prtc_data_ctl_error_ac_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_error_sub_pid_ac_rsp(num, pPh, pData);
+			app_rx_error_sub_pid_ac_rsp(num, pPh, (prtc_data_rsp_error_ac_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_error_sub_pid_ac_rqt(num, pPh, pData);
@@ -96,10 +96,10 @@ void net_phd_error_sub_pid_bldc(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_error_sub_pid_bldc_ctl(num, pPh, pData);
+			app_rx_error_sub_pid_bldc_ctl(num, pPh, (prtc_data_ctl_error_bldc_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_error_sub_pid_bldc_rsp(num, pPh, pData);
+			app_rx_error_sub_pid_bldc_rsp(num, pPh, (prtc_data_rsp_error_bldc_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_error_sub_pid_bldc_rqt(num, pPh, pData);
@@ -119,10 +119,10 @@ void net_phd_error_sub_pid_clear(uint8_t num, prtc_header_t *pPh, uint8_t *pData
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_error_sub_pid_clear_ctl(num, pPh, pData);
+			app_rx_error_sub_pid_clear_ctl(num, pPh, (prtc_data_ctl_error_clear_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_error_sub_pid_clear_rsp(num, pPh, pData);
+			app_rx_error_sub_pid_clear_rsp(num, pPh, (prtc_data_rsp_error_clear_t *)pData);
 		break;
 		case CMD_REQUEST:
 			app_rx_error_sub_pid_clear_rqt(num, pPh, pData);

@@ -10,12 +10,12 @@
 			*pData : packet data pointer
   * @retval None
   */
-__weak void app_rx_sensor_sub_pid_detect_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_sensor_sub_pid_detect_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_sensor_detect_t *pData)
 {
 	
 }
 
-__weak void app_rx_sensor_sub_pid_detect_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_sensor_sub_pid_detect_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_sensor_detect_t *pData)
 {
 	
 }

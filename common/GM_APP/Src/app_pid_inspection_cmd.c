@@ -4,12 +4,12 @@
 
 
 
-__weak void app_rx_inspection_sub_pid_data_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_inspection_sub_pid_data_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_inspection_data_t *pData)
 {
 	
 }
 
-__weak void app_rx_inspection_sub_pid_data_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_inspection_sub_pid_data_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_inspection_data_t *pData)
 {
 	
 }

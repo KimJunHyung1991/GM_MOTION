@@ -10,12 +10,12 @@
 			*pData : packet data pointer
   * @retval None
   */
-__weak void app_rx_error_sub_pid_rc_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_error_sub_pid_rc_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_error_rc_t *pData)
 {
 	
 }
 
-__weak void app_rx_error_sub_pid_rc_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_error_sub_pid_rc_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_error_rc_t *pData)
 {
 	
 }
@@ -52,12 +52,12 @@ void app_tx_error_sub_pid_rc_rqt(uint8_t num, uint8_t priority, uint8_t souce_id
 			*pData : packet data pointer
   * @retval None
   */
-__weak void app_rx_error_sub_pid_ac_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_error_sub_pid_ac_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_error_ac_t *pData)
 {
 	
 }
 
-__weak void app_rx_error_sub_pid_ac_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_error_sub_pid_ac_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_error_ac_t *pData)
 { 
 	
 }
@@ -93,12 +93,12 @@ void app_tx_error_sub_pid_ac_rqt(uint8_t num, uint8_t priority, uint8_t souce_id
 			*pData : packet data pointer
   * @retval None
   */
-__weak void app_rx_error_sub_pid_bldc_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_error_sub_pid_bldc_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_error_bldc_t *pData)
 {
 	
 }
 
-__weak void app_rx_error_sub_pid_bldc_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_error_sub_pid_bldc_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_error_bldc_t *pData)
 {
 	
 }
@@ -134,12 +134,12 @@ void app_tx_error_sub_pid_bldc_rqt(uint8_t num, uint8_t priority, uint8_t souce_
 			*pData : packet data pointer
   * @retval None
   */
-__weak void app_rx_error_sub_pid_clear_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_error_sub_pid_clear_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_error_clear_t *pData)
 {
 	
 }
 
-__weak void app_rx_error_sub_pid_clear_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+__weak void app_rx_error_sub_pid_clear_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_error_clear_t *pData)
 {
 	
 }

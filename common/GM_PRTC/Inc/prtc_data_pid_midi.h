@@ -29,10 +29,6 @@ typedef struct{
 }prtc_data_ctl_midi_button_t;
 
 typedef struct{
-	uint8_t		type;
-}prtc_data_rqt_midi_button_t;
-
-typedef struct{
 	uint8_t	type;
 	union{
 		struct{
@@ -43,7 +39,9 @@ typedef struct{
 	};	
 }prtc_data_rsp_midi_button_t;
 
-
+typedef struct{
+	uint8_t		type;
+}prtc_data_rqt_midi_button_t;
 ///////////////////////////type///////////////////////////
 #define MIDI_BTN_TYPE_PUSH		0
 #define MIDI_BTN_TYPE_SLOT		1
@@ -62,12 +60,12 @@ typedef struct{
 
 typedef struct{
 	uint8_t		type;
-}prtc_data_rqt_midi_led_t;
+	uint32_t 	val;
+}prtc_data_rsp_midi_led_t;
 
 typedef struct{
 	uint8_t		type;
-	uint32_t 	val;
-}prtc_data_rsp_midi_led_t;
+}prtc_data_rqt_midi_led_t;
 ///////////////////////////type///////////////////////////
 #define MIDI_LED_TYPE_PUSH_BTN		0
 #define MIDI_LED_TYPE_COUNT1		1
