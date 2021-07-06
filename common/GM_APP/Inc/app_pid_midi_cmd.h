@@ -53,8 +53,8 @@ void app_tx_midi_sub_pid_nick_name_l_rqt(uint8_t num, uint8_t priority, uint8_t 
 void app_rx_midi_sub_pid_range_data_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_range_data_t *pData);
 void app_rx_midi_sub_pid_range_data_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_range_data_t *pData);
 void app_rx_midi_sub_pid_range_data_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void app_tx_midi_sub_pid_range_data_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min);
-void app_tx_midi_sub_pid_range_data_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min);
+void app_tx_midi_sub_pid_range_data_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, uint16_t range, uint16_t max, uint16_t min);
+void app_tx_midi_sub_pid_range_data_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, uint16_t range, uint16_t max, uint16_t min);
 void app_tx_midi_sub_pid_range_data_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
 /**********************************************************************************/
 /**********************************************************************************/

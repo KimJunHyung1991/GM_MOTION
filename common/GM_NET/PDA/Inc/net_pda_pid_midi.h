@@ -25,8 +25,8 @@ uint8_t *net_pda_midi_sub_pid_nick_name_l_ctl(uint8_t motor_num, uint8_t set_pag
 uint8_t *net_pda_midi_sub_pid_nick_name_l_rsp(uint8_t motor_num, uint8_t set_page_num, char *nick_name);
 uint8_t *net_pda_midi_sub_pid_nick_name_l_rqt(void);
 
-uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min);
-uint8_t *net_pda_midi_sub_pid_range_data_rsp(uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min);
+uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_num, uint8_t set_page_num, uint16_t range, uint16_t max, uint16_t min);
+uint8_t *net_pda_midi_sub_pid_range_data_rsp(uint8_t motor_num, uint8_t set_page_num, uint16_t range, uint16_t max, uint16_t min);
 uint8_t *net_pda_midi_sub_pid_range_data_rqt(void);
 
 uint8_t *net_pda_midi_sub_pid_page_ctl(uint8_t page, uint8_t slot_num, uint8_t motor_num, uint8_t set_page_num);

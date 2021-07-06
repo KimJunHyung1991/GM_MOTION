@@ -301,7 +301,7 @@ uint8_t *net_pda_midi_sub_pid_nick_name_l_rqt(void)
 			set_page_num : 
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min)
+uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_num, uint8_t set_page_num, uint16_t range, uint16_t max, uint16_t min)
 {
 	prtc_data_ctl_midi_range_data_t *pCdcmrd = (prtc_data_ctl_midi_range_data_t *)make_data_buff;
 	pCdcmrd->motor_num = motor_num;
@@ -318,7 +318,7 @@ uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_num, uint8_t set_page
 			set_page_num : 
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_range_data_rsp(uint8_t motor_num, uint8_t set_page_num, uint16_t max, uint16_t min)
+uint8_t *net_pda_midi_sub_pid_range_data_rsp(uint8_t motor_num, uint8_t set_page_num, uint16_t range, uint16_t max, uint16_t min)
 {
 	prtc_data_rsp_midi_range_data_t *pCdrmrd = (prtc_data_rsp_midi_range_data_t *)make_data_buff;
 	pCdrmrd->motor_num = motor_num;

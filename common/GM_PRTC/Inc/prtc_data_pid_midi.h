@@ -133,6 +133,7 @@ typedef struct{
 typedef struct{
 	uint8_t motor_num;
 	uint8_t set_page_num;
+	uint16_t range;
 	uint16_t max;
 	uint16_t min;
 }prtc_data_ctl_midi_range_data_t;
@@ -140,6 +141,7 @@ typedef struct{
 typedef struct{
 	uint8_t motor_num;
 	uint8_t set_page_num;
+	uint16_t range;
 	uint16_t max;
 	uint16_t min;
 }prtc_data_rsp_midi_range_data_t;
