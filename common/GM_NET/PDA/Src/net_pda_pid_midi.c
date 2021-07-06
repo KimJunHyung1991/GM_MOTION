@@ -306,6 +306,7 @@ uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_num, uint8_t set_page
 	prtc_data_ctl_midi_range_data_t *pCdcmrd = (prtc_data_ctl_midi_range_data_t *)make_data_buff;
 	pCdcmrd->motor_num = motor_num;
 	pCdcmrd->set_page_num = set_page_num;
+	pCdcmrd->range = range;
 	pCdcmrd->max = max;
 	pCdcmrd->min = min;
 	
@@ -323,6 +324,7 @@ uint8_t *net_pda_midi_sub_pid_range_data_rsp(uint8_t motor_num, uint8_t set_page
 	prtc_data_rsp_midi_range_data_t *pCdrmrd = (prtc_data_rsp_midi_range_data_t *)make_data_buff;
 	pCdrmrd->motor_num = motor_num;
 	pCdrmrd->set_page_num = set_page_num;
+	pCdrmrd->range = range;
 	pCdrmrd->max = max;
 	pCdrmrd->min = min;
 	
