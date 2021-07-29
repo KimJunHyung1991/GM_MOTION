@@ -252,7 +252,7 @@ __weak void app_rx_midi_sub_pid_range_data_rqt(uint8_t num, prtc_header_t *pPh, 
 {
 	
 }
-
+//test
 void app_tx_midi_sub_pid_range_data_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_num, uint8_t set_page_num, uint16_t range, uint16_t max, uint16_t min)
 {
 	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_midi_range_data_t), priority, souce_id, target_id, PID_MIDI, MIDI_SUB_PID_RANGE_DATA, sub_id), \
