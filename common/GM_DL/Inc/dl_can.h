@@ -53,6 +53,7 @@ typedef struct{
 #include "dl_can_tx.h"
 
 extern uint8_t my_can_id;
+extern uint8_t my_can_sub_id;
 /////////////////////////////////////////////////////
 
 

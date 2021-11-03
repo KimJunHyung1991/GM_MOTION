@@ -3,17 +3,20 @@
 #pragma pack(1)
 /***********************************************************MIDI_SUB_PID_ADC**********************************************************/
 typedef struct{
-	uint8_t		id;
+	uint8_t		motor_id;
+	uint8_t		motor_sub_id;
 	uint16_t	adc_val;
 }prtc_data_ctl_midi_adc_t;
 
 typedef struct{
-	uint8_t		id;
+	uint8_t		motor_id;
+	uint8_t		motor_sub_id;
 	uint16_t	adc_val;
 }prtc_data_rsp_midi_adc_t;
 
 typedef struct{
-	uint8_t		id;
+	uint8_t		motor_id;
+	uint8_t		motor_sub_id;
 }prtc_data_rqt_midi_adc_t;
 /***********************************************************MIDI_SUB_PID_ADC**********************************************************/
 /***********************************************************MIDI_SUB_PID_BUTTON**********************************************************/

@@ -14,10 +14,11 @@ packet pid-midi영역의 data 재조립
   * @param  adc_val : midi슬라이더 12bit(0~4095) value
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_adc_ctl(uint8_t id, uint16_t adc_val)
+uint8_t *net_pda_midi_sub_pid_adc_ctl(uint8_t motor_id, uint8_t motor_sub_id, uint16_t adc_val)
 {
 	prtc_data_ctl_midi_adc_t *pCdcma = (prtc_data_ctl_midi_adc_t *)make_data_buff;
-	pCdcma->id = id;
+	pCdcma->motor_id = motor_id;
+	pCdcma->motor_sub_id = motor_sub_id;
 	pCdcma->adc_val = adc_val;
 	
 	return make_data_buff;
@@ -28,10 +29,11 @@ uint8_t *net_pda_midi_sub_pid_adc_ctl(uint8_t id, uint16_t adc_val)
   * @param  adc_val : midi슬라이더 12bit(0~4095) value
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_adc_rsp(uint8_t id, uint16_t adc_val)
+uint8_t *net_pda_midi_sub_pid_adc_rsp(uint8_t motor_id, uint8_t motor_sub_id, uint16_t adc_val)
 {
 	prtc_data_rsp_midi_adc_t *pCdrma = (prtc_data_rsp_midi_adc_t *)make_data_buff;
-	pCdrma->id = id;
+	pCdrma->motor_id = motor_id;
+	pCdrma->motor_sub_id = motor_sub_id;
 	pCdrma->adc_val = adc_val;
 	
 	return make_data_buff;
@@ -42,10 +44,11 @@ uint8_t *net_pda_midi_sub_pid_adc_rsp(uint8_t id, uint16_t adc_val)
   * @param  adc_val : midi슬라이더 12bit(0~4095) value
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_adc_rqt(uint8_t id)
+uint8_t *net_pda_midi_sub_pid_adc_rqt(uint8_t motor_id, uint8_t motor_sub_id)
 {
 	prtc_data_rqt_midi_adc_t *pCdrma = (prtc_data_rqt_midi_adc_t *)make_data_buff;
-	pCdrma->id = id;
+	pCdrma->motor_id = motor_id;
+	pCdrma->motor_sub_id = motor_sub_id;
 	return make_data_buff;
 }
 /******************************************MIDI SUB PID ADC ASSEMBLE*********************************************/

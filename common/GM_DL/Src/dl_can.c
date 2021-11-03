@@ -8,6 +8,7 @@ data link can
 **************************************************/
 
 uint8_t my_can_id = 0;
+uint8_t my_can_sub_id = 0;
 can_init_t can_init;
 
 

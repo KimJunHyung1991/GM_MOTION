@@ -5,9 +5,9 @@
 void app_rx_midi_sub_pid_adc_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_adc_t *pData);
 void app_rx_midi_sub_pid_adc_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_adc_t *pData);
 void app_rx_midi_sub_pid_adc_rqt(uint8_t num, prtc_header_t *pPh, prtc_data_rqt_midi_adc_t *pData);
-void app_tx_midi_sub_pid_adc_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t id, uint16_t adc_val);
-void app_tx_midi_sub_pid_adc_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t id, uint16_t adc_val);
-void app_tx_midi_sub_pid_adc_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t id);
+void app_tx_midi_sub_pid_adc_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_id, uint8_t motor_sub_id, uint16_t adc_val);
+void app_tx_midi_sub_pid_adc_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_id, uint8_t motor_sub_id, uint16_t adc_val);
+void app_tx_midi_sub_pid_adc_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t motor_id, uint8_t motor_sub_id);
 /**********************************************************************************/
 /**********************************************************************************/
 void app_rx_midi_sub_pid_button_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_button_t *pData);
