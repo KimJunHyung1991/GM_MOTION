@@ -9,14 +9,14 @@ typedef struct{
 	uint8_t 	direction;
 	uint16_t 	angle;
 	uint16_t	init_position;
-	uint8_t		reducer_ratio;
+	uint16_t	reducer_ratio;
 }prtc_data_ctl_init_driver_data1_t;
 
 typedef struct{
 	uint8_t 	direction;
 	uint16_t 	angle;
 	uint16_t	init_position;
-	uint8_t		reducer_ratio;
+	uint16_t	reducer_ratio;
 }prtc_data_rsp_init_driver_data1_t;
 ///////////////////////////direction///////////////////////////
 #define CW		0

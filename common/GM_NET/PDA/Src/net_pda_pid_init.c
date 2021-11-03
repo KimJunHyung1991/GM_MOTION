@@ -46,7 +46,7 @@ uint8_t *net_pda_init_sub_pid_boot_rqt(void)
 			reducer_ratio :	감속기 비율
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_driver_data1_ctl(uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio)
+uint8_t *net_pda_init_sub_pid_driver_data1_ctl(uint8_t direction, uint16_t angle, uint16_t init_position, uint16_t reducer_ratio)
 {
 	prtc_data_ctl_init_driver_data1_t *pCdcidd = (prtc_data_ctl_init_driver_data1_t *)make_data_buff;
 	
@@ -66,7 +66,7 @@ uint8_t *net_pda_init_sub_pid_driver_data1_ctl(uint8_t direction, uint16_t angle
 			reducer_ratio :	감속기 비율
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_driver_data1_rsp(uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio)
+uint8_t *net_pda_init_sub_pid_driver_data1_rsp(uint8_t direction, uint16_t angle, uint16_t init_position, uint16_t reducer_ratio)
 {
 	prtc_data_rsp_init_driver_data1_t *pCdridd = (prtc_data_rsp_init_driver_data1_t *)make_data_buff;
 	

@@ -12,8 +12,8 @@ void app_tx_init_sub_pid_boot_rqt(uint8_t num, uint8_t priority, uint8_t souce_i
 void app_rx_init_sub_pid_driver_data1_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_init_driver_data1_t *pData);
 void app_rx_init_sub_pid_driver_data1_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_init_driver_data1_t *pData);
 void app_rx_init_sub_pid_driver_data1_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void app_tx_init_sub_pid_driver_data1_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio);
-void app_tx_init_sub_pid_driver_data1_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio);
+void app_tx_init_sub_pid_driver_data1_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t direction, uint16_t angle, uint16_t init_position, uint16_t reducer_ratio);
+void app_tx_init_sub_pid_driver_data1_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id, uint8_t direction, uint16_t angle, uint16_t init_position, uint16_t reducer_ratio);
 void app_tx_init_sub_pid_driver_data1_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t sub_id);
 /**********************************************************************************/
 /**********************************************************************************/

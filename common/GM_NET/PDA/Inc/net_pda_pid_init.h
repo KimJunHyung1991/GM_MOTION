@@ -5,8 +5,8 @@ uint8_t *net_pda_init_sub_pid_boot_ctl(void);
 uint8_t *net_pda_init_sub_pid_boot_rsp(void);
 uint8_t *net_pda_init_sub_pid_boot_rqt(void);
 
-uint8_t *net_pda_init_sub_pid_driver_data1_ctl(uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio);
-uint8_t *net_pda_init_sub_pid_driver_data1_rsp(uint8_t direction, uint16_t angle, uint16_t init_position, uint8_t reducer_ratio);
+uint8_t *net_pda_init_sub_pid_driver_data1_ctl(uint8_t direction, uint16_t angle, uint16_t init_position, uint16_t reducer_ratio);
+uint8_t *net_pda_init_sub_pid_driver_data1_rsp(uint8_t direction, uint16_t angle, uint16_t init_position, uint16_t reducer_ratio);
 uint8_t *net_pda_init_sub_pid_driver_data1_rqt(void);
 
 uint8_t *net_pda_init_sub_pid_driver_data2_ctl(uint32_t count, uint16_t rpm);
