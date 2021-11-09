@@ -8,5 +8,28 @@ typedef struct{
 typedef struct{
 	uint8_t 	data[8];
 }prtc_data_rsp_inspection_data_t;
+
+
+#define INSPECTION_PING 	0
+#define INSPECTION_VER 		1
+#define INSPECTION_SDCARD 	2
+#define INSPECTION_SDRAM 	3
+
+typedef struct{
+	uint8_t 	data[8];
+}prtc_data_ctl_inspection_data_play_t;
+
+typedef struct{
+	uint8_t 	data[8];
+}prtc_data_rsp_inspection_data_play_t;
+
+typedef struct{
+	uint8_t 	index;
+}prtc_data_rqt_inspection_data_play_t;
+
+
+
+
+
 #pragma pack()
 #endif
