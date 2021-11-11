@@ -212,11 +212,11 @@ uint8_t *net_pda_midi_sub_pid_id_rqt(void)
 			set_page_num : 
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_nick_name_h_ctl(uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+uint8_t *net_pda_midi_sub_pid_nick_name_h_ctl(uint8_t motor_id, uint8_t motor_sub_id, char *nick_name)
 {
 	prtc_data_ctl_midi_nick_name_h_t *pCdcmnnh = (prtc_data_ctl_midi_nick_name_h_t *)make_data_buff;
-	pCdcmnnh->motor_num = motor_num;
-	pCdcmnnh->set_page_num = set_page_num;
+	pCdcmnnh->motor_id = motor_id;
+	pCdcmnnh->motor_sub_id = motor_sub_id;
 	
 	strncpy(pCdcmnnh->nick_name, nick_name, sizeof(pCdcmnnh->nick_name));
 	
@@ -229,11 +229,11 @@ uint8_t *net_pda_midi_sub_pid_nick_name_h_ctl(uint8_t motor_num, uint8_t set_pag
 			set_page_num : 
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_nick_name_h_rsp(uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+uint8_t *net_pda_midi_sub_pid_nick_name_h_rsp(uint8_t motor_id, uint8_t motor_sub_id, char *nick_name)
 {
 	prtc_data_rsp_midi_nick_name_h_t *pCdrmnnh = (prtc_data_rsp_midi_nick_name_h_t *)make_data_buff;
-	pCdrmnnh->motor_num = motor_num;
-	pCdrmnnh->set_page_num = set_page_num;
+	pCdrmnnh->motor_id = motor_id;
+	pCdrmnnh->motor_sub_id = motor_sub_id;
 	
 	strncpy(pCdrmnnh->nick_name, nick_name, sizeof(pCdrmnnh->nick_name));
 	
@@ -258,11 +258,11 @@ uint8_t *net_pda_midi_sub_pid_nick_name_h_rqt(void)
 			set_page_num : 
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_nick_name_l_ctl(uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+uint8_t *net_pda_midi_sub_pid_nick_name_l_ctl(uint8_t motor_id, uint8_t motor_sub_id, char *nick_name)
 {
 	prtc_data_ctl_midi_nick_name_l_t *pCdcmnnl = (prtc_data_ctl_midi_nick_name_l_t *)make_data_buff;
-	pCdcmnnl->motor_num = motor_num;
-	pCdcmnnl->set_page_num = set_page_num;
+	pCdcmnnl->motor_id = motor_id;
+	pCdcmnnl->motor_sub_id = motor_sub_id;
 	
 	strncpy(pCdcmnnl->nick_name, nick_name, sizeof(pCdcmnnl->nick_name));
 	
@@ -275,11 +275,11 @@ uint8_t *net_pda_midi_sub_pid_nick_name_l_ctl(uint8_t motor_num, uint8_t set_pag
 			set_page_num : 
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_nick_name_l_rsp(uint8_t motor_num, uint8_t set_page_num, char *nick_name)
+uint8_t *net_pda_midi_sub_pid_nick_name_l_rsp(uint8_t motor_id, uint8_t motor_sub_id, char *nick_name)
 {
 	prtc_data_rsp_midi_nick_name_l_t *pCdrmnnl = (prtc_data_rsp_midi_nick_name_l_t *)make_data_buff;
-	pCdrmnnl->motor_num = motor_num;
-	pCdrmnnl->set_page_num = set_page_num;
+	pCdrmnnl->motor_id = motor_id;
+	pCdrmnnl->motor_sub_id = motor_sub_id;
 	
 	strncpy(pCdrmnnl->nick_name, nick_name, sizeof(pCdrmnnl->nick_name));
 	
@@ -304,11 +304,11 @@ uint8_t *net_pda_midi_sub_pid_nick_name_l_rqt(void)
 			set_page_num : 
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_num, uint8_t set_page_num, uint16_t range, uint16_t max, uint16_t min)
+uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_id, uint8_t motor_sub_id, uint16_t range, uint16_t max, uint16_t min)
 {
 	prtc_data_ctl_midi_range_data_t *pCdcmrd = (prtc_data_ctl_midi_range_data_t *)make_data_buff;
-	pCdcmrd->motor_num = motor_num;
-	pCdcmrd->set_page_num = set_page_num;
+	pCdcmrd->motor_id = motor_id;
+	pCdcmrd->motor_sub_id = motor_sub_id;
 	pCdcmrd->range = range;
 	pCdcmrd->max = max;
 	pCdcmrd->min = min;
@@ -322,11 +322,11 @@ uint8_t *net_pda_midi_sub_pid_range_data_ctl(uint8_t motor_num, uint8_t set_page
 			set_page_num : 
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_range_data_rsp(uint8_t motor_num, uint8_t set_page_num, uint16_t range, uint16_t max, uint16_t min)
+uint8_t *net_pda_midi_sub_pid_range_data_rsp(uint8_t motor_id, uint8_t motor_sub_id, uint16_t range, uint16_t max, uint16_t min)
 {
 	prtc_data_rsp_midi_range_data_t *pCdrmrd = (prtc_data_rsp_midi_range_data_t *)make_data_buff;
-	pCdrmrd->motor_num = motor_num;
-	pCdrmrd->set_page_num = set_page_num;
+	pCdrmrd->motor_id = motor_id;
+	pCdrmrd->motor_sub_id = motor_sub_id;
 	pCdrmrd->range = range;
 	pCdrmrd->max = max;
 	pCdrmrd->min = min;
@@ -345,13 +345,13 @@ uint8_t *net_pda_midi_sub_pid_range_data_rqt(void)
 }
 /******************************************MIDI SUB PID RANGE_DATA ASSEMBLE*********************************************/
 /******************************************MIDI SUB PID PAGE ASSEMBLE*********************************************/
-uint8_t *net_pda_midi_sub_pid_page_ctl(uint8_t page, uint8_t slot_num, uint8_t motor_num, uint8_t set_page_num)
+uint8_t *net_pda_midi_sub_pid_page_ctl(uint8_t page, uint8_t slot_num, uint8_t motor_id, uint8_t motor_sub_id)
 {
 	prtc_data_ctl_midi_page_t *pCdcmip = (prtc_data_ctl_midi_page_t *)make_data_buff;
 	pCdcmip->page = page;
 	pCdcmip->slot_num = slot_num;
-	pCdcmip->motor_num = motor_num;
-	pCdcmip->set_page_num = set_page_num;
+	pCdcmip->motor_id = motor_id;
+	pCdcmip->motor_sub_id = motor_sub_id;
 	
 	
 	return make_data_buff;
@@ -363,13 +363,13 @@ uint8_t *net_pda_midi_sub_pid_page_ctl(uint8_t page, uint8_t slot_num, uint8_t m
 			set_page_num : 
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_midi_sub_pid_page_rsp(uint8_t page, uint8_t slot_num, uint8_t motor_num, uint8_t set_page_num)
+uint8_t *net_pda_midi_sub_pid_page_rsp(uint8_t page, uint8_t slot_num, uint8_t motor_id, uint8_t motor_sub_id)
 {
 	prtc_data_rsp_midi_page_t *pCdrmp = (prtc_data_rsp_midi_page_t *)make_data_buff;
 	pCdrmp->page = page;
 	pCdrmp->slot_num = slot_num;
-	pCdrmp->motor_num = motor_num;
-	pCdrmp->set_page_num = set_page_num;
+	pCdrmp->motor_id = motor_id;
+	pCdrmp->motor_sub_id = motor_sub_id;
 	
 	
 	return make_data_buff;
