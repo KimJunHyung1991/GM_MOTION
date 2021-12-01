@@ -14,14 +14,15 @@ typedef struct{
 	uint8_t dlc;
 	union{
 		struct{
-			uint32_t sub_id		:	5;
-			uint32_t sub_pid	:	5;
-			uint32_t pid		:	4;
-			uint32_t cmd		:	2;
-			uint32_t target_id	:	6;
-			uint32_t souce_id	:	6;
-			uint32_t priority	:	1;
-			uint32_t Null		:	3;
+			uint32_t target_sub_id		:	5;
+			uint32_t souce_sub_id		:	5;
+			uint32_t sub_pid			:	4;
+			uint32_t pid				:	4;
+			uint32_t cmd				:	2;
+			uint32_t target_id			:	4;
+			uint32_t souce_id			:	4;
+			uint32_t priority			:	1;
+			uint32_t Null				:	3;
 		};
 		uint32_t protocol_header_32;
 	};
