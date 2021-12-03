@@ -127,10 +127,14 @@ void proc_can_rx(void)
 	for(int i = 0; i < can_init.cnt; i++){
 		if(can_rx_ring_buff[i].head != can_rx_ring_buff[i].tail){
 			prtc_header_t *pPh = (prtc_header_t *)&can_rx_ring_buff[i].can_header[can_rx_ring_buff[i].tail];
-			if((pPh->target_id == my_can_id || pPh->target_id == CAN_ID_BROAD_CAST) && (pPh->target_sub_id == my_can_sub_id || pPh->target_sub_id == CAN_SUB_ID_BROAD_CAST)){
-				gm_motion_RX_LED_ON(i);//210218 shs//210430kjh
-				net_phd_pid(i, &can_rx_ring_buff[i].can_header[can_rx_ring_buff[i].tail], (uint8_t *)&can_rx_ring_buff[i].data[can_rx_ring_buff[i].tail]);
+			for(int j = 0; j < my_can_id_data.sub_id_cnt; j++){
+				if((pPh->target_id == my_can_id_data.id || pPh->target_id == CAN_ID_BROAD_CAST) && (pPh->target_sub_id == my_can_id_data.sub_id[j] || pPh->target_sub_id == CAN_SUB_ID_BROAD_CAST)){
+					gm_motion_RX_LED_ON(i);//210218 shs//210430kjh
+					net_phd_pid(i, &can_rx_ring_buff[i].can_header[can_rx_ring_buff[i].tail], (uint8_t *)&can_rx_ring_buff[i].data[can_rx_ring_buff[i].tail]);
+					break;
+				}
 			}
+			
 			proc_rx_ring_buff_tail_chk(i);
 		}
 	}

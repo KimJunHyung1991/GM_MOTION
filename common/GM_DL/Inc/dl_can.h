@@ -52,8 +52,18 @@ typedef struct{
 #include "dl_can_rx.h"
 #include "dl_can_tx.h"
 
-extern uint8_t my_can_id;
-extern uint8_t my_can_sub_id;
+
+typedef struct{
+	uint8_t sub_id_cnt;
+	uint8_t id;
+	uint8_t sub_id[32];
+}my_can_id_data_t;
+
+extern my_can_id_data_t my_can_id_data;
+
+void set_my_can_id(uint8_t id);
+void add_my_can_sub_id(uint8_t start_sub_id, uint8_t cnt);
+
 /////////////////////////////////////////////////////
 
 

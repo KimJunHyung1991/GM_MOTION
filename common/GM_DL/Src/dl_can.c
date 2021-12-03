@@ -7,8 +7,9 @@ data link can
 
 **************************************************/
 
-uint8_t my_can_id = 0;
-uint8_t my_can_sub_id = 0;
+
+
+my_can_id_data_t my_can_id_data;
 can_init_t can_init;
 
 
@@ -19,3 +20,14 @@ void can_init_data_save(CAN_HandleTypeDef *canhandle)
 	can_init.cnt++;
 }
 
+void set_my_can_id(uint8_t id)
+{
+	my_can_id_data.id = id;
+}
+
+void add_my_can_sub_id(uint8_t start_sub_id, uint8_t cnt)
+{
+	for(int i = 0; i < cnt; i++){
+		my_can_id_data.sub_id[my_can_id_data.sub_id_cnt++] = start_sub_id + i;
+	}
+}

@@ -22,6 +22,7 @@ typedef struct{
 /***********************************************************MOTION_SUB_PID_DIRECTION**********************************************************/
 typedef struct{
 	uint8_t id;
+	uint8_t sub_id;
 	uint8_t direction;
 	uint8_t val;
 }prtc_data_ctl_motion_direction_t;
