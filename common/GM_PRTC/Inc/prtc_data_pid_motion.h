@@ -20,6 +20,7 @@ typedef struct{
 }prtc_data_rsp_motion_angle_t;
 /***********************************************************MOTION_SUB_PID_ANGLE**********************************************************/
 /***********************************************************MOTION_SUB_PID_DIRECTION**********************************************************/
+
 typedef struct{
 	uint8_t id;
 	uint8_t direction;
@@ -31,6 +32,22 @@ typedef struct{
 	uint8_t direction;
 	uint8_t val;
 }prtc_data_rsp_motion_direction_t;
+
+/*
+typedef struct{
+	uint8_t id;
+	uint8_t sub_id;
+	uint8_t direction;
+	uint8_t val;
+}prtc_data_ctl_motion_direction_t;
+
+typedef struct{
+	uint8_t id;
+	uint8_t sub_id;
+	uint8_t direction;
+	uint8_t val;
+}prtc_data_rsp_motion_direction_t;
+*/
 //////////////////////////////////////direction/////////////////////////////////
 #define MOTION_DIRECTION_CCW	0
 #define MOTION_DIRECTION_CW		1
