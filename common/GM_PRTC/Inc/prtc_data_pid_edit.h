@@ -59,6 +59,8 @@ typedef struct{
 #define	EDIT_ACTION_SD_SAVE_END							45
 #define	EDIT_ACTION_KEY_POSITION_START					46
 #define	EDIT_ACTION_KEY_POSITION_END					47
+#define	EDIT_ACTION_NON_INIT_PLAY_START					48
+
 ///////////////////////////action///////////////////////////
 
 /***********************************************************EDIT_SUB_PID_ACTION**********************************************************/
