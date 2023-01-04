@@ -134,7 +134,6 @@ void proc_can_rx(void)
 					break;
 				}
 			}
-			
 			proc_rx_ring_buff_tail_chk(i);
 		}
 	}
