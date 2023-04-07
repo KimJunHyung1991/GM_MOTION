@@ -73,8 +73,8 @@ typedef struct{
 }prtc_data_rsp_init_absolute_battery_t;
 /***********************************************************INIT_SUB_PID_ABSOLUTE_BATTERY**********************************************************/
 /***********************************************************INIT_SUB_PID_MOVE_SENSOR**********************************************************/
-#define MOVE_SENSOR_DATA_NOMAL_MODE	0
-#define MOVE_SENSOR_DATA_ABSOLUTE_MODE	1
+#define MOVE_SENSOR_DATA_ABSOLUTE_MODE		0
+#define MOVE_SENSOR_DATA_NOMAL_MODE			1
 
 typedef struct{
 	uint8_t mode;
