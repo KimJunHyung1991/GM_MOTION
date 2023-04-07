@@ -83,10 +83,11 @@ typedef struct{
 typedef struct{
 	uint8_t mode;
 }prtc_data_rsp_init_move_sensor_t;
-
+/*
 typedef struct{
 	uint8_t mode;
 }prtc_data_rqt_init_move_sensor_t;
+*/
 /***********************************************************INIT_SUB_PID_MOVE_SENSOR**********************************************************/
 /***********************************************************INIT_SUB_PID_MOVE_INIT_POSITION**********************************************************/
 

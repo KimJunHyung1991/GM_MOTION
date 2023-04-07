@@ -240,10 +240,8 @@ uint8_t *net_pda_init_sub_pid_move_sensor_rsp(uint8_t mode)
   * @param  none
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_move_sensor_rqt(uint8_t mode)
+uint8_t *net_pda_init_sub_pid_move_sensor_rqt(void)
 {
-	prtc_data_rqt_init_move_sensor_t *pCdrims = (prtc_data_rqt_init_move_sensor_t *)make_data_buff;
-	pCdrims->mode = mode;
 	return make_data_buff;
 }
 /******************************************INIT SUB PID MOVE SENSOR ASSEMBLE*********************************************/
