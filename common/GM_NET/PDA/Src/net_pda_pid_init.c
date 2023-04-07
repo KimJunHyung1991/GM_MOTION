@@ -216,8 +216,10 @@ uint8_t *net_pda_init_sub_pid_absolute_battery_rqt(void)
   * @param  none
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_move_sensor_ctl(void)
+uint8_t *net_pda_init_sub_pid_move_sensor_ctl(uint8_t mode)
 {
+	prtc_data_ctl_init_move_sensor_t *pCdcims = (prtc_data_ctl_init_move_sensor_t *)make_data_buff;
+	pCdcims->mode = mode;
 	return make_data_buff;
 }
 
@@ -226,8 +228,10 @@ uint8_t *net_pda_init_sub_pid_move_sensor_ctl(void)
   * @param  none
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_move_sensor_rsp(void)
+uint8_t *net_pda_init_sub_pid_move_sensor_rsp(uint8_t mode)
 {
+	prtc_data_rsp_init_move_sensor_t *pCdrims = (prtc_data_rsp_init_move_sensor_t *)make_data_buff;
+	pCdrims->mode = mode;
 	return make_data_buff;
 }
 
@@ -236,8 +240,10 @@ uint8_t *net_pda_init_sub_pid_move_sensor_rsp(void)
   * @param  none
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_move_sensor_rqt(void)
+uint8_t *net_pda_init_sub_pid_move_sensor_rqt(uint8_t mode)
 {
+	prtc_data_rqt_init_move_sensor_t *pCdrims = (prtc_data_rqt_init_move_sensor_t *)make_data_buff;
+	pCdrims->mode = mode;
 	return make_data_buff;
 }
 /******************************************INIT SUB PID MOVE SENSOR ASSEMBLE*********************************************/

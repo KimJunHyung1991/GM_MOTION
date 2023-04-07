@@ -21,9 +21,9 @@ uint8_t *net_pda_init_sub_pid_absolute_battery_ctl(uint32_t save_data);
 uint8_t *net_pda_init_sub_pid_absolute_battery_rsp(uint32_t save_data);
 uint8_t *net_pda_init_sub_pid_absolute_battery_rqt(void);
 
-uint8_t *net_pda_init_sub_pid_move_sensor_ctl(void);
-uint8_t *net_pda_init_sub_pid_move_sensor_rsp(void);
-uint8_t *net_pda_init_sub_pid_move_sensor_rqt(void);
+uint8_t *net_pda_init_sub_pid_move_sensor_ctl(uint8_t mode);
+uint8_t *net_pda_init_sub_pid_move_sensor_rsp(uint8_t mode);
+uint8_t *net_pda_init_sub_pid_move_sensor_rqt(uint8_t mode);
 
 uint8_t *net_pda_init_sub_pid_move_init_position_ctl(void);
 uint8_t *net_pda_init_sub_pid_move_init_position_rsp(void);
