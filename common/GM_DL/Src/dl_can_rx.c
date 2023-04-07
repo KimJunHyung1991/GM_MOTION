@@ -74,6 +74,7 @@ static void gm_motion_RX_LED_OFF(void)
   */
 void proc_rx_ring_buff_head_chk(uint8_t num)
 {
+	//if(can_rx_ring_buff[num].tail == can_rx_ring_buff[num].head) return;
 	can_rx_ring_buff[num].head++;
 	if(can_rx_ring_buff[num].head >= CAN_Q_BUFF_SIZE){
 		can_rx_ring_buff[num].head = 0;
@@ -88,6 +89,7 @@ void proc_rx_ring_buff_head_chk(uint8_t num)
   */
 void proc_rx_ring_buff_tail_chk(uint8_t num)
 {
+	if(can_rx_ring_buff[num].tail == can_rx_ring_buff[num].head) return;
 	can_rx_ring_buff[num].tail++;
 	if(can_rx_ring_buff[num].tail >= CAN_Q_BUFF_SIZE){
 		can_rx_ring_buff[num].tail = 0;
