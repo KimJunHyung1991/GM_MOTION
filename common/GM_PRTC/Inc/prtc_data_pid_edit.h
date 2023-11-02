@@ -4,10 +4,12 @@
 /***********************************************************EDIT_SUB_PID_ACTION**********************************************************/
 typedef struct{
 	uint8_t 	action;
+	uint32_t	option_value;
 }prtc_data_ctl_edit_action_t;
 
 typedef struct{
 	uint8_t 	action;
+	uint32_t	option_value;
 }prtc_data_rsp_edit_action_t;
 
 ///////////////////////////action///////////////////////////
