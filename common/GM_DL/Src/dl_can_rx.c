@@ -129,7 +129,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
   * @param  none
   * @retval none
   */
-void proc_can_rx(void)
+__weak void proc_can_rx(void)
 {
 	for(int i = 0; i < can_init.cnt; i++){
 		if(can_rx_ring_buff[i].head != can_rx_ring_buff[i].tail){
