@@ -137,13 +137,13 @@ __weak void app_rx_motion_sub_pid_profile_position_rqt(uint8_t num, prtc_header_
 
 void app_tx_motion_sub_pid_profile_position_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint32_t time, uint16_t location)
 {
-	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_motion_profile_position_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_DIRECTION, souce_sub_id, target_sub_id), \
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_motion_profile_position_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_PROFILE_POSITION, souce_sub_id, target_sub_id), \
 			net_pda_motion_sub_pid_profile_position_ctl(time, location));
 }
 
 void app_tx_motion_sub_pid_profile_position_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint32_t time, uint16_t location)
 {
-	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_motion_profile_position_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_DIRECTION, souce_sub_id, target_sub_id), \
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_motion_profile_position_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_PROFILE_POSITION, souce_sub_id, target_sub_id), \
 			net_pda_motion_sub_pid_profile_position_rsp(time, location));
 }
 
