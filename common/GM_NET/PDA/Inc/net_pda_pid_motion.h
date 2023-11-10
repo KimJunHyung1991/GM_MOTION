@@ -12,4 +12,8 @@ uint8_t *net_pda_motion_sub_pid_angle_rqt(void);
 uint8_t *net_pda_motion_sub_pid_direction_ctl(uint8_t id, uint8_t direction, uint8_t val);
 uint8_t *net_pda_motion_sub_pid_direction_rsp(uint8_t id, uint8_t direction, uint8_t val);
 uint8_t *net_pda_motion_sub_pid_direction_rqt(void);
+
+uint8_t *net_pda_motion_sub_pid_profile_position_ctl(uint32_t time, uint16_t location);
+uint8_t *net_pda_motion_sub_pid_profile_position_rsp(uint32_t time, uint16_t location);
+uint8_t *net_pda_motion_sub_pid_profile_position_rqt(void);
 #endif

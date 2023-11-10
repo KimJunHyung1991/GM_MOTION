@@ -8,6 +8,7 @@
 #include "net_phd_pid_sensor.h"
 #include "net_phd_pid_error.h"
 #include "net_phd_pid_inspection.h"
+#include "net_phd_pid_lfs.h"
 
 /*************************************************
 fail : net_phd_pid.c
@@ -51,6 +52,9 @@ void net_phd_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 		break;
 		case PID_INSPECTION:
 			net_phd_inspection_sub_pid(num, pPh, pData);
+		break;
+		case PID_LFS:
+			net_phd_lfs_sub_pid(num, pPh, pData);
 		break;
 	}
 }

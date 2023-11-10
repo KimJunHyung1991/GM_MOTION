@@ -81,10 +81,11 @@ uint8_t *net_pda_motion_sub_pid_angle_rqt(void)
 	return make_data_buff;
 }
 /******************************************MOTION SUB PID ANGLE ASSEMBLE*********************************************/
-/******************************************MOTION SUB PID ANGLE DIRECTION*********************************************/
+/******************************************MOTION SUB PID DIRECTION ASSEMBLE*********************************************/
 /**
-  * @brief  packet motion-angle-control data assemble
-  * @param  angle_val :  value
+  * @brief  packet motion-direction-control data assemble
+  * @param  direction :  방향
+			val		  :	움직임 속도
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
 uint8_t *net_pda_motion_sub_pid_direction_ctl(uint8_t id, uint8_t direction, uint8_t val)
@@ -98,8 +99,9 @@ uint8_t *net_pda_motion_sub_pid_direction_ctl(uint8_t id, uint8_t direction, uin
 }
 
 /**
-  * @brief  packet motion-angle-response data assemble
-  * @param  angle_val :  value
+  * @brief  packet motion-direction-response data assemble
+  *  @param  direction :  방향
+			val		  :	움직임 속도
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
 uint8_t *net_pda_motion_sub_pid_direction_rsp(uint8_t id, uint8_t direction, uint8_t val)
@@ -113,7 +115,7 @@ uint8_t *net_pda_motion_sub_pid_direction_rsp(uint8_t id, uint8_t direction, uin
 }
 
 /**
-  * @brief  packet motion-angle-request data assemble
+  * @brief  packet motion-direction-request data assemble
   * @param  none
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
@@ -121,4 +123,45 @@ uint8_t *net_pda_motion_sub_pid_direction_rqt(void)
 {
 	return make_data_buff;
 }
-/******************************************MOTION SUB PID ANGLE DIRECTION*********************************************/
+/******************************************MOTION SUB PID DIRECTION ASSEMBLE*********************************************/
+/******************************************MOTION SUB PID PROFILE_POSITION ASSEMBLE*********************************************/
+/**
+  * @brief  packet motion-profile_position-control data assemble
+  * @param  time :  설정시간
+			location : 모터 위치
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_profile_position_ctl(uint32_t time, uint16_t location)
+{
+	prtc_data_ctl_motion_profile_position_t *pCdcmpp = (prtc_data_ctl_motion_profile_position_t *)make_data_buff;
+	pCdcmpp->time = time;
+	pCdcmpp->location = location;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet motion-profile_position-response data assemble
+  * @param  time :  설정시간
+			location : 모터 위치
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_profile_position_rsp(uint32_t time, uint16_t location)
+{
+	prtc_data_rsp_motion_profile_position_t *pCdrpp = (prtc_data_rsp_motion_profile_position_t *)make_data_buff;
+	pCdrpp->time = time;
+	pCdrpp->location = location;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet motion-profile_position-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_profile_position_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************MOTION SUB PID PROFILE_POSITION ASSEMBLE*********************************************/

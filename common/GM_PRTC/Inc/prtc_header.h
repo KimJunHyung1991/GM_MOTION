@@ -9,6 +9,8 @@
 #include "prtc_data_pid_sensor.h"
 #include "prtc_data_pid_error.h"
 #include "prtc_data_pid_inspection.h"
+#include "prtc_data_pid_lfs.h"
+
 #pragma pack(1)
 typedef struct{
 	uint8_t dlc;
@@ -30,11 +32,13 @@ typedef struct{
 
 
 
+
+
 /*******************************************Header영역의 RTR******************************************************************/
 #define CMD_CONTROL			0
 #define CMD_RESPONSE		1
 #define CMD_REQUEST			2
-#define CMD_RESERVED		3
+#define CMD_LFS				3
 /*******************************************Header영역의 RTR******************************************************************/
 /*******************************************Header영역의 PRIORITY******************************************************************/
 #define PRIORITY_EMERGENCY		0
@@ -58,6 +62,7 @@ typedef struct{
 #define PID_ERROR				6
 #define PID_INSPECTION			7
 #define PID_WIFI				8
+#define PID_LFS					9
 /*******************************************Header영역의 PID******************************************************************/
 /*******************************************PID_INIT의 SUB_PID******************************************************************/
 #define INIT_SUB_PID_BOOT					0
@@ -69,9 +74,10 @@ typedef struct{
 #define INIT_SUB_PID_MOVE_INIT_POSITION		6
 /*******************************************PID_INIT의 SUB_PID******************************************************************/
 /*******************************************PID_MOTION의 SUB_PID******************************************************************/
-#define MOTION_SUB_PID_ADC			0
-#define MOTION_SUB_PID_ANGLE		1
-#define MOTION_SUB_PID_DIRECTION	2
+#define MOTION_SUB_PID_ADC					0
+#define MOTION_SUB_PID_ANGLE				1
+#define MOTION_SUB_PID_DIRECTION			2
+#define MOTION_SUB_PID_PROFILE_POSITION		3
 /*******************************************PID_MOTION의 SUB_PID******************************************************************/
 /*******************************************PID_MIDI의 SUB_PID******************************************************************/
 #define MIDI_SUB_PID_ADC			0
@@ -110,5 +116,29 @@ typedef struct{
 #define WIFI_SUB_PID_IPADDRESS		0
 #define WIFI_SUB_PID_REALTIME		1
 /*******************************************PID_WIFI의 SUB_PID******************************************************************/
+/*******************************************PID_WIFI의 SUB_PID******************************************************************/
+#define LFS_SUB_PID_CONNECT		0
+/*******************************************PID_WIFI의 SUB_PID******************************************************************/
+
+
+typedef struct{
+	uint8_t dlc;
+	union{
+		struct{
+			uint32_t low_cnt			:	14;
+			uint32_t pid				:	4;
+			uint32_t cmd				:	2;
+			uint32_t high_cnt			:	9;
+			uint32_t Null				:	3;
+		};
+		uint32_t large_protocol_header_32;
+	};
+}large_data_prtc_header_t;
+/*******************************************LFS Header영역의 PID******************************************************************/
+#define LFS_PID_COUNT		0
+#define LFS_PID_TRANSFER	1
+/*******************************************LFS Header영역의 PID******************************************************************/
+
+
 #pragma pack()
 #endif

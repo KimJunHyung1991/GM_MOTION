@@ -37,5 +37,16 @@ typedef struct{
 #define MOTION_DIRECTION_CW		1
 //////////////////////////////////////direction/////////////////////////////////
 /***********************************************************MOTION_SUB_PID_DIRECTION**********************************************************/
+/***********************************************************MOTION_SUB_PID_PROFILE_POSITION**********************************************************/
+typedef struct{
+	uint32_t time;
+	uint16_t location;
+}prtc_data_ctl_motion_profile_position_t;
+
+typedef struct{
+	uint32_t time;
+	uint16_t location;
+}prtc_data_rsp_motion_profile_position_t;
+/***********************************************************MOTION_SUB_PID_PROFILE_POSITION**********************************************************/
 #pragma pack()
 #endif
