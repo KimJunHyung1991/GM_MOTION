@@ -1,6 +1,10 @@
 #ifndef _GM_APP_PID_MIDI_CMD_H_
 #define _GM_APP_PID_MIDI_CMD_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**********************************************************************************/
 void app_rx_midi_sub_pid_adc_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_midi_adc_t *pData);
 void app_rx_midi_sub_pid_adc_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_midi_adc_t *pData);
@@ -81,4 +85,9 @@ void app_tx_midi_sub_pid_last_page_ctl(uint8_t num, uint8_t priority, uint8_t so
 void app_tx_midi_sub_pid_last_page_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id);
 void app_tx_midi_sub_pid_last_page_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id);
 /**********************************************************************************/
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif
