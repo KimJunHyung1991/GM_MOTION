@@ -102,6 +102,10 @@ void proc_rx_ring_buff_tail_chk(uint8_t num)
   * @param  CAN_HandleTypeDef *hcan : can 핸들러
   * @retval none
   */
+__weak void HAL_CAN_RxFifo0MsgPendingCallback_ByPass(CAN_HandleTypeDef *hcan)//231110 shs
+{
+  UNUSED(hcan);
+}
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
 	for(int i = 0; i < can_init.cnt; i++){
@@ -116,6 +120,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 			
 		}
 	}
+	HAL_CAN_RxFifo0MsgPendingCallback_ByPass(hcan);
 }
 /******************************************HAL CAN RX CALL BACK*********************************************/
 /******************************************PROCESS CAN RX*********************************************/
