@@ -35,7 +35,7 @@ void gm_motion_RX_LED_init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState
 	rx_led.data[rx_led.cnt++].ledOnState = ledOnState;
 }
 //led on
-static void gm_motion_RX_LED_ON(uint8_t num)
+void gm_motion_RX_LED_ON(uint8_t num)
 {
 	if(num >= CAN_CNT) return;
 	if(rx_led.data[num].f_init)
@@ -49,7 +49,7 @@ static void gm_motion_RX_LED_ON(uint8_t num)
 	}
 }
 //led off
-static void gm_motion_RX_LED_OFF(void)
+void gm_motion_RX_LED_OFF(void)
 {
 	for(int i = 0; i < rx_led.cnt; i++){
 		if(rx_led.data[i].f_init)
