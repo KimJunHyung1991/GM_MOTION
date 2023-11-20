@@ -290,3 +290,44 @@ void app_tx_init_sub_pid_move_init_position_rqt(uint8_t num, uint8_t priority, u
 			net_pda_init_sub_pid_move_init_position_rqt());
 }
 /******************************************INIT SUB PID MOVE INIT POSITION APPLICATION*********************************************/
+/******************************************INIT SUB PID MOVE INIT POSITION APPLICATION*********************************************/
+/**
+  * @brief  
+  * @param  num : CAN 종류
+			*pPh : packet header pointer
+			*pData : packet data pointer
+  * @retval None
+  */
+__weak void app_rx_init_sub_pid_driver_data_op_ctl(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+__weak void app_rx_init_sub_pid_driver_data_op_rsp(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+__weak void app_rx_init_sub_pid_driver_data_op_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+void app_tx_init_sub_pid_driver_data_op_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t *pData)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, 8, priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA_OP, souce_sub_id, target_sub_id), \
+			net_pda_init_sub_pid_driver_data_op_ctl(pData));
+}
+
+void app_tx_init_sub_pid_driver_data_op_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t *pData)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, 8, priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA_OP, souce_sub_id, target_sub_id), \
+			net_pda_init_sub_pid_driver_data_op_rsp(pData));
+}
+
+void app_tx_init_sub_pid_driver_data_op_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA_OP, souce_sub_id, target_sub_id), \
+			net_pda_init_sub_pid_driver_data_op_rqt());
+}
+/******************************************INIT SUB PID MOVE INIT POSITION APPLICATION*********************************************/

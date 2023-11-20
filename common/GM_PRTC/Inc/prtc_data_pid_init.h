@@ -92,5 +92,24 @@ typedef struct{
 /***********************************************************INIT_SUB_PID_MOVE_INIT_POSITION**********************************************************/
 
 /***********************************************************INIT_SUB_PID_MOVE_INIT_POSITION**********************************************************/
+/***********************************************************INIT_SUB_PID_DRIVER_DATA_OP**********************************************************/
+typedef struct{
+	uint32_t profile_target_speed;
+	uint32_t profile_acc_cnt;
+}prtc_data_ctl_init_driver_data_op_zero_err_t;
+
+typedef struct{
+	uint32_t profile_target_speed;
+	uint32_t profile_acc_cnt;
+}prtc_data_rsp_init_driver_data_op_zero_err_t;
+
+typedef struct{
+	uint32_t home_cnt;
+}prtc_data_ctl_init_driver_data_op_dxl_t;
+
+typedef struct{
+	uint32_t home_cnt;
+}prtc_data_rsp_init_driver_data_op_dxl_t;
+/***********************************************************INIT_SUB_PID_DRIVER_DATA_OP**********************************************************/
 #pragma pack()
 #endif

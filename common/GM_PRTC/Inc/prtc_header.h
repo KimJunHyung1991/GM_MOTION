@@ -72,6 +72,7 @@ typedef struct{
 #define INIT_SUB_PID_ABSOLUTE_BATTERY		4
 #define INIT_SUB_PID_MOVE_SENSOR			5
 #define INIT_SUB_PID_MOVE_INIT_POSITION		6
+#define INIT_SUB_PID_DRIVER_DATA_OP			7
 /*******************************************PID_INITÀÇ SUB_PID******************************************************************/
 /*******************************************PID_MOTIONÀÇ SUB_PID******************************************************************/
 #define MOTION_SUB_PID_ADC					0
