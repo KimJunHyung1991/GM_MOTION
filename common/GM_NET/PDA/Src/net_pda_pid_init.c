@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /*************************************************
 fail : net_pda_pid_error.c
 network packet data assemble prameter idemtification error
@@ -276,3 +277,36 @@ uint8_t *net_pda_init_sub_pid_move_init_position_rqt(void)
 	return make_data_buff;
 }
 /******************************************INIT SUB PID MOVE INIT POSITION ASSEMBLE*********************************************/
+/******************************************INIT SUB PID DRIVER DATA OP ASSEMBLE*********************************************/
+/**
+  * @brief  packet init-driver_data_op-control data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_init_sub_pid_driver_data_op_ctl(uint8_t *pData)
+{
+	memcpy(make_data_buff, pData, 8);
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet init-driver_data_op-response data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_init_sub_pid_driver_data_op_rsp(uint8_t *pData)
+{
+	memcpy(make_data_buff, pData, 8);
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet init-driver_data_op-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_init_sub_pid_driver_data_op_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************INIT SUB PID DRIVER DATA OP ASSEMBLE*********************************************/
