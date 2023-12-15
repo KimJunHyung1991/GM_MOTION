@@ -62,6 +62,7 @@ typedef struct{
 #define	EDIT_ACTION_KEY_POSITION_START					46
 #define	EDIT_ACTION_KEY_POSITION_END					47
 #define	EDIT_ACTION_NON_INIT_PLAY_START					48
+#define	EDIT_ACTION_PLAY_END_STOP						49
 
 ///////////////////////////action///////////////////////////
 
