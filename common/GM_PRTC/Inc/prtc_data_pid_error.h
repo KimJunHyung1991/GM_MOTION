@@ -44,5 +44,25 @@ typedef struct{
 #define ERROR_ALL_CLEAR		0xFFFFFFFF
 ///////////////////////////error_code///////////////////////////
 /***********************************************************ERROR_SUB_PID_CLEAR**********************************************************/
+/***********************************************************ERROR_SUB_PID_ERROR_LEVEL**********************************************************/
+typedef struct{
+	uint8_t motor_type;
+	char err_lv_str[7];
+}prtc_data_ctl_error_level_t;
+
+typedef struct{
+	uint8_t motor_type;
+	char err_lv_str[7];
+}prtc_data_rsp_error_level_t;
+
+///////////////////////////error_code///////////////////////////
+#define EL_MOTOR_NULL		0
+#define EL_MOTOR_RC			1
+#define EL_MOTOR_AC			2
+#define EL_MOTOR_BL			3
+#define EL_MOTOR_ZER		4
+#define EL_MOTOR_DXL		5
+///////////////////////////error_code///////////////////////////
+/***********************************************************ERROR_SUB_PID_ERROR_LEVEL**********************************************************/
 #pragma pack()
 #endif

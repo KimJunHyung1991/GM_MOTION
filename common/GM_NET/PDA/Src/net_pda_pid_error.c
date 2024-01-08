@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /*************************************************
 fail : net_pda_pid_error.c
 network packet data assemble prameter idemtification error
@@ -154,3 +155,56 @@ uint8_t *net_pda_error_sub_pid_clear_rqt(void)
 	return make_data_buff;
 }
 /******************************************ERROR SUB PID CLEAR ASSEMBLE*********************************************/
+/******************************************ERROR SUB PID ERROR LEVEL ASSEMBLE*********************************************/
+/**
+  * @brief  packet error-level-control data assemble
+  * @param  motor_type : 0 - NULL
+						 1 - RC
+						 2 - AC
+						 3 - BLDC
+						 4 - ZER
+						 5 - DXL
+			err_str : 에러 코드 문자열
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_error_level_ctl(uint8_t motor_type, char *err_str)
+{
+	prtc_data_ctl_error_level_t *pCdcel = (prtc_data_ctl_error_level_t *)make_data_buff;
+	pCdcel->motor_type = motor_type;
+	memcpy(pCdcel->err_lv_str, err_str, 7);
+	//memcpy(pCdcel->err_lv_str, err_str, sizeof(pCdcel->err_lv_str));
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-level-response data assemble
+  * @param  motor_type : 0 - NULL
+						 1 - RC
+						 2 - AC
+						 3 - BLDC
+						 4 - ZER
+						 5 - DXL
+			err_str : 에러 코드 문자열
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_error_level_rsp(uint8_t motor_type, char *err_str)
+{
+	prtc_data_rsp_error_level_t *pCdrel = (prtc_data_rsp_error_level_t *)make_data_buff;
+	pCdrel->motor_type = motor_type;
+	memcpy(pCdrel->err_lv_str, err_str, 7);
+	//memcpy(pCdrel->err_lv_str, err_str, sizeof(pCdrel->err_lv_str));
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-level-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_error_level_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************ERROR SUB PID ERROR LEVEL ASSEMBLE*********************************************/

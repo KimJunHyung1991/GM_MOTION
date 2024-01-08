@@ -91,7 +91,6 @@ typedef struct{
 #define MIDI_SUB_PID_PAGE			7
 #define MIDI_SUB_PID_EXIST			8
 #define MIDI_SUB_PID_LAST_PAGE		9
-
 /*******************************************PID_MIDI의 SUB_PID******************************************************************/
 /*******************************************PID_VIDEO의 SUB_PID******************************************************************/
 #define EDIT_SUB_PID_ACTION		0
@@ -104,10 +103,11 @@ typedef struct{
 #define SENSOR_SUB_PID_DETECT	0
 /*******************************************PID_SENSOR의 SUB_PID******************************************************************/
 /*******************************************PID_ERROR의 SUB_PID******************************************************************/
-#define ERROR_SUB_PID_RC		0
-#define ERROR_SUB_PID_AC		1
-#define ERROR_SUB_PID_BLDC		2
-#define ERROR_SUB_PID_CLEAR		3
+#define ERROR_SUB_PID_RC			0
+#define ERROR_SUB_PID_AC			1
+#define ERROR_SUB_PID_BLDC			2
+#define ERROR_SUB_PID_CLEAR			3
+#define ERROR_SUB_PID_ERROR_LEVEL	4
 /*******************************************PID_ERROR의 SUB_PID******************************************************************/
 /*******************************************PID_INSPECTION의 SUB_PID******************************************************************/
 #define INSPECTION_SUB_PID_DATA		0
