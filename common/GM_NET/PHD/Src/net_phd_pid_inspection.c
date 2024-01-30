@@ -46,7 +46,7 @@ void net_phd_inspection_sub_pid_data_play(uint8_t num, prtc_header_t *pPh, uint8
 			app_rx_inspection_sub_pid_data_play_rsp(num, pPh, (prtc_data_rsp_inspection_data_play_t *)pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_inspection_sub_pid_data_play_rqt(num, pPh, pData);
+			app_rx_inspection_sub_pid_data_play_rqt(num, pPh, (prtc_data_rqt_inspection_data_play_t *)pData);
 		break;
 	}
 }
