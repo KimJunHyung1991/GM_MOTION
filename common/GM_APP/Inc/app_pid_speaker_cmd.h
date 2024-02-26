@@ -12,6 +12,7 @@ void app_rx_speaker_sub_pid_action_rqt(uint8_t num, prtc_header_t *pPh, uint8_t 
 void app_tx_speaker_sub_pid_action_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t action);
 void app_tx_speaker_sub_pid_action_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t action);
 void app_tx_speaker_sub_pid_action_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id ,uint8_t target_sub_id);
+void app_tx_speaker_sub_pid_action_play_num_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t action, uint8_t play_num);
 /**********************************************************************************/
 
 #ifdef __cplusplus

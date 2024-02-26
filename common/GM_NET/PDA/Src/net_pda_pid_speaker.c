@@ -43,4 +43,19 @@ uint8_t *net_pda_speaker_sub_pid_action_rqt(void)
 {
 	return make_data_buff;
 }
+
+/**
+  * @brief  packet speaker-action-control data assemble
+  * @param  action : value
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_speaker_sub_pid_action_play_num_ctl(uint8_t action, uint8_t num)
+{
+	prtc_data_ctl_speaker_action_t *pCdcsa = (prtc_data_ctl_speaker_action_t *)make_data_buff;
+	prtc_data_ctl_speaker_action_play_num_t *pCdcsapn = (prtc_data_ctl_speaker_action_play_num_t *)pCdcsa->payload;
+	pCdcsa->action = action;
+	pCdcsapn->num = num;
+	
+	return make_data_buff;
+}
 /******************************************SPEAKER SUB PID ACTION ASSEMBLE*********************************************/

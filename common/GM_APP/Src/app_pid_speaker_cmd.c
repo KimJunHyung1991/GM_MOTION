@@ -42,4 +42,11 @@ void app_tx_speaker_sub_pid_action_rqt(uint8_t num, uint8_t priority, uint8_t so
 	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_SPEAKER, SPEAKER_SUB_PID_ACTION, souce_sub_id, target_sub_id), \
 			net_pda_speaker_sub_pid_action_rqt());
 }
+
+void app_tx_speaker_sub_pid_action_play_num_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t action, uint8_t play_num)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_speaker_action_t) + sizeof(prtc_data_ctl_speaker_action_play_num_t), priority, souce_id, target_id, PID_SPEAKER, SPEAKER_SUB_PID_ACTION, souce_sub_id, target_sub_id), \
+			net_pda_speaker_sub_pid_action_play_num_ctl(action, play_num));
+}
+
 /******************************************SPEAKER SUB PID ACTION APPLICATION*********************************************/

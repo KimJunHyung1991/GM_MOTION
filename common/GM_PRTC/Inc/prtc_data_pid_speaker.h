@@ -4,7 +4,12 @@
 /***********************************************************SPEAKER_SUB_PID_ACTION**********************************************************/
 typedef struct{
 	uint8_t 	action;
+	uint8_t 	payload[0];
 }prtc_data_ctl_speaker_action_t;
+
+typedef struct{
+	uint8_t 	num;
+}prtc_data_ctl_speaker_action_play_num_t;
 
 typedef struct{
 	uint8_t 	action;
