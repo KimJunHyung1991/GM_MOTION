@@ -2,15 +2,7 @@
 #define _GM_HAL_PROTOCOL1_5_PID_EDIT_H_
 #pragma pack(1)
 /***********************************************************EDIT_SUB_PID_ACTION**********************************************************/
-typedef struct{
-	uint8_t 	action;
-	uint32_t	option_value;
-}prtc_data_ctl_edit_action_t;
 
-typedef struct{
-	uint8_t 	action;
-	uint32_t	option_value;
-}prtc_data_rsp_edit_action_t;
 
 ///////////////////////////action///////////////////////////
 #define	EDIT_ACTION_REC_START							0
@@ -63,6 +55,52 @@ typedef struct{
 #define	EDIT_ACTION_KEY_POSITION_END					47
 #define	EDIT_ACTION_NON_INIT_PLAY_START					48
 #define	EDIT_ACTION_PLAY_END_STOP						49
+
+
+typedef enum{
+	VIDEO_STATUS_NORMAL = 0,
+	VIDEO_STATUS_REC,
+	VIDEO_STATUS_PLAY,
+	VIDEO_STATUS_REPEAT_PLAY,
+	VIDEO_STATUS_MOTION1_REC,
+	VIDEO_STATUS_MOTION1_PLAY,
+	VIDEO_STATUS_MOTION2_REC,
+	VIDEO_STATUS_MOTION2_PLAY,
+	VIDEO_STATUS_MOTION3_REC,
+	VIDEO_STATUS_MOTION3_PLAY,
+	VIDEO_STATUS_MOTION4_REC,
+	VIDEO_STATUS_MOTION4_PLAY,
+	VIDEO_STATUS_MOTION5_REC,
+	VIDEO_STATUS_MOTION5_PLAY,
+	VIDEO_STATUS_MOTION6_REC,
+	VIDEO_STATUS_MOTION6_PLAY,
+	VIDEO_STATUS_MOTION7_REC,
+	VIDEO_STATUS_MOTION7_PLAY,
+	VIDEO_STATUS_MOTION8_REC,
+	VIDEO_STATUS_MOTION8_PLAY,
+	VIDEO_STATUS_PLAY_AND_REC,
+	VIDEO_STATUS_PLAY_AND_REC_PLAY,
+	VIDEO_STATUS_REPEAT_PLAY2,
+	VIDEO_STATUS_PLAY_END_STOP
+}video_status_enum_t;
+
+typedef struct{
+	uint8_t 	action;
+	uint32_t	option_value;
+}prtc_data_ctl_edit_action_t;
+
+typedef struct{
+	uint8_t 	action;
+	uint32_t	option_value;
+}prtc_data_rsp_edit_action_t;
+
+typedef struct{
+	uint8_t 	status;
+}prtc_data_ctl_edit_status_t;
+
+typedef struct{
+	uint8_t 	status;
+}prtc_data_rsp_edit_status_t;
 
 ///////////////////////////action///////////////////////////
 
