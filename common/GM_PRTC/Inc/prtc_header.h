@@ -30,10 +30,6 @@ typedef struct{
 	};
 }prtc_header_t;
 
-
-
-
-
 /*******************************************Header영역의 RTR******************************************************************/
 #define CMD_CONTROL			0
 #define CMD_RESPONSE		1
@@ -104,11 +100,12 @@ typedef struct{
 #define SENSOR_SUB_PID_DETECT	0
 /*******************************************PID_SENSOR의 SUB_PID******************************************************************/
 /*******************************************PID_ERROR의 SUB_PID******************************************************************/
-#define ERROR_SUB_PID_RC			0
-#define ERROR_SUB_PID_AC			1
-#define ERROR_SUB_PID_BLDC			2
-#define ERROR_SUB_PID_CLEAR			3
-#define ERROR_SUB_PID_ERROR_LEVEL	4
+#define ERROR_SUB_PID_RC					0
+#define ERROR_SUB_PID_AC					1
+#define ERROR_SUB_PID_BLDC					2
+#define ERROR_SUB_PID_CLEAR					3
+#define ERROR_SUB_PID_ERROR_LEVEL			4
+#define ERROR_SUB_PID_ERROR_TRANSMISSION	5
 /*******************************************PID_ERROR의 SUB_PID******************************************************************/
 /*******************************************PID_INSPECTION의 SUB_PID******************************************************************/
 #define INSPECTION_SUB_PID_DATA		0

@@ -20,4 +20,8 @@ uint8_t *net_pda_error_sub_pid_clear_rqt(void);
 uint8_t *net_pda_error_sub_pid_error_level_ctl(uint8_t motor_type, char *err_str);
 uint8_t *net_pda_error_sub_pid_error_level_rsp(uint8_t motor_type, char *err_str);
 uint8_t *net_pda_error_sub_pid_error_level_rqt(void);
+
+uint8_t *net_pda_error_sub_pid_error_transmission_ctl(uint8_t id, uint8_t sub_id, uint8_t err_lv, char *err_str);
+uint8_t *net_pda_error_sub_pid_error_transmission_rsp(uint8_t id, uint8_t sub_id, uint8_t err_lv ,char *err_str);
+uint8_t *net_pda_error_sub_pid_error_transmission_rqt(void);
 #endif

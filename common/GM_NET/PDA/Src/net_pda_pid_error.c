@@ -208,3 +208,50 @@ uint8_t *net_pda_error_sub_pid_error_level_rqt(void)
 	return make_data_buff;
 }
 /******************************************ERROR SUB PID ERROR LEVEL ASSEMBLE*********************************************/
+/******************************************ERROR SUB PID ERROR TRANSMISSION ASSEMBLE*********************************************/
+/**
+  * @brief  packet error-transmission-control data assemble
+  * @param  id : error모터의 can id
+			sub_id : error모터의 can sub_id
+			err_str : 에러 코드 문자열
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_error_transmission_ctl(uint8_t id, uint8_t sub_id, uint8_t err_lv, char *err_str)
+{
+	prtc_data_ctl_error_transmission_t *pCdcet = (prtc_data_ctl_error_transmission_t *)make_data_buff;
+	pCdcet->id = id;
+	pCdcet->sub_id = sub_id;
+	pCdcet->err_lv = err_lv;
+	memcpy(pCdcet->err_lv_str, err_str, 6);
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-transmission-response data assemble
+  * @param  id : error모터의 can id
+			sub_id : error모터의 can sub_id
+			err_str : 에러 코드 문자열
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_error_transmission_rsp(uint8_t id, uint8_t sub_id, uint8_t err_lv, char *err_str)
+{
+	prtc_data_rsp_error_transmission_t *pCdret = (prtc_data_rsp_error_transmission_t *)make_data_buff;
+	pCdret->id = id;
+	pCdret->sub_id = sub_id;
+	pCdret->err_lv = err_lv;
+	memcpy(pCdret->err_lv_str, err_str, 6);
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet error-transmission-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_error_sub_pid_error_transmission_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************ERROR SUB PID ERROR TRANSMISSION ASSEMBLE*********************************************/

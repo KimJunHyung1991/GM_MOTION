@@ -110,6 +110,14 @@ typedef struct{
 typedef struct{
 	uint32_t home_cnt;
 }prtc_data_rsp_init_driver_data_op_dxl_t;
+
+typedef struct{
+	uint32_t ref_position;
+}prtc_data_ctl_init_driver_data_op_ac2_t;
+
+typedef struct{
+	uint32_t ref_position;
+}prtc_data_rsp_init_driver_data_op_ac2_t;
 /***********************************************************INIT_SUB_PID_DRIVER_DATA_OP**********************************************************/
 #pragma pack()
 #endif

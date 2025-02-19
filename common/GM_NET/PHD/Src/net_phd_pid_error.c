@@ -12,7 +12,7 @@ void net_phd_error_sub_pid_ac(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void net_phd_error_sub_pid_bldc(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void net_phd_error_sub_pid_clear(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void net_phd_error_sub_pid_error_level(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-
+void net_phd_error_sub_pid_error_transmission(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 /******************************************ERROR PID DISASSEMBLE*********************************************/
 /**
   * @brief  packet header disassemble(PID-error의 sub_pid)
@@ -38,6 +38,9 @@ void net_phd_error_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 		break;
 		case ERROR_SUB_PID_ERROR_LEVEL:
 			net_phd_error_sub_pid_error_level(num, pPh, pData);
+		break;
+		case ERROR_SUB_PID_ERROR_TRANSMISSION:
+			net_phd_error_sub_pid_error_transmission(num, pPh, pData);
 		break;
 	}
 }
@@ -157,3 +160,26 @@ void net_phd_error_sub_pid_error_level(uint8_t num, prtc_header_t *pPh, uint8_t 
 	}
 }
 /******************************************ERROR SUB PID ERROR LEVEL DISASSEMBLE*********************************************/
+/******************************************ERROR SUB PID ERROR TRANSMISSION DISASSEMBLE*********************************************/
+/**
+  * @brief  packet header disassemble(PID-error의 sub_pid_error_transmission의 cmd)
+  * @param  *pPh : packet header pointer
+			*pData : packet data pointer
+  * @retval None
+  */
+void net_phd_error_sub_pid_error_transmission(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	switch(pPh->cmd)
+	{
+		case CMD_CONTROL:
+			app_rx_error_sub_pid_error_transmission_ctl(num, pPh, (prtc_data_ctl_error_transmission_t *)pData);
+		break;
+		case CMD_RESPONSE:
+			app_rx_error_sub_pid_error_transmission_rsp(num, pPh, (prtc_data_rsp_error_transmission_t *)pData);
+		break;
+		case CMD_REQUEST:
+			app_rx_error_sub_pid_error_transmission_rqt(num, pPh, pData);
+		break;
+	}
+}
+/******************************************ERROR SUB PID ERROR TRANSMISSION DISASSEMBLE*********************************************/

@@ -208,3 +208,44 @@ void app_tx_error_sub_pid_error_level_rqt(uint8_t num, uint8_t priority, uint8_t
 			net_pda_error_sub_pid_error_level_rqt());
 }
 /******************************************ERROR SUB PID ERROR LEVEL APPLICATION*********************************************/
+/******************************************ERROR SUB PID ERROR TRANSMISSION APPLICATION*********************************************/
+/**
+  * @brief  
+  * @param  num : CAN 종류
+			*pPh : packet header pointer
+			*pData : packet data pointer
+  * @retval None
+  */
+__weak void app_rx_error_sub_pid_error_transmission_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_error_transmission_t *pData)
+{
+	
+}
+
+__weak void app_rx_error_sub_pid_error_transmission_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_error_transmission_t *pData)
+{
+	
+}
+
+__weak void app_rx_error_sub_pid_error_transmission_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+void app_tx_error_sub_pid_error_transmission_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t id, uint8_t sub_id, uint8_t err_lv, char *err_str)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_error_transmission_t), priority, souce_id, target_id, PID_ERROR, ERROR_SUB_PID_ERROR_LEVEL, souce_sub_id, target_sub_id), \
+			net_pda_error_sub_pid_error_transmission_ctl(id, sub_id, err_lv, err_str));
+}
+
+void app_tx_error_sub_pid_error_transmission_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t id, uint8_t sub_id, uint8_t err_lv, char *err_str)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_error_transmission_t), priority, souce_id, target_id, PID_ERROR, ERROR_SUB_PID_ERROR_LEVEL, souce_sub_id, target_sub_id), \
+			net_pda_error_sub_pid_error_transmission_rsp(id, sub_id, err_lv, err_str));
+}
+
+void app_tx_error_sub_pid_error_transmission_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_ERROR, ERROR_SUB_PID_ERROR_LEVEL, souce_sub_id, target_sub_id), \
+			net_pda_error_sub_pid_error_transmission_rqt());
+}
+/******************************************ERROR SUB PID ERROR TRANSMISSION APPLICATION*********************************************/
