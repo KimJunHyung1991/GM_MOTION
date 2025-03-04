@@ -190,13 +190,13 @@ __weak void app_rx_init_sub_pid_absolute_battery_rqt(uint8_t num, prtc_header_t 
 	
 }
 
-void app_tx_init_sub_pid_absolute_battery_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint32_t save_data)
+void app_tx_init_sub_pid_absolute_battery_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, int64_t save_data)
 {
 	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_init_absolute_battery_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_ABSOLUTE_BATTERY, souce_sub_id, target_sub_id), \
 			net_pda_init_sub_pid_absolute_battery_ctl(save_data));
 }
 
-void app_tx_init_sub_pid_absolute_battery_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint32_t save_data)
+void app_tx_init_sub_pid_absolute_battery_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, int64_t save_data)
 {
 	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_init_absolute_battery_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_ABSOLUTE_BATTERY, souce_sub_id, target_sub_id), \
 			net_pda_init_sub_pid_absolute_battery_rsp(save_data));

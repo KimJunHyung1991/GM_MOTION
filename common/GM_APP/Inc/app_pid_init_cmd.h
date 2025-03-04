@@ -41,8 +41,8 @@ void app_tx_init_sub_pid_status_rqt(uint8_t num, uint8_t priority, uint8_t souce
 void app_rx_init_sub_pid_absolute_battery_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_init_absolute_battery_t *pData);
 void app_rx_init_sub_pid_absolute_battery_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_init_absolute_battery_t *pData);
 void app_rx_init_sub_pid_absolute_battery_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void app_tx_init_sub_pid_absolute_battery_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint32_t save_data);
-void app_tx_init_sub_pid_absolute_battery_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint32_t save_data);
+void app_tx_init_sub_pid_absolute_battery_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, int64_t save_data);
+void app_tx_init_sub_pid_absolute_battery_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, int64_t save_data);
 void app_tx_init_sub_pid_absolute_battery_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id);
 /**********************************************************************************/
 /**********************************************************************************/

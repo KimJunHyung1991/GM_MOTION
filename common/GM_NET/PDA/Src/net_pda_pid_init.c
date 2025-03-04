@@ -181,7 +181,7 @@ uint8_t *net_pda_init_sub_pid_status_rqt(uint8_t step)
   * @param  save_data : 모터 드라이버 저장 카운트
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_absolute_battery_ctl(uint32_t save_data)
+uint8_t *net_pda_init_sub_pid_absolute_battery_ctl(int64_t save_data)
 {
 	prtc_data_ctl_init_absolute_battery_t *pCdciab = (prtc_data_ctl_init_absolute_battery_t *)make_data_buff;
 	pCdciab->save_data = save_data;
@@ -193,7 +193,7 @@ uint8_t *net_pda_init_sub_pid_absolute_battery_ctl(uint32_t save_data)
   * @param  save_data : 모터 드라이버 저장 카운트
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_init_sub_pid_absolute_battery_rsp(uint32_t save_data)
+uint8_t *net_pda_init_sub_pid_absolute_battery_rsp(int64_t save_data)
 {
 	prtc_data_rsp_init_absolute_battery_t *pCdriab = (prtc_data_rsp_init_absolute_battery_t *)make_data_buff;
 	pCdriab->save_data = save_data;
