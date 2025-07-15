@@ -290,7 +290,7 @@ void app_tx_init_sub_pid_move_init_position_rqt(uint8_t num, uint8_t priority, u
 			net_pda_init_sub_pid_move_init_position_rqt());
 }
 /******************************************INIT SUB PID MOVE INIT POSITION APPLICATION*********************************************/
-/******************************************INIT SUB PID MOVE INIT POSITION APPLICATION*********************************************/
+/******************************************INIT SUB PID DATA OP APPLICATION*********************************************/
 /**
   * @brief  
   * @param  num : CAN 종류
@@ -330,4 +330,45 @@ void app_tx_init_sub_pid_driver_data_op_rqt(uint8_t num, uint8_t priority, uint8
 	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA_OP, souce_sub_id, target_sub_id), \
 			net_pda_init_sub_pid_driver_data_op_rqt());
 }
-/******************************************INIT SUB PID MOVE INIT POSITION APPLICATION*********************************************/
+/******************************************INIT SUB PID DATA OP APPLICATION*********************************************/
+/******************************************INIT SUB PID DRIVER TYPE APPLICATION*********************************************/
+/**
+  * @brief  
+  * @param  num : CAN 종류
+			*pPh : packet header pointer
+			*pData : packet data pointer
+  * @retval None
+  */
+__weak void app_rx_init_sub_pid_driver_type_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_init_driver_type_t *pData)
+{
+	
+}
+
+__weak void app_rx_init_sub_pid_driver_type_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_init_driver_type_t *pData)
+{
+	
+}
+
+__weak void app_rx_init_sub_pid_driver_type_rqt(uint8_t num, prtc_header_t *pPh, prtc_data_rqt_init_driver_type_t *pData)
+{
+	
+}
+
+void app_tx_init_sub_pid_driver_type_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t type)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_init_driver_type_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA_OP, souce_sub_id, target_sub_id), \
+			net_pda_init_sub_pid_driver_type_ctl(type));
+}
+
+void app_tx_init_sub_pid_driver_type_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t type)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_init_driver_type_t), priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA_OP, souce_sub_id, target_sub_id), \
+			net_pda_init_sub_pid_driver_type_rsp(type));
+}
+
+void app_tx_init_sub_pid_driver_type_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_INIT, INIT_SUB_PID_DRIVER_DATA_OP, souce_sub_id, target_sub_id), \
+			net_pda_init_sub_pid_driver_type_rqt());
+}
+/******************************************INIT SUB PID DRIVER TYPE APPLICATION*********************************************/

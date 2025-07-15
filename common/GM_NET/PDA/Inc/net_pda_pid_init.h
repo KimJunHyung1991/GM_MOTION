@@ -32,4 +32,8 @@ uint8_t *net_pda_init_sub_pid_move_init_position_rqt(void);
 uint8_t *net_pda_init_sub_pid_driver_data_op_ctl(uint8_t *pData);
 uint8_t *net_pda_init_sub_pid_driver_data_op_rsp(uint8_t *pData);
 uint8_t *net_pda_init_sub_pid_driver_data_op_rqt(void);
+
+uint8_t *net_pda_init_sub_pid_driver_type_ctl(uint8_t type);
+uint8_t *net_pda_init_sub_pid_driver_type_rsp(uint8_t type);
+uint8_t *net_pda_init_sub_pid_driver_type_rqt(void);
 #endif

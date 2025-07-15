@@ -69,12 +69,15 @@ typedef struct{
 #define INIT_SUB_PID_MOVE_SENSOR			5
 #define INIT_SUB_PID_MOVE_INIT_POSITION		6
 #define INIT_SUB_PID_DRIVER_DATA_OP			7
+#define INIT_SUB_PID_DRIVER_TYPE			8
 /*******************************************PID_INIT의 SUB_PID******************************************************************/
 /*******************************************PID_MOTION의 SUB_PID******************************************************************/
 #define MOTION_SUB_PID_ADC					0
 #define MOTION_SUB_PID_ANGLE				1
 #define MOTION_SUB_PID_DIRECTION			2
 #define MOTION_SUB_PID_PROFILE_POSITION		3
+#define MOTION_SUB_PID_RAW_DATA				4
+#define MOTION_SUB_PID_BRAKE				5
 /*******************************************PID_MOTION의 SUB_PID******************************************************************/
 /*******************************************PID_MIDI의 SUB_PID******************************************************************/
 #define MIDI_SUB_PID_ADC			0
@@ -115,14 +118,12 @@ typedef struct{
 #define WIFI_SUB_PID_IPADDRESS		0
 #define WIFI_SUB_PID_REALTIME		1
 /*******************************************PID_WIFI의 SUB_PID******************************************************************/
-/*******************************************PID_WIFI의 SUB_PID******************************************************************/
+/*******************************************PID_LFS의 SUB_PID******************************************************************/
 #define LFS_SUB_PID_MODE		0
 #define LFS_SUB_PID_START		1
 #define LFS_SUB_PID_DATA		2
 #define LFS_SUB_PID_END			3
-/*******************************************PID_WIFI의 SUB_PID******************************************************************/
-
-
+/*******************************************PID_LFS의 SUB_PID******************************************************************/
 typedef struct{
 	uint8_t dlc;
 	union{
@@ -140,7 +141,5 @@ typedef struct{
 #define LFS_PID_COUNT		0
 #define LFS_PID_TRANSFER	1
 /*******************************************LFS Header영역의 PID******************************************************************/
-
-
 #pragma pack()
 #endif

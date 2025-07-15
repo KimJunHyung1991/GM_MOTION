@@ -16,4 +16,12 @@ uint8_t *net_pda_motion_sub_pid_direction_rqt(void);
 uint8_t *net_pda_motion_sub_pid_profile_position_ctl(uint32_t time, uint16_t location);
 uint8_t *net_pda_motion_sub_pid_profile_position_rsp(uint32_t time, uint16_t location);
 uint8_t *net_pda_motion_sub_pid_profile_position_rqt(void);
+
+uint8_t *net_pda_motion_sub_pid_raw_data_ctl(uint64_t raw_data);
+uint8_t *net_pda_motion_sub_pid_raw_data_rsp(uint64_t raw_data);
+uint8_t *net_pda_motion_sub_pid_raw_data_rqt(void);
+
+uint8_t *net_pda_motion_sub_pid_brake_ctl(uint8_t brake, uint8_t servo_on);
+uint8_t *net_pda_motion_sub_pid_brake_rsp(uint8_t brake, uint8_t servo_on);
+uint8_t *net_pda_motion_sub_pid_brake_rqt(void);
 #endif

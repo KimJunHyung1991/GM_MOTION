@@ -310,3 +310,38 @@ uint8_t *net_pda_init_sub_pid_driver_data_op_rqt(void)
 	return make_data_buff;
 }
 /******************************************INIT SUB PID DRIVER DATA OP ASSEMBLE*********************************************/
+/******************************************INIT SUB PID DRIVER TYPE ASSEMBLE*********************************************/
+/**
+  * @brief  packet init-driver_type-control data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_init_sub_pid_driver_type_ctl(uint8_t type)
+{
+	prtc_data_ctl_init_driver_type_t *pDdcidt = (prtc_data_ctl_init_driver_type_t *)make_data_buff;
+	pDdcidt->type = type;
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet init-driver_type-response data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_init_sub_pid_driver_type_rsp(uint8_t type)
+{
+	prtc_data_rsp_init_driver_type_t *pDdridt = (prtc_data_rsp_init_driver_type_t *)make_data_buff;
+	pDdridt->type = type;
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet init-driver_type-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_init_sub_pid_driver_type_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************INIT SUB PID DRIVER TYPE ASSEMBLE*********************************************/

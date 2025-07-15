@@ -48,5 +48,31 @@ typedef struct{
 	uint16_t location;
 }prtc_data_rsp_motion_profile_position_t;
 /***********************************************************MOTION_SUB_PID_PROFILE_POSITION**********************************************************/
+/***********************************************************MOTION_SUB_PID_RAW_DATA**********************************************************/
+typedef struct{
+	uint64_t raw_data;
+}prtc_data_ctl_motion_raw_data_t;
+typedef struct{
+	uint64_t raw_data;
+}prtc_data_rsp_motion_raw_data_t;
+/***********************************************************MOTION_SUB_PID_RAW_DATA**********************************************************/
+#define MOTOR_BRAKE_UNLOCK	0
+#define MOTOR_BRAKE_LOCK	1
+
+#define MOTOR_SERVO_OFF		0
+#define MOTOR_SERVO_ON		1
+
+typedef struct{
+	uint8_t brake;
+	uint8_t servo_on;
+}prtc_data_ctl_brake_t;
+
+typedef struct{
+	uint8_t brake;
+	uint8_t servo_on;
+}prtc_data_rsp_brake_t;
+/***********************************************************MOTION_SUB_PID_BRAKE**********************************************************/
+
+/***********************************************************MOTION_SUB_PID_BRAKE**********************************************************/
 #pragma pack()
 #endif
