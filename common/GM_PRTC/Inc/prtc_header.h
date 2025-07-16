@@ -9,6 +9,7 @@
 #include "prtc_data_pid_sensor.h"
 #include "prtc_data_pid_error.h"
 #include "prtc_data_pid_inspection.h"
+#include "prtc_data_pid_wifi.h"
 #include "prtc_data_pid_lfs.h"
 
 #pragma pack(1)
@@ -111,12 +112,13 @@ typedef struct{
 #define ERROR_SUB_PID_ERROR_TRANSMISSION	5
 /*******************************************PID_ERROR의 SUB_PID******************************************************************/
 /*******************************************PID_INSPECTION의 SUB_PID******************************************************************/
-#define INSPECTION_SUB_PID_DATA		0
-#define INSPECTION_SUB_PID_DATA_PLAY 1
+#define INSPECTION_SUB_PID_DATA			0
+#define INSPECTION_SUB_PID_DATA_PLAY 	1
 /*******************************************PID_INSPECTION의 SUB_PID******************************************************************/
 /*******************************************PID_WIFI의 SUB_PID******************************************************************/
 #define WIFI_SUB_PID_IPADDRESS		0
 #define WIFI_SUB_PID_REALTIME		1
+#define WIFI_SUB_PID_BRAKE			2
 /*******************************************PID_WIFI의 SUB_PID******************************************************************/
 /*******************************************PID_LFS의 SUB_PID******************************************************************/
 #define LFS_SUB_PID_MODE		0

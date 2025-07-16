@@ -53,6 +53,9 @@ void net_phd_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 		case PID_INSPECTION:
 			net_phd_inspection_sub_pid(num, pPh, pData);
 		break;
+		case PID_WIFI:
+			//net_phd_wifi_sub_pid(num, pPh, pData);
+		break;
 		case PID_LFS:
 			net_phd_lfs_sub_pid(num, pPh, pData);
 		break;
