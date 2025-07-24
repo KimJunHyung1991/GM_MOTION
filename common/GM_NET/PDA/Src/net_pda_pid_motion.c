@@ -171,10 +171,11 @@ uint8_t *net_pda_motion_sub_pid_profile_position_rqt(void)
   * @param  raw_data :  원본 데이터
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_motion_sub_pid_raw_data_ctl(uint64_t raw_data)
+uint8_t *net_pda_motion_sub_pid_raw_data_ctl(uint16_t multi_turn , uint32_t single_turn)
 {
 	prtc_data_ctl_motion_raw_data_t *pCdcmrd = (prtc_data_ctl_motion_raw_data_t *)make_data_buff;
-	pCdcmrd->raw_data = raw_data;
+	pCdcmrd->multi_turn = multi_turn;
+	pCdcmrd->single_turn = single_turn;
 	
 	return make_data_buff;
 }
@@ -184,10 +185,11 @@ uint8_t *net_pda_motion_sub_pid_raw_data_ctl(uint64_t raw_data)
   * @param  raw_data :  원본 데이터
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_motion_sub_pid_raw_data_rsp(uint64_t raw_data)
+uint8_t *net_pda_motion_sub_pid_raw_data_rsp(uint16_t multi_turn , uint32_t single_turn)
 {
 	prtc_data_rsp_motion_raw_data_t *pCdrmrd = (prtc_data_rsp_motion_raw_data_t *)make_data_buff;
-	pCdrmrd->raw_data = raw_data;
+	pCdrmrd->multi_turn = multi_turn;
+	pCdrmrd->single_turn = single_turn;
 	
 	return make_data_buff;
 }

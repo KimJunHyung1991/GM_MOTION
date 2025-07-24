@@ -50,10 +50,12 @@ typedef struct{
 /***********************************************************MOTION_SUB_PID_PROFILE_POSITION**********************************************************/
 /***********************************************************MOTION_SUB_PID_RAW_DATA**********************************************************/
 typedef struct{
-	uint64_t raw_data;
+	uint16_t multi_turn;
+	uint32_t single_turn;
 }prtc_data_ctl_motion_raw_data_t;
 typedef struct{
-	uint64_t raw_data;
+	uint16_t multi_turn;
+	uint32_t single_turn;
 }prtc_data_rsp_motion_raw_data_t;
 /***********************************************************MOTION_SUB_PID_RAW_DATA**********************************************************/
 #define MOTOR_BRAKE_UNLOCK	0
