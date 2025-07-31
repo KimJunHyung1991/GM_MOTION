@@ -17,8 +17,8 @@ uint8_t *net_pda_init_sub_pid_status_ctl(uint8_t step, uint8_t status);
 uint8_t *net_pda_init_sub_pid_status_rsp(uint8_t step, uint8_t status);
 uint8_t *net_pda_init_sub_pid_status_rqt(uint8_t step);
 
-uint8_t *net_pda_init_sub_pid_absolute_battery_ctl(uint32_t save_data);
-uint8_t *net_pda_init_sub_pid_absolute_battery_rsp(uint32_t save_data);
+uint8_t *net_pda_init_sub_pid_absolute_battery_ctl(int64_t save_data);
+uint8_t *net_pda_init_sub_pid_absolute_battery_rsp(int64_t save_data);
 uint8_t *net_pda_init_sub_pid_absolute_battery_rqt(void);
 
 uint8_t *net_pda_init_sub_pid_move_sensor_ctl(uint8_t mode);
@@ -32,4 +32,8 @@ uint8_t *net_pda_init_sub_pid_move_init_position_rqt(void);
 uint8_t *net_pda_init_sub_pid_driver_data_op_ctl(uint8_t *pData);
 uint8_t *net_pda_init_sub_pid_driver_data_op_rsp(uint8_t *pData);
 uint8_t *net_pda_init_sub_pid_driver_data_op_rqt(void);
+
+uint8_t *net_pda_init_sub_pid_driver_type_ctl(uint8_t type);
+uint8_t *net_pda_init_sub_pid_driver_type_rsp(uint8_t type);
+uint8_t *net_pda_init_sub_pid_driver_type_rqt(void);
 #endif

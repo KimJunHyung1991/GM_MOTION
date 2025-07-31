@@ -2,13 +2,31 @@
 #define _PRTC_DATA_PID_LFS_H_
 #pragma pack(1)
 /***********************************************************LFS_SUB_PID_CONNECT**********************************************************/
-typedef struct{
-	uint8_t	connect_status;
-}prtc_data_ctl_lfs_connect_t;
+#define LFS_MODE_FW					0
+#define LFS_MODE_MOTION_DATA		1
 
 typedef struct{
-	uint8_t	connect_status;
-}prtc_data_rsp_lfs_connect_t;
+	uint8_t	mode;
+}prtc_data_ctl_lfs_mode_t;
+
+typedef struct{
+	uint8_t	mode;
+}prtc_data_rsp_lfs_mode_t;
+
+
+	
+typedef struct{
+	uint8_t	mode;
+	uint32_t cnt;
+}prtc_data_ctl_lfs_start_t;
+
+typedef struct{
+	uint8_t	mode;
+	uint32_t cnt;
+}prtc_data_rsp_lfs_start_t;
+
+
+
 /***********************************************************LFS_SUB_PID_CONNECT**********************************************************/
 #pragma pack()
 #endif

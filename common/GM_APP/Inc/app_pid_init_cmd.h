@@ -41,8 +41,8 @@ void app_tx_init_sub_pid_status_rqt(uint8_t num, uint8_t priority, uint8_t souce
 void app_rx_init_sub_pid_absolute_battery_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_init_absolute_battery_t *pData);
 void app_rx_init_sub_pid_absolute_battery_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_init_absolute_battery_t *pData);
 void app_rx_init_sub_pid_absolute_battery_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void app_tx_init_sub_pid_absolute_battery_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint32_t save_data);
-void app_tx_init_sub_pid_absolute_battery_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint32_t save_data);
+void app_tx_init_sub_pid_absolute_battery_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, int64_t save_data);
+void app_tx_init_sub_pid_absolute_battery_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, int64_t save_data);
 void app_tx_init_sub_pid_absolute_battery_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id);
 /**********************************************************************************/
 /**********************************************************************************/
@@ -69,7 +69,14 @@ void app_tx_init_sub_pid_driver_data_op_ctl(uint8_t num, uint8_t priority, uint8
 void app_tx_init_sub_pid_driver_data_op_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t *pData);
 void app_tx_init_sub_pid_driver_data_op_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id);
 /**********************************************************************************/
-
+/**********************************************************************************/
+void app_rx_init_sub_pid_driver_type_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_init_driver_type_t *pData);
+void app_rx_init_sub_pid_driver_type_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_init_driver_type_t *pData);
+void app_rx_init_sub_pid_driver_type_rqt(uint8_t num, prtc_header_t *pPh, prtc_data_rqt_init_driver_type_t *pData);
+void app_tx_init_sub_pid_driver_type_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t type);
+void app_tx_init_sub_pid_driver_type_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t type);
+void app_tx_init_sub_pid_driver_type_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id);
+/**********************************************************************************/
 #ifdef __cplusplus
 }
 #endif

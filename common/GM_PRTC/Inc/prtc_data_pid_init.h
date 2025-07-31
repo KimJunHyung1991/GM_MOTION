@@ -65,11 +65,13 @@ typedef struct{
 /***********************************************************INIT_SUB_PID_STATUS**********************************************************/
 /***********************************************************INIT_SUB_PID_ABSOLUTE_BATTERY**********************************************************/
 typedef struct{
-	uint32_t save_data;
+	//uint32_t save_data;
+	int64_t save_data;
 }prtc_data_ctl_init_absolute_battery_t;
 
 typedef struct{
-	uint32_t save_data;
+	//uint32_t save_data;
+	int64_t save_data;
 }prtc_data_rsp_init_absolute_battery_t;
 /***********************************************************INIT_SUB_PID_ABSOLUTE_BATTERY**********************************************************/
 /***********************************************************INIT_SUB_PID_MOVE_SENSOR**********************************************************/
@@ -91,7 +93,7 @@ typedef struct{
 /***********************************************************INIT_SUB_PID_MOVE_SENSOR**********************************************************/
 /***********************************************************INIT_SUB_PID_MOVE_INIT_POSITION**********************************************************/
 
-/***********************************************************INIT_SUB_PID_MOVE_INIT_POSITION**********************************************************/
+/**********************************************************INIT_SUB_PID_MOVE_INIT_POSITION**********************************************************/
 /***********************************************************INIT_SUB_PID_DRIVER_DATA_OP**********************************************************/
 typedef struct{
 	uint32_t profile_target_speed;
@@ -110,6 +112,29 @@ typedef struct{
 typedef struct{
 	uint32_t home_cnt;
 }prtc_data_rsp_init_driver_data_op_dxl_t;
+
+typedef struct{
+	uint32_t ref_position;
+	uint8_t	 board_type;
+}prtc_data_ctl_init_driver_data_op_ac2_t;
+
+typedef struct{
+	uint32_t ref_position;
+	uint8_t	 board_type;
+}prtc_data_rsp_init_driver_data_op_ac2_t;
 /***********************************************************INIT_SUB_PID_DRIVER_DATA_OP**********************************************************/
+/***********************************************************INIT_SUB_PID_DRIVER_TYPE**********************************************************/
+typedef struct{
+	uint8_t type;
+}prtc_data_ctl_init_driver_type_t;
+
+typedef struct{
+	uint8_t type;
+}prtc_data_rsp_init_driver_type_t;
+
+typedef struct{
+	uint8_t type;
+}prtc_data_rqt_init_driver_type_t;
+/***********************************************************INIT_SUB_PID_DRIVER_TYPE**********************************************************/
 #pragma pack()
 #endif

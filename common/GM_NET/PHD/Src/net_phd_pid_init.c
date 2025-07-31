@@ -15,7 +15,7 @@ void net_phd_init_sub_pid_absolute_battery(uint8_t num, prtc_header_t *pPh, uint
 void net_phd_init_sub_pid_move_sensor(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void net_phd_init_sub_pid_move_init_position(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void net_phd_init_sub_pid_driver_data_op(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-
+void net_phd_init_sub_pid_driver_type(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 /******************************************INIT PID DISASSEMBLE*********************************************/
 /**
   * @brief  packet header disassemble(PID-init의 sub_pid)
@@ -50,6 +50,9 @@ void net_phd_init_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 		break;
 		case INIT_SUB_PID_DRIVER_DATA_OP:
 			net_phd_init_sub_pid_driver_data_op(num, pPh, pData);
+		break;
+		case INIT_SUB_PID_DRIVER_TYPE:
+			net_phd_init_sub_pid_driver_type(num, pPh, pData);
 		break;
 	}
 }
@@ -215,9 +218,9 @@ void net_phd_init_sub_pid_move_init_position(uint8_t num, prtc_header_t *pPh, ui
 	}
 }
 /******************************************INIT SUB PID MOVE INIT POSITION DISASSEMBLE*********************************************/
-/******************************************INIT SUB PID MOVE INIT POSITION DISASSEMBLE*********************************************/
+/******************************************INIT SUB PID DRIVER DATA OP DISASSEMBLE*********************************************/
 /**
-  * @brief  packet header disassemble(PID-init의 sub_pid-move_init_position의 cmd)
+  * @brief  packet header disassemble(PID-init의 sub_pid-river data op의 cmd)
   * @param  *pPh : packet header pointer
 			*pData : packet data pointer
   * @retval None
@@ -237,4 +240,27 @@ void net_phd_init_sub_pid_driver_data_op(uint8_t num, prtc_header_t *pPh, uint8_
 		break;
 	}
 }
-/******************************************INIT SUB PID MOVE INIT POSITION DISASSEMBLE*********************************************/
+/******************************************INIT SUB PID DRIVER DATA OP DISASSEMBLE*********************************************/
+/******************************************INIT SUB PID DRIVER TYPE DISASSEMBLE*********************************************/
+/**
+  * @brief  packet header disassemble(PID-init의 sub_pid-river data op의 cmd)
+  * @param  *pPh : packet header pointer
+			*pData : packet data pointer
+  * @retval None
+  */
+void net_phd_init_sub_pid_driver_type(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	switch(pPh->cmd)
+	{
+		case CMD_CONTROL:
+			app_rx_init_sub_pid_driver_type_ctl(num, pPh, (prtc_data_ctl_init_driver_type_t *)pData);
+		break;
+		case CMD_RESPONSE:
+			app_rx_init_sub_pid_driver_type_rsp(num, pPh, (prtc_data_rsp_init_driver_type_t *)pData);
+		break;
+		case CMD_REQUEST:
+			app_rx_init_sub_pid_driver_type_rqt(num, pPh, (prtc_data_rqt_init_driver_type_t *)pData);
+		break;
+	}
+}
+/******************************************INIT SUB PID DRIVER TYPE DISASSEMBLE*********************************************/

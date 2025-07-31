@@ -45,7 +45,13 @@ void app_tx_error_sub_pid_error_level_ctl(uint8_t num, uint8_t priority, uint8_t
 void app_tx_error_sub_pid_error_level_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t motor_type, char *err_str);
 void app_tx_error_sub_pid_error_level_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id);
 /**********************************************************************************/
-
+void app_rx_error_sub_pid_error_transmission_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_error_transmission_t *pData);
+void app_rx_error_sub_pid_error_transmission_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_error_transmission_t *pData);
+void app_rx_error_sub_pid_error_transmission_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void app_tx_error_sub_pid_error_transmission_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t id, uint8_t sub_id, uint8_t err_lv, char *err_str);
+void app_tx_error_sub_pid_error_transmission_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t id, uint8_t sub_id, uint8_t err_lv, char *err_str);
+void app_tx_error_sub_pid_error_transmission_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id);
+/**********************************************************************************/
 #ifdef __cplusplus
 }
 #endif

@@ -45,3 +45,41 @@ uint8_t *net_pda_edit_sub_action_pid_rqt(void)
 	return make_data_buff;
 }
 /******************************************EDIT SUB PID ACTION ASSEMBLE*********************************************/
+
+/******************************************EDIT SUB PID STATUS ASSEMBLE*********************************************/
+/**
+  * @brief  packet eidt-status-control data assemble
+  * @param  status : value(0~255)
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_edit_sub_pid_status_ctl(uint8_t status)
+{
+	prtc_data_ctl_edit_status_t *pCdces = (prtc_data_ctl_edit_status_t *)make_data_buff;
+	pCdces->status = status;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet eidt-status-response data assemble
+  * @param  status : value(0~255)
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_edit_sub_pid_status_rsp(uint8_t status)
+{
+	prtc_data_rsp_edit_status_t *pCdres = (prtc_data_rsp_edit_status_t *)make_data_buff;
+	pCdres->status = status;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet eidt-status-response data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_edit_sub_pid_status_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************EDIT SUB PID STATUS ASSEMBLE*********************************************/

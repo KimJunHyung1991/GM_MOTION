@@ -64,5 +64,23 @@ typedef struct{
 #define EL_MOTOR_DXL		5
 ///////////////////////////error_code///////////////////////////
 /***********************************************************ERROR_SUB_PID_ERROR_LEVEL**********************************************************/
+/***********************************************************ERROR_SUB_PID_ERROR_TRANSMISSION**********************************************************/
+typedef struct{
+	uint16_t id 	: 4;
+	uint16_t sub_id : 5;
+	uint16_t err_lv : 7;
+	char err_lv_str[6];
+}prtc_data_ctl_error_transmission_t;
+
+typedef struct{
+	uint16_t id 	: 4;
+	uint16_t sub_id : 5;
+	uint16_t err_lv : 7;
+	char err_lv_str[6];
+}prtc_data_rsp_error_transmission_t;
+/***********************************************************ERROR_SUB_PID_ERROR_TRANSMISSION**********************************************************/
+
+
+
 #pragma pack()
 #endif

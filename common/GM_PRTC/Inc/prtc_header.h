@@ -9,6 +9,7 @@
 #include "prtc_data_pid_sensor.h"
 #include "prtc_data_pid_error.h"
 #include "prtc_data_pid_inspection.h"
+#include "prtc_data_pid_wifi.h"
 #include "prtc_data_pid_lfs.h"
 
 #pragma pack(1)
@@ -29,10 +30,6 @@ typedef struct{
 		uint32_t protocol_header_32;
 	};
 }prtc_header_t;
-
-
-
-
 
 /*******************************************Header영역의 RTR******************************************************************/
 #define CMD_CONTROL			0
@@ -73,12 +70,15 @@ typedef struct{
 #define INIT_SUB_PID_MOVE_SENSOR			5
 #define INIT_SUB_PID_MOVE_INIT_POSITION		6
 #define INIT_SUB_PID_DRIVER_DATA_OP			7
+#define INIT_SUB_PID_DRIVER_TYPE			8
 /*******************************************PID_INIT의 SUB_PID******************************************************************/
 /*******************************************PID_MOTION의 SUB_PID******************************************************************/
 #define MOTION_SUB_PID_ADC					0
 #define MOTION_SUB_PID_ANGLE				1
 #define MOTION_SUB_PID_DIRECTION			2
 #define MOTION_SUB_PID_PROFILE_POSITION		3
+#define MOTION_SUB_PID_RAW_DATA				4
+#define MOTION_SUB_PID_BRAKE				5
 /*******************************************PID_MOTION의 SUB_PID******************************************************************/
 /*******************************************PID_MIDI의 SUB_PID******************************************************************/
 #define MIDI_SUB_PID_ADC			0
@@ -95,6 +95,7 @@ typedef struct{
 /*******************************************PID_VIDEO의 SUB_PID******************************************************************/
 #define EDIT_SUB_PID_ACTION		0
 #define EDIT_SUB_PID_PLAY_CNT	1
+#define EDIT_SUB_PID_STATUS		2
 /*******************************************PID_VIDEO의 SUB_PID******************************************************************/
 /*******************************************PID_SPEAKER의 SUB_PID******************************************************************/
 #define SPEAKER_SUB_PID_ACTION	0
@@ -103,25 +104,28 @@ typedef struct{
 #define SENSOR_SUB_PID_DETECT	0
 /*******************************************PID_SENSOR의 SUB_PID******************************************************************/
 /*******************************************PID_ERROR의 SUB_PID******************************************************************/
-#define ERROR_SUB_PID_RC			0
-#define ERROR_SUB_PID_AC			1
-#define ERROR_SUB_PID_BLDC			2
-#define ERROR_SUB_PID_CLEAR			3
-#define ERROR_SUB_PID_ERROR_LEVEL	4
+#define ERROR_SUB_PID_RC					0
+#define ERROR_SUB_PID_AC					1
+#define ERROR_SUB_PID_BLDC					2
+#define ERROR_SUB_PID_CLEAR					3
+#define ERROR_SUB_PID_ERROR_LEVEL			4
+#define ERROR_SUB_PID_ERROR_TRANSMISSION	5
 /*******************************************PID_ERROR의 SUB_PID******************************************************************/
 /*******************************************PID_INSPECTION의 SUB_PID******************************************************************/
-#define INSPECTION_SUB_PID_DATA		0
-#define INSPECTION_SUB_PID_DATA_PLAY 1
+#define INSPECTION_SUB_PID_DATA			0
+#define INSPECTION_SUB_PID_DATA_PLAY 	1
 /*******************************************PID_INSPECTION의 SUB_PID******************************************************************/
 /*******************************************PID_WIFI의 SUB_PID******************************************************************/
 #define WIFI_SUB_PID_IPADDRESS		0
 #define WIFI_SUB_PID_REALTIME		1
+#define WIFI_SUB_PID_BRAKE			2
 /*******************************************PID_WIFI의 SUB_PID******************************************************************/
-/*******************************************PID_WIFI의 SUB_PID******************************************************************/
-#define LFS_SUB_PID_CONNECT		0
-/*******************************************PID_WIFI의 SUB_PID******************************************************************/
-
-
+/*******************************************PID_LFS의 SUB_PID******************************************************************/
+#define LFS_SUB_PID_MODE		0
+#define LFS_SUB_PID_START		1
+#define LFS_SUB_PID_DATA		2
+#define LFS_SUB_PID_END			3
+/*******************************************PID_LFS의 SUB_PID******************************************************************/
 typedef struct{
 	uint8_t dlc;
 	union{
@@ -139,7 +143,5 @@ typedef struct{
 #define LFS_PID_COUNT		0
 #define LFS_PID_TRANSFER	1
 /*******************************************LFS Header영역의 PID******************************************************************/
-
-
 #pragma pack()
 #endif

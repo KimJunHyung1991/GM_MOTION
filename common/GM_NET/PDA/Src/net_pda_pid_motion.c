@@ -165,3 +165,83 @@ uint8_t *net_pda_motion_sub_pid_profile_position_rqt(void)
 	return make_data_buff;
 }
 /******************************************MOTION SUB PID PROFILE_POSITION ASSEMBLE*********************************************/
+/******************************************MOTION SUB PID RAW DATA ASSEMBLE*********************************************/
+/**
+  * @brief  packet motion-raw_data-control data assemble
+  * @param  raw_data :  원본 데이터
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_raw_data_ctl(uint16_t multi_turn , uint32_t single_turn)
+{
+	prtc_data_ctl_motion_raw_data_t *pCdcmrd = (prtc_data_ctl_motion_raw_data_t *)make_data_buff;
+	pCdcmrd->multi_turn = multi_turn;
+	pCdcmrd->single_turn = single_turn;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet motion-raw_data-response data assemble
+  * @param  raw_data :  원본 데이터
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_raw_data_rsp(uint16_t multi_turn , uint32_t single_turn)
+{
+	prtc_data_rsp_motion_raw_data_t *pCdrmrd = (prtc_data_rsp_motion_raw_data_t *)make_data_buff;
+	pCdrmrd->multi_turn = multi_turn;
+	pCdrmrd->single_turn = single_turn;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet motion-raw_data-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_raw_data_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************MOTION SUB PID RAW DATA ASSEMBLE*********************************************/
+/******************************************MOTION SUB PID BRAKE ASSEMBLE*********************************************/
+/**
+  * @brief  packet motion-brake-control data assemble
+  * @param  brake :  brake 상태
+			sorvo_on : sorvo on 상태
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_brake_ctl(uint8_t brake, uint8_t servo_on)
+{
+	prtc_data_ctl_brake_t *pCdcb = (prtc_data_ctl_brake_t *)make_data_buff;
+	pCdcb->brake = brake;
+	pCdcb->servo_on = servo_on;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet motion-brake-response data assemble
+  * @param  brake :  brake 상태
+			sorvo_on : sorvo on 상태
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_brake_rsp(uint8_t brake, uint8_t servo_on)
+{
+	prtc_data_rsp_brake_t *pCdrb = (prtc_data_rsp_brake_t *)make_data_buff;
+	pCdrb->brake = brake;
+	pCdrb->servo_on = servo_on;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet motion-brake-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_brake_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************MOTION SUB PID BRAKE ASSEMBLE*********************************************/
