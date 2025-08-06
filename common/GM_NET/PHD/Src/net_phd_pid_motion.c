@@ -13,6 +13,7 @@ void net_phd_motion_sub_pid_direction(uint8_t num, prtc_header_t *pPh, uint8_t *
 void net_phd_motion_sub_pid_profile_position(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void net_phd_motion_sub_pid_raw_data(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 void net_phd_motion_sub_pid_brake(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
+void net_phd_motion_sub_pid_scale_raw_data(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
 /******************************************MOTION PID DISASSEMBLE*********************************************/
 /**
   * @brief  packet header disassemble(PID-motion의 sub_pid)
@@ -41,6 +42,9 @@ void net_phd_motion_sub_pid(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
 		break;
 		case MOTION_SUB_PID_BRAKE:
 			net_phd_motion_sub_pid_brake(num, pPh, pData);
+		break;
+		case MOTION_SUB_PID_SCALE_RAW_DATA:
+			net_phd_motion_sub_pid_scale_raw_data(num, pPh, pData);
 		break;
 	}
 }
@@ -183,3 +187,26 @@ void net_phd_motion_sub_pid_brake(uint8_t num, prtc_header_t *pPh, uint8_t *pDat
 	}
 }
 /******************************************MOTION SUB PID BRAKE DISASSEMBLE*********************************************/
+/******************************************MOTION SUB PID SCALE RAW DATA DISASSEMBLE*********************************************/
+/**
+  * @brief  packet header disassemble(PID-motion의 sub_pid-scale_raw_data의 cmd)
+  * @param  *pPh : packet header pointer
+			*pData : packet data pointer
+  * @retval None
+  */
+void net_phd_motion_sub_pid_scale_raw_data(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	switch(pPh->cmd)
+	{
+		case CMD_CONTROL:
+			app_rx_motion_sub_pid_scale_raw_data_ctl(num, pPh, (prtc_data_ctl_scale_motion_raw_data_t *)pData);
+		break;
+		case CMD_RESPONSE:
+			app_rx_motion_sub_pid_scale_raw_data_rsp(num, pPh, (prtc_data_rsp_scale_motion_raw_data_t *)pData);
+		break;
+		case CMD_REQUEST:
+			app_rx_motion_sub_pid_scale_raw_data_rqt(num, pPh, pData);
+		break;
+	}
+}
+/******************************************MOTION SUB PID SCALE RAW DATA DISASSEMBLE*********************************************/

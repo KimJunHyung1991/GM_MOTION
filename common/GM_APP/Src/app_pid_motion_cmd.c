@@ -224,3 +224,38 @@ void app_tx_motion_sub_pid_brake_rqt(uint8_t num, uint8_t priority, uint8_t souc
 			net_pda_motion_sub_pid_brake_rqt());
 }
 /******************************************MOTION SUB PID BRAKE*********************************************/
+/******************************************MOTION SUB PID SCALE RAW DATA*********************************************/
+__weak void app_rx_motion_sub_pid_scale_raw_data_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_scale_motion_raw_data_t *pData)
+{
+	
+	
+}
+
+__weak void app_rx_motion_sub_pid_scale_raw_data_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_scale_motion_raw_data_t *pData)
+{
+	
+}
+
+__weak void app_rx_motion_sub_pid_scale_raw_data_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+{
+	
+}
+
+void app_tx_motion_sub_pid_scale_raw_data_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, int64_t raw_data)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_scale_motion_raw_data_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_SCALE_RAW_DATA, souce_sub_id, target_sub_id), \
+			net_pda_motion_sub_pid_scale_raw_data_ctl(raw_data));
+}
+
+void app_tx_motion_sub_pid_scale_raw_data_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, int64_t raw_data)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_scale_motion_raw_data_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_SCALE_RAW_DATA, souce_sub_id, target_sub_id), \
+			net_pda_motion_sub_pid_scale_raw_data_rsp(raw_data));
+}
+
+void app_tx_motion_sub_pid_scale_raw_data_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id)
+{
+	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, sizeof(prtc_data_motion_raw_data_op_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_SCALE_RAW_DATA, souce_sub_id, target_sub_id), \
+			net_pda_motion_sub_pid_scale_raw_data_rqt());
+}
+/******************************************MOTION SUB PID SCALE RAW DATA*********************************************/

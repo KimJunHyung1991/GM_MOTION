@@ -24,4 +24,8 @@ uint8_t *net_pda_motion_sub_pid_raw_data_rqt(uint8_t op);
 uint8_t *net_pda_motion_sub_pid_brake_ctl(uint8_t brake, uint8_t servo_on);
 uint8_t *net_pda_motion_sub_pid_brake_rsp(uint8_t brake, uint8_t servo_on);
 uint8_t *net_pda_motion_sub_pid_brake_rqt(void);
+
+uint8_t *net_pda_motion_sub_pid_scale_raw_data_ctl(int64_t raw_data);
+uint8_t *net_pda_motion_sub_pid_scale_raw_data_rsp(int64_t raw_data);
+uint8_t *net_pda_motion_sub_pid_scale_raw_data_rqt(void);
 #endif

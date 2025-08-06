@@ -66,6 +66,7 @@ typedef struct{
 	uint32_t single_turn;
 }prtc_data_rsp_motion_raw_data_t;
 /***********************************************************MOTION_SUB_PID_RAW_DATA**********************************************************/
+/***********************************************************MOTION_SUB_PID_BRAKE**********************************************************/
 #define MOTOR_BRAKE_UNLOCK	0
 #define MOTOR_BRAKE_LOCK	1
 
@@ -82,7 +83,14 @@ typedef struct{
 	uint8_t servo_on;
 }prtc_data_rsp_brake_t;
 /***********************************************************MOTION_SUB_PID_BRAKE**********************************************************/
+/***********************************************************MOTION_SUB_PID_SCALE_RAW_DATA**********************************************************/
+typedef struct{
+	int64_t raw_data;
+}prtc_data_ctl_scale_motion_raw_data_t;
 
-/***********************************************************MOTION_SUB_PID_BRAKE**********************************************************/
+typedef struct{
+	int64_t raw_data;
+}prtc_data_rsp_scale_motion_raw_data_t;
+/***********************************************************MOTION_SUB_PID_SCALE_RAW_DATA**********************************************************/
 #pragma pack()
 #endif

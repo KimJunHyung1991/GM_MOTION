@@ -254,3 +254,40 @@ uint8_t *net_pda_motion_sub_pid_brake_rqt(void)
 	return make_data_buff;
 }
 /******************************************MOTION SUB PID BRAKE ASSEMBLE*********************************************/
+/******************************************MOTION SUB PID SCALE RAW DATA ASSEMBLE*********************************************/
+/**
+  * @brief  packet motion-scale_raw_data-control data assemble
+  * @param  raw_data :  raw_data 값
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_scale_raw_data_ctl(int64_t raw_data)
+{
+	prtc_data_ctl_scale_motion_raw_data_t *pCdcsmrd = (prtc_data_ctl_scale_motion_raw_data_t *)make_data_buff;
+	pCdcsmrd->raw_data = raw_data;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet motion-scale_raw_data-response data assemble
+  * @param  raw_data :  raw_data 값
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_scale_raw_data_rsp(int64_t raw_data)
+{
+	prtc_data_rsp_scale_motion_raw_data_t *pCdrsmrd = (prtc_data_rsp_scale_motion_raw_data_t *)make_data_buff;
+	pCdrsmrd->raw_data = raw_data;
+	
+	return make_data_buff;
+}
+
+/**
+  * @brief  packet motion-scale_raw_data-request data assemble
+  * @param  none
+  * @retval make_data_buff  : 데이터 버퍼 포인터
+  */
+uint8_t *net_pda_motion_sub_pid_scale_raw_data_rqt(void)
+{
+	return make_data_buff;
+}
+/******************************************MOTION SUB PID SCALE RAW DATA ASSEMBLE*********************************************/

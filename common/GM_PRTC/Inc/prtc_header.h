@@ -79,6 +79,7 @@ typedef struct{
 #define MOTION_SUB_PID_PROFILE_POSITION		3
 #define MOTION_SUB_PID_RAW_DATA				4
 #define MOTION_SUB_PID_BRAKE				5
+#define MOTION_SUB_PID_SCALE_RAW_DATA		6
 /*******************************************PID_MOTIONÀÇ SUB_PID******************************************************************/
 /*******************************************PID_MIDIÀÇ SUB_PID******************************************************************/
 #define MIDI_SUB_PID_ADC			0
