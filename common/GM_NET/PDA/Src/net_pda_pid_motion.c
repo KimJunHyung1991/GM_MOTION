@@ -171,9 +171,12 @@ uint8_t *net_pda_motion_sub_pid_profile_position_rqt(void)
   * @param  raw_data :  원본 데이터
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_motion_sub_pid_raw_data_ctl(uint16_t multi_turn , uint32_t single_turn)
+uint8_t *net_pda_motion_sub_pid_raw_data_ctl(uint8_t op, uint16_t multi_turn , uint32_t single_turn)
 {
-	prtc_data_ctl_motion_raw_data_t *pCdcmrd = (prtc_data_ctl_motion_raw_data_t *)make_data_buff;
+	prtc_data_motion_raw_data_op_t *pCdmrdo = (prtc_data_motion_raw_data_op_t *)make_data_buff;
+	prtc_data_ctl_motion_raw_data_t *pCdcmrd = (prtc_data_ctl_motion_raw_data_t *)pCdmrdo->payload;
+	
+	pCdmrdo->option = op;
 	pCdcmrd->multi_turn = multi_turn;
 	pCdcmrd->single_turn = single_turn;
 	
@@ -185,9 +188,12 @@ uint8_t *net_pda_motion_sub_pid_raw_data_ctl(uint16_t multi_turn , uint32_t sing
   * @param  raw_data :  원본 데이터
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_motion_sub_pid_raw_data_rsp(uint16_t multi_turn , uint32_t single_turn)
+uint8_t *net_pda_motion_sub_pid_raw_data_rsp(uint8_t op, uint16_t multi_turn , uint32_t single_turn)
 {
-	prtc_data_rsp_motion_raw_data_t *pCdrmrd = (prtc_data_rsp_motion_raw_data_t *)make_data_buff;
+	prtc_data_motion_raw_data_op_t *pCdmrdo = (prtc_data_motion_raw_data_op_t *)make_data_buff;
+	prtc_data_rsp_motion_raw_data_t *pCdrmrd = (prtc_data_rsp_motion_raw_data_t *)pCdmrdo->payload;
+	
+	pCdmrdo->option = op;
 	pCdrmrd->multi_turn = multi_turn;
 	pCdrmrd->single_turn = single_turn;
 	
@@ -199,8 +205,11 @@ uint8_t *net_pda_motion_sub_pid_raw_data_rsp(uint16_t multi_turn , uint32_t sing
   * @param  none
   * @retval make_data_buff  : 데이터 버퍼 포인터
   */
-uint8_t *net_pda_motion_sub_pid_raw_data_rqt(void)
+uint8_t *net_pda_motion_sub_pid_raw_data_rqt(uint8_t op)
 {
+	prtc_data_motion_raw_data_op_t *pCdmrdo = (prtc_data_motion_raw_data_op_t *)make_data_buff;
+	pCdmrdo->option = op;
+	
 	return make_data_buff;
 }
 /******************************************MOTION SUB PID RAW DATA ASSEMBLE*********************************************/

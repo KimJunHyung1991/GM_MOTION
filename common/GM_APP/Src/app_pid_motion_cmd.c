@@ -154,37 +154,40 @@ void app_tx_motion_sub_pid_profile_position_rqt(uint8_t num, uint8_t priority, u
 }
 /******************************************MOTION SUB PID PROFILE_POSITION*********************************************/
 /******************************************MOTION SUB PID RAW DATA*********************************************/
-__weak void app_rx_motion_sub_pid_raw_data_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_motion_raw_data_t *pData)
+__weak void app_rx_motion_sub_pid_raw_data_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_motion_raw_data_op_t *pData)
+{
+	//prtc_data_motion_raw_data_op_t *pCdmrdo = (prtc_data_motion_raw_data_op_t *)pData;
+	//prtc_data_ctl_motion_raw_data_t *pCdcmrd = (prtc_data_ctl_motion_raw_data_t *)pCdmrdo->payload;
+	
+}
+
+__weak void app_rx_motion_sub_pid_raw_data_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_motion_raw_data_op_t *pData)
+{
+	//prtc_data_motion_raw_data_op_t *pCdmrdo = (prtc_data_motion_raw_data_op_t *)pData;
+	//prtc_data_rsp_motion_raw_data_t *pCdrmrd = (prtc_data_rsp_motion_raw_data_t *)pCdmrdo->payload;
+}
+
+__weak void app_rx_motion_sub_pid_raw_data_rqt(uint8_t num, prtc_header_t *pPh, prtc_data_motion_raw_data_op_t *pData)
 {
 	
 }
 
-__weak void app_rx_motion_sub_pid_raw_data_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_motion_raw_data_t *pData)
+void app_tx_motion_sub_pid_raw_data_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t op ,uint16_t multi_turn, uint32_t single_turn)
 {
-	
+	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_motion_raw_data_op_t)+sizeof(prtc_data_ctl_motion_raw_data_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_RAW_DATA, souce_sub_id, target_sub_id), \
+			net_pda_motion_sub_pid_raw_data_ctl(op, multi_turn, single_turn));
 }
 
-__weak void app_rx_motion_sub_pid_raw_data_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData)
+void app_tx_motion_sub_pid_raw_data_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t op, uint16_t multi_turn, uint32_t single_turn)
 {
-	
+	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_motion_raw_data_op_t)+sizeof(prtc_data_rsp_motion_raw_data_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_RAW_DATA, souce_sub_id, target_sub_id), \
+			net_pda_motion_sub_pid_raw_data_rsp(op, multi_turn, single_turn));
 }
 
-void app_tx_motion_sub_pid_raw_data_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint16_t multi_turn, uint32_t single_turn)
+void app_tx_motion_sub_pid_raw_data_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t op)
 {
-	hal_can_protocol_tx(num, net_pha(CMD_CONTROL, sizeof(prtc_data_ctl_motion_raw_data_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_RAW_DATA, souce_sub_id, target_sub_id), \
-			net_pda_motion_sub_pid_raw_data_ctl(multi_turn, single_turn));
-}
-
-void app_tx_motion_sub_pid_raw_data_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint16_t multi_turn, uint32_t single_turn)
-{
-	hal_can_protocol_tx(num, net_pha(CMD_RESPONSE, sizeof(prtc_data_rsp_motion_raw_data_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_RAW_DATA, souce_sub_id, target_sub_id), \
-			net_pda_motion_sub_pid_raw_data_rsp(multi_turn, single_turn));
-}
-
-void app_tx_motion_sub_pid_raw_data_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id)
-{
-	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, 0, priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_RAW_DATA, souce_sub_id, target_sub_id), \
-			net_pda_motion_sub_pid_raw_data_rqt());
+	hal_can_protocol_tx(num, net_pha(CMD_REQUEST, sizeof(prtc_data_motion_raw_data_op_t), priority, souce_id, target_id, PID_MOTION, MOTION_SUB_PID_RAW_DATA, souce_sub_id, target_sub_id), \
+			net_pda_motion_sub_pid_raw_data_rqt(op));
 }
 /******************************************MOTION SUB PID RAW DATA*********************************************/
 /******************************************MOTION SUB PID BRAKE*********************************************/

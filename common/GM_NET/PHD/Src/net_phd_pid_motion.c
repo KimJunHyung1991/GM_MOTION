@@ -149,13 +149,13 @@ void net_phd_motion_sub_pid_raw_data(uint8_t num, prtc_header_t *pPh, uint8_t *p
 	switch(pPh->cmd)
 	{
 		case CMD_CONTROL:
-			app_rx_motion_sub_pid_raw_data_ctl(num, pPh, (prtc_data_ctl_motion_raw_data_t *)pData);
+			app_rx_motion_sub_pid_raw_data_ctl(num, pPh, (prtc_data_motion_raw_data_op_t *)pData);
 		break;
 		case CMD_RESPONSE:
-			app_rx_motion_sub_pid_raw_data_rsp(num, pPh, (prtc_data_rsp_motion_raw_data_t *)pData);
+			app_rx_motion_sub_pid_raw_data_rsp(num, pPh, (prtc_data_motion_raw_data_op_t *)pData);
 		break;
 		case CMD_REQUEST:
-			app_rx_motion_sub_pid_raw_data_rqt(num, pPh, pData);
+			app_rx_motion_sub_pid_raw_data_rqt(num, pPh, (prtc_data_motion_raw_data_op_t *)pData);
 		break;
 	}
 }

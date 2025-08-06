@@ -49,6 +49,14 @@ typedef struct{
 }prtc_data_rsp_motion_profile_position_t;
 /***********************************************************MOTION_SUB_PID_PROFILE_POSITION**********************************************************/
 /***********************************************************MOTION_SUB_PID_RAW_DATA**********************************************************/
+#define MOTION_RAW_DATA_OPTION_DATA		0
+#define MOTION_RAW_DATA_OPTION_CLEAR	1
+	
+typedef struct{
+	uint8_t option;
+	uint8_t payload[0];
+}prtc_data_motion_raw_data_op_t;
+
 typedef struct{
 	uint16_t multi_turn;
 	uint32_t single_turn;

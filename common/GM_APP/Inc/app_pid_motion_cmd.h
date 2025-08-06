@@ -38,12 +38,12 @@ void app_tx_motion_sub_pid_profile_position_rsp(uint8_t num, uint8_t priority, u
 void app_tx_motion_sub_pid_profile_position_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id);
 /**********************************************************************************/
 /**********************************************************************************/
-void app_rx_motion_sub_pid_raw_data_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_motion_raw_data_t *pData);
-void app_rx_motion_sub_pid_raw_data_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_rsp_motion_raw_data_t *pData);
-void app_rx_motion_sub_pid_raw_data_rqt(uint8_t num, prtc_header_t *pPh, uint8_t *pData);
-void app_tx_motion_sub_pid_raw_data_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint16_t multi_turn, uint32_t single_turn);
-void app_tx_motion_sub_pid_raw_data_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint16_t multi_turn, uint32_t single_turn);
-void app_tx_motion_sub_pid_raw_data_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id);
+__weak void app_rx_motion_sub_pid_raw_data_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_motion_raw_data_op_t *pData);
+__weak void app_rx_motion_sub_pid_raw_data_rsp(uint8_t num, prtc_header_t *pPh, prtc_data_motion_raw_data_op_t *pData);
+__weak void app_rx_motion_sub_pid_raw_data_rqt(uint8_t num, prtc_header_t *pPh, prtc_data_motion_raw_data_op_t *pData);
+void app_tx_motion_sub_pid_raw_data_ctl(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t op ,uint16_t multi_turn, uint32_t single_turn);
+void app_tx_motion_sub_pid_raw_data_rsp(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t op, uint16_t multi_turn, uint32_t single_turn);
+void app_tx_motion_sub_pid_raw_data_rqt(uint8_t num, uint8_t priority, uint8_t souce_id, uint8_t target_id, uint8_t souce_sub_id, uint8_t target_sub_id, uint8_t op);
 /**********************************************************************************/
 /**********************************************************************************/
 void app_rx_motion_sub_pid_brake_ctl(uint8_t num, prtc_header_t *pPh, prtc_data_ctl_brake_t *pData);
