@@ -124,6 +124,20 @@ typedef struct{
 	uint8_t load;
 	uint8_t	board_type;
 }prtc_data_rsp_init_driver_data_op_ac2_t;
+
+typedef struct{
+	uint16_t case_num;
+	uint16_t min;
+	uint16_t ref_position;
+	uint16_t max;
+}prtc_data_ctl_init_driver_data_op_dxl2_t;
+
+typedef struct{
+	uint16_t case_num;
+	uint16_t min;
+	uint16_t ref_position;
+	uint16_t max;
+}prtc_data_rsp_init_driver_data_op_dxl2_t;
 /***********************************************************INIT_SUB_PID_DRIVER_DATA_OP**********************************************************/
 /***********************************************************INIT_SUB_PID_DRIVER_TYPE**********************************************************/
 typedef struct{
